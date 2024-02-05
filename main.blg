@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: chapter_1.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: chapter_2.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 4 items.
+Database file #1: ref.bib
+You're missing a field name---line 465 of file ref.bib
+ : 
+ : % author={Hayashi, Yuichi and Kawamura, Shinichi},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty booktitle in 7092492
+Warning--empty year in skorobogatovhardware
+You've used 26 entries,
+            1935 wiz_defined-function locations,
+            611 strings with 8421 characters,
+and the built_in function-call counts, 13142 in all, are:
+= -- 1327
+> -- 532
+< -- 27
++ -- 199
+- -- 182
+* -- 1048
+:= -- 2097
+add.period$ -- 87
+call.type$ -- 26
+change.case$ -- 221
+chr.to.int$ -- 23
+cite$ -- 28
+duplicate$ -- 549
+empty$ -- 936
+format.name$ -- 228
+if$ -- 2751
+int.to.chr$ -- 4
+int.to.str$ -- 0
+missing$ -- 25
+newline$ -- 132
+num.names$ -- 78
+pop$ -- 248
+preamble$ -- 1
+purify$ -- 221
+quote$ -- 0
+skip$ -- 414
+stack$ -- 0
+substring$ -- 981
+swap$ -- 150
+text.length$ -- 16
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 156
+warning$ -- 2
+while$ -- 108
+width$ -- 0
+write$ -- 345
+(There was 1 error message)

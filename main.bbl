@@ -1,0 +1,164 @@
+\begin{thebibliography}{}
+
+\bibitem[Abramovici and Bradley, 2009]{abramovici2009integrated}
+Abramovici, M. and Bradley, P. (2009).
+\newblock Integrated circuit security: new threats and solutions.
+\newblock In {\em Proceedings of the 5th Annual Workshop on Cyber Security and
+  Information Intelligence Research: Cyber Security and Information
+  Intelligence Challenges and Strategies}, pages 1--3.
+
+\bibitem[Alkabani and Koushanfar, 2008]{4559059}
+Alkabani, Y. and Koushanfar, F. (2008).
+\newblock Extended abstract: Designer’s hardware trojan horse.
+\newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
+  Security and Trust}, pages 82--83.
+
+\bibitem[Banga and Hsiao, 2008a]{4559047a}
+Banga, M. and Hsiao, M.~S. (2008a).
+\newblock A region based approach for the identification of hardware trojans.
+\newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
+  Security and Trust}, pages 40--47.
+
+\bibitem[Banga and Hsiao, 2008b]{banga2008region}
+Banga, M. and Hsiao, M.~S. (2008b).
+\newblock A region based approach for the identification of hardware trojans.
+\newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
+  Security and Trust}, pages 40--47. IEEE.
+
+\bibitem[Banga and Hsiao, 2009]{banga2009novel}
+Banga, M. and Hsiao, M.~S. (2009).
+\newblock A novel sustained vector technique for the detection of hardware
+  trojans.
+\newblock In {\em 2009 22nd international conference on VLSI design}, pages
+  327--332. IEEE.
+
+\bibitem[Bhunia et~al., 2014]{6856140}
+Bhunia, S., Hsiao, M.~S., Banga, M., and Narasimhan, S. (2014).
+\newblock Hardware trojan attacks: Threat analysis and countermeasures.
+\newblock {\em Proceedings of the IEEE}, 102(8):1229--1247.
+
+\bibitem[Cruz et~al., 2022]{cruz2022machine}
+Cruz, J., Gaikwad, P., Nair, A., Chakraborty, P., and Bhunia, S. (2022).
+\newblock A machine learning based automatic hardware trojan attack space
+  exploration and benchmarking framework.
+\newblock In {\em 2022 Asian Hardware Oriented Security and Trust Symposium
+  (AsianHOST)}, pages 1--6. IEEE.
+
+\bibitem[Ghandali et~al., 2016]{ghandali2016design}
+Ghandali, S., Becker, G.~T., Holcomb, D., and Paar, C. (2016).
+\newblock A design methodology for stealthy parametric trojans and its
+  application to bug attacks.
+\newblock In {\em Cryptographic Hardware and Embedded Systems--CHES 2016: 18th
+  International Conference, Santa Barbara, CA, USA, August 17-19, 2016,
+  Proceedings 18}, pages 625--647. Springer.
+
+\bibitem[Huang et~al., 2020]{8952724}
+Huang, Z., Wang, Q., Chen, Y., and Jiang, X. (2020).
+\newblock A survey on machine learning against hardware trojan attacks: Recent
+  advances and challenges.
+\newblock {\em IEEE Access}, 8:10796--10826.
+
+\bibitem[Jacob et~al., 2014a]{jacob2014hardware}
+Jacob, N., Merli, D., Heyszl, J., and Sigl, G. (2014a).
+\newblock Hardware trojans: current challenges and approaches.
+\newblock {\em IET Computers \& Digital Techniques}, 8(6):264--273.
+
+\bibitem[Jacob et~al., 2014b]{insert01}
+Jacob, N., Merli, D., Heyszl, J., and Sigl, G. (2014b).
+\newblock Hardware trojans: current challenges and approaches.
+\newblock {\em IET Computers \& Digital Techniques}, 8(6):264--273.
+
+\bibitem[Jha and Jha, 2008]{jha2008randomization}
+Jha, S. and Jha, S.~K. (2008).
+\newblock Randomization based probabilistic approach to detect trojan circuits.
+\newblock In {\em 2008 11th IEEE High Assurance Systems Engineering Symposium},
+  pages 117--124. IEEE.
+
+\bibitem[King et~al., 2008]{king2008designing}
+King, S.~T., Tucek, J., Cozzie, A., Grier, C., Jiang, W., and Zhou, Y. (2008).
+\newblock Designing and implementing malicious hardware.
+\newblock {\em Leet}, 8:1--8.
+
+\bibitem[Liu et~al., 2017]{7792718}
+Liu, Y., Jin, Y., Nosratinia, A., and Makris, Y. (2017).
+\newblock Silicon demonstration of hardware trojan design and detection in
+  wireless cryptographic ics.
+\newblock {\em IEEE Transactions on Very Large Scale Integration (VLSI)
+  Systems}, 25(4):1506--1519.
+
+\bibitem[Ngo et~al., 2015]{7092492}
+Ngo, X.-T., Exurville, I., Bhasin, S., Danger, J.-L., Guilley, S., Najm, Z.,
+  Rigaud, J.-B., and Robisson, B. (2015).
+\newblock Hardware trojan detection by delay and electromagnetic measurements.
+\newblock pages 782--787.
+
+\bibitem[Perez and Pagliarini, 2023]{9956883}
+Perez, T.~D. and Pagliarini, S. (2023).
+\newblock Hardware trojan insertion in finalized layouts: From methodology to a
+  silicon demonstration.
+\newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems}, 42(7):2094--2107.
+
+\bibitem[Qu and Yuan, 2014]{qu2014design}
+Qu, G. and Yuan, L. (2014).
+\newblock Design things for the internet of things—an eda perspective.
+\newblock In {\em 2014 IEEE/ACM international conference on Computer-Aided
+  Design (ICCAD)}, pages 411--416. IEEE.
+
+\bibitem[Skorobogatov, ]{skorobogatovhardware}
+Skorobogatov, S.
+\newblock Hardware assurance and its importance to national security (2012).
+
+\bibitem[Smith and Di, 2007]{smith2007detecting}
+Smith, S.~C. and Di, J. (2007).
+\newblock Detecting malicious logic through structural checking.
+\newblock In {\em 2007 IEEE Region 5 Technical Conference}, pages 217--222.
+  IEEE.
+
+\bibitem[Subramani et~al., 2020]{subramani2020amplitude}
+Subramani, K.~S., Helal, N., Antonopoulos, A., Nosratinia, A., and Makris, Y.
+  (2020).
+\newblock Amplitude-modulating analog/rf hardware trojans in wireless networks:
+  Risks and remedies.
+\newblock {\em IEEE Transactions on Information Forensics and Security},
+  15:3497--3510.
+
+\bibitem[Wang et~al., 2008]{wang2008detecting}
+Wang, X., Tehranipoor, M., and Plusquellic, J. (2008).
+\newblock Detecting malicious inclusions in secure hardware: Challenges and
+  solutions.
+\newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
+  Security and Trust}, pages 15--19. IEEE.
+
+\bibitem[Wolff et~al., 2008]{wolff2008towards}
+Wolff, F., Papachristou, C., Bhunia, S., and Chakraborty, R.~S. (2008).
+\newblock Towards trojan-free trusted ics: Problem analysis and detection
+  scheme.
+\newblock In {\em Proceedings of the conference on Design, automation and test
+  in Europe}, pages 1362--1365.
+
+\bibitem[Yang et~al., 2016a]{yang2016a2}
+Yang, K., Hicks, M., Dong, Q., Austin, T., and Sylvester, D. (2016a).
+\newblock A2: Analog malicious hardware.
+\newblock In {\em 2016 IEEE symposium on security and privacy (SP)}, pages
+  18--37. IEEE.
+
+\bibitem[Yang et~al., 2016b]{7546493}
+Yang, K., Hicks, M., Dong, Q., Austin, T., and Sylvester, D. (2016b).
+\newblock A2: Analog malicious hardware.
+\newblock In {\em 2016 IEEE Symposium on Security and Privacy (SP)}, pages
+  18--37.
+
+\bibitem[Zhang and Qu, 2014]{zhang2014survey}
+Zhang, J. and Qu, G. (2014).
+\newblock A survey on security and trust of fpga-based systems.
+\newblock In {\em 2014 International Conference on Field-Programmable
+  Technology (FPT)}, pages 147--152. IEEE.
+
+\bibitem[Zhang et~al., 2015]{7086012}
+Zhang, J., Yuan, F., Wei, L., Liu, Y., and Xu, Q. (2015).
+\newblock Veritrust: Verification for hardware trust.
+\newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems}, 34(7):1148--1161.
+
+\end{thebibliography}

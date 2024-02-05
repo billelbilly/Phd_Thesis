@@ -1,0 +1,573 @@
+\chapter{General concepts of Hardware Trojans}
+\section{Introduction}
+\paragraph*{}
+Here in this chapter I will cover the concepts of hardware Trojans, their classification, threats, taxonomy, location where possibly going to find them, their effects on the entire circuit, comparison of some hardware Trojan attacks and a complete study case to show real impact. This chapter presents concepts from available literature on hardware Trojans.
+\section{Definition}
+\paragraph*{}
+A hardware Trojan is a malicious modification of the circuitry of an IC chip. It is done during the design or fabrication of chip. It is also a piece of hardware, which is hiding inside another larger piece of hardware. It wakes up at unpredictable times and does something malicious, which is again unpredictable. Hardware Trojans may be introduced as hidden “Back-doors” that are inserted while designing an IC, by using a pre-made circuit known as intellectual property core (IP core) that have been purchased from a non-reputable source. There are two main things that categorize a Hardware Trojan: first, its physical Representation that is how it behaves, and how it looks like, second its behavior that is how it shows up and what are its effects. Among the properties of a Hardware Trojan are that it can take place pre- or post-manufacturing, that it is inserted by some intellectual adversary, and that it is stealthy and nearly impossible to detect. Hardware Trojan consists of the Trigger that decides when the HT will wake up and the Payload that decides what will happen when the Trojan will wake up. It is maliciously placed in the original circuit; user does not know about this because most of the time circuit will behave normally, but sometimes it behaves unpredictably and maliciously whenever it wakes up.
+\section{Hardware Trojan threats}
+\paragraph*{}
+Economic reasons dictate that most of the modern integrated circuits (ICs) are manufactured in offshore fabrication facilities. Moreover, modern IC design often involves intellectual property (IP)\footnote{An IP core is a reusable unit of logic or integrated circuit (IC) layout design. It is the IP of one party and may be licensed by others for use in their own ICs and semiconductors. For more information visit (https://www.techtarget.com/whatis/definition/IP-core-intellectual-property-core)} cores supplied by third-party vendors, outsourced design and test services as well as electronic design automation (EDA)\footnote{Electronic Design Automation, or EDA, is a market segment consisting of software, hardware, and services with the collective goal of assisting in the definition, planning, design, implementation, verification, and subsequent manufacturing of semiconductor devices, or chips. For more information visit (https://www.synopsys.com/glossary/what-is-electronic-design-automation.html)} and different vendors supply software tools. Thus, security level of such ICs is often affected. As the full potential of the threat posed by the hardware Trojan has been realized and acknowledged by the electronics industries many different conspiracy theories have emerged.
+\paragraph*{}
+In this section, we first introduce an IC market model proposed by Zhang and Qu \cite{zhang2014survey}, and then describe the potential threats from HTs in the model.
+\subsection{IC market model}
+\paragraph*{}
+In the context illustrated in Figure \ref{fig:icmarketmodel}, the IC design, manufacturing, and application process typically involve five distinct entities. Each party's role is outlined below:
+\begin{enumerate}
+	\item Foundries: \begin{itemize}
+		\item Definition: Semiconductor manufacturers such as TSMC and IBM.
+		\item Role: Contract with System-on-Chip (SoC) designers to manufacture integrated circuits (ICs).
+	\end{itemize}
+	\item SoC Designers: \begin{itemize}
+		\item Definition: Entities responsible for designing and producing commercial products, incorporating various intellectual properties (IPs).
+		\item Role: Collaborate with foundries for IC fabrication.
+	\end{itemize}
+	\item IP Vendors: \begin{itemize}
+		\item Definition: Developers of intellectual property cores, such as memory blocks and DSP cores, tailored for SoC designers.
+		\item Role: Supply essential IP components for SoC design.
+	\end{itemize}
+	\item EDA Tool Vendors: \begin{itemize}
+		\item Definition: Providers of Electronic Design Automation (EDA) tools, such as Altera and Xilinx.
+		\item Role: Offer tools to facilitate the design of large-scale integrated circuits for both SoC designers and IP vendors.
+	\end{itemize}
+	\item IC end users:
+	Companies or individuals purchase commercial products from SoC designers.
+\end{enumerate}
+\paragraph*{}
+This representation captures the key participants in the IC design system, highlighting their distinct roles and interactions throughout the design, manufacturing, and application phases. The information in this passage serves as a valuable reference for understanding the dynamics of the semiconductor industry (Figure \ref{fig:icmarketmodel}).
+
+
+\paragraph*{}
+Figure  \ref{fig:icmarketmodel} illustrates the interactions among the various entities within the IC market model. In this model, a directional arrow signifies the flow of services from the supplier to the receiver. Broadly speaking, each party involved in this model contributes competitive products to others. Specifically, System-on-Chip (SoC) designers form connections with different entities in the IC market. As recipients of services, SoC designers acquire intellectual properties (IPs) from IP vendors to streamline the development process, utilize licensed Electronic Design Automation (EDA) tools from EDA tool vendors to enhance their design capabilities, and engage with foundries for chip fabrication. Conversely, as service providers, SoC designers offer their products to end-users lacking a chip-level development team who require chips for specific applications. Furthermore, IP vendors also procure software tools from EDA tool vendors. This model, originating from the evolution of the IC industry, enables each party to concentrate on their respective areas of expertise. Nevertheless, the involvement of multiple parties in the production of a single product introduces vulnerabilities to hostile insertion of Hardware Trojans (HT).
+\begin{figure}[h]
+	\centering
+	\includegraphics{../Figures/ic_market_model}
+	\caption{IC market model}
+	\label{fig:icmarketmodel}
+\end{figure}
+\subsection{HT threat between SoC designers and foundries}
+\paragraph*{}
+Throughout the fabrication process, there is no assurance that foundries refrain from incorporating a specific type of Hardware Trojan (HT) into the chips. Chips manufactured in foundries face potential threats from untrusted personnel or external entities with access to the fabrication process. To illustrate, a Trojan may infiltrate the integrated circuit (IC) by deliberately or inadvertently altering the dopant level or mask layout during sample or mass production \cite{jacob2014hardware}. Furthermore, foundries possess proprietary tools capable of manipulating chip fabrication for potentially malicious purposes. Additionally, foundries might delegate mask generation tasks to third-party entities, presenting an opportunity for the intentional inclusion of malicious mask macros in the GDSII.
+\subsection{HT threat between SoC designers and IP vendors}
+\paragraph*{}
+In the interaction between System-on-Chip (SoC) designers and Intellectual Property (IP) vendors, it is imperative for the former to ensure that the acquired IPs do not conceal malicious function units, as their detection becomes exceedingly challenging later on. A skilled adversary can design various types of Trojans during the pre-silicon stage. The majority of Hardware Trojans (HTs) proposed in existing literature are introduced and integrated into the design at the Register Transfer Level (RTL), before the stages of synthesis, placement, and routing \cite{king2008designing}. An untrusted insider within IP vendors can easily manipulate the RTL, introducing malicious codes, altering macros during design synthesis, and even modifying the placement and routing to accommodate the Trojan circuitry. Moreover, an untrusted contractor involved in specifying components for IP vendors and SoC designers also has the opportunity to incorporate malicious elements.
+\subsection{HT threat between IP vendors (or SoC designers) and EDA vendors}
+\paragraph*{}
+EDA tools play a crucial role in various significant phases of design. The software tools created by Electronic Design Automation (EDA) vendors could potentially harbor malicious codes, leading to the unauthorized collection of valuable data within Intellectual Properties (IPs) and System-on-Chips (SoCs). In a recent study by Qu and Yuan \cite{qu2014design}, an examination of security vulnerabilities in EDA design tools revealed that logic implementations inferred by these tools may exceed the necessary requirements. This holds true regardless of the trustworthiness of the design team, the origin of the EDA tools, or the reliability of IP providers. These unforeseen vulnerabilities could be exploited by adversaries to execute attacks.
+
+\subsection{HT threat between end users and SoC designers}
+\paragraph*{}
+End users lacking an in-house chip-level design team express concerns about Hardware Trojan (HT) attacks in products procured from System-on-Chip (SoC) designers. These HTs can be surreptitiously inserted into the chips during the SoC design phase, circumventing software security measures and enabling unauthorized surveillance of users. Detecting this type of hardware-level security threat proves challenging for end users, eroding their trust in traditionally reliable chips. Instances of HTs and backdoors concealed in critical systems such as weapons control, nuclear power plants, and public transportation have been documented in \cite{skorobogatovhardware}.
+\section{Critical fields affected by Trojans}
+\subsection{Military}
+\paragraph*{}
+Since modern military machinery rely on advanced electronic systems to perform its work, it becomes more vulnerable to hardware Trojan attacks. In September 2008, Israeli jets bombed a suspected nuclear installation in northeastern Syria. Among the many mysteries still surrounding that strike was the failure of a Syrian radar supposedly state-of-the-art to warn the Syrian military of the incoming assault. It was not long before military and technology bloggers concluded that this was an incident of electronic warfare and not just any kind. Commercial off-the-shelf microprocessors in the Syrian radar might have been purposely fabricated with a hidden “backdoor” inside. By sending a preprogrammed code to those chips, an unknown antagonist had disrupted the chips function and temporarily blocked the radar.
+\subsection{Banking and Finance}
+\paragraph*{}
+Modern banking rely on the use of the new technology ranging from credit cards to ATMs. The advanced electronics behind the fabrication of these devices open the door to more security concerns. Hardware Trojan designs could be specially crafted in ATM circuit, and attacker could remotely trigger such intruder component, thus taking over the whole money transactions.
+\subsection{Nuclear centers and drilling Rigs}
+\paragraph*{}
+In order to be able to monitor and control drilling operations, drilling rigs are doted by huge number of electronic sensors and micro-electronic systems that give remote operation centers complete control of the drilling platform, besides these systems provide real time data. If a black hat designer mess with the circuits of this systems, millions of dollars would be lost, and the country economic would be damaged. Advanced embedded systems are being used in nuclear power facilities to control and monitor different operations needed.
+\section{Trojan Taxonomy and Classification}
+\paragraph*{}
+In this section, I present detailed classification for hardware Trojans according to several studies, delineating the stages of the design process where hardware Trojans may be incorporated. The design phases of System-on-Chip (SoC), Application-Specific Integrated Circuit (ASIC), and Field-Programmable Gate Array (FPGA), encompassing specification, design, fabrication, assembly, and testing, are susceptible to potential hardware Trojan insertions. The design phase encompasses diverse abstraction levels, including System Level, Register-Transfer Level, Gate Level, Transistor Level, and Physical Level. Given that multiple teams collaborate on the design evolution across these abstraction levels, the surreptitious insertion of Trojans becomes feasible. Hardware components in digital designs encompass Processors, Memory, Input/Output ports, Power supply, Clock, etc., providing potential points for Trojan insertion.
+\paragraph*{}
+HT circuits can be classified into various forms based on different characteristics. Numerous research works have presented comprehensive taxonomies to encompass a broad spectrum of hardware trojan instances.
+\subsection{Banga et al. classification}
+\paragraph*{}
+In their study \cite{4559047a}, they Categorized hardware trojans into two groups based on logical types, namely combinational and sequential.
+\subsection*{Combinational}
+\paragraph*{}
+A combinational circuit activates when a specific condition arises in the internal signals and/or circuit flip-flops or a segment of it.
+\subsection*{Sequential}
+\paragraph*{}
+A finite state machine (FSM) observes a section of the internal circuit signals and activates the output when a specific sequence(s) occurs. Typically, Trojans involve sequential sub-circuits. However, combinational Trojans may be employed when targeting a hard property of the system.
+\subsection{Tehranipoor et al. classification}
+\paragraph*{}
+Wang, Tehranipoor, and Plusquellic developed the first detailed taxonomy for hardware Trojans \cite{wang2008detecting}, they decomposed the Trojan taxonomy into three main categories as shown in Figure \ref{fig:trojanclassification} according to their physical, activation, and action characteristics.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\textwidth]{../Figures/Trojan_classification}
+	\caption{Taxonomy of Trojans}
+	\label{fig:trojanclassification}
+\end{figure}
+\pagebreak
+\subsection*{Physical characteristics}
+\paragraph*{}
+The physical characteristics category delineates the diverse hardware manifestations of Trojans. Trojans are further categorized into functional and parametric classes in the type category. The functional class encompasses Trojans that manifest physically through the addition or removal of transistors or gates, while the parametric class pertains to Trojans realized through alterations to existing wires and logic. The size category accounts for the quantity of components on the chip that have been introduced, removed, or compromised. The distribution category details the Trojan's location within the chip's physical layout. The structure category comes into play when an adversary is compelled to regenerate the layout to insert a Trojan, potentially altering the chip's physical form factor. Such alterations could lead to a different placement for some or all design components. Any malevolent modifications in the physical layout that influence the chip's delay and power characteristics would facilitate the detection of Trojans.
+\subsection*{Activation characteristics}
+\paragraph*{}
+Activation characteristics pertain to the criteria triggering a Trojan to become active and execute its disruptive function. These characteristics can be broadly classified into two categories, as depicted in Figure \ref{fig:trojanclassification}: externally activated (e.g., triggered by an antenna or a sensor interacting with the external environment) and internally activated. The latter category is further divided into two subcategories: "always on," where the Trojan remains constantly active, capable of disrupting the chip's function at any moment, and condition-based, where the Trojan remains inactive until specific conditions are met.
+\paragraph*{}
+The "always on" subclass involves Trojans implemented by modifying the chip's geometries, rendering certain nodes or paths more susceptible to failure. Adversaries may insert Trojans at nodes or paths seldom exercised, thereby enhancing their stealth. The condition-based subclass encompasses Trojans lying dormant until specific conditions are satisfied. Activation conditions may be contingent on external environmental factors monitored by a sensor (e.g., electromagnetic interference, humidity, altitude, or temperature). Alternatively, conditions may be tied to an internal logic state, a specific input pattern, or the value of an internal counter. In these cases, the Trojan is implemented by introducing logic gates and/or flip-flops to the chip, representing a combinational or sequential circuit.
+\subsection*{Action characteristics}
+\paragraph*{}
+Action characteristics delineate the various types of disruptive behaviors instigated by a Trojan. The categorization illustrated in Figure \ref{fig:trojanclassification} divides Trojan actions into three distinct classes: modify function, modify specification, and transmit information. Trojans falling into the modify function class are those that alter the chip's function either by introducing additional logic or by eliminating or bypassing existing logic. Trojans categorized under the modify-specification class target the chip's parametric properties, such as delay, achieved by an adversary manipulating the geometries of existing wires and transistors. Finally, the transmit-information class encompasses Trojans designed to convey crucial information to an adversary.
+\subsection{Zhang et al. classification}
+\paragraph*{}
+In their study \cite{7086012}, they Categorized hardware trojans into two groups: bug-based HTs and parasite-based HTs, determined by their effects on the regular functionalities of the circuits.
+\subsection*{Bug-Based HT}
+\paragraph*{}
+A bug-based HT instance alters the circuit in a way that leads to a loss of some of its typical functionalities. a simple inverter on input can change the whole functionality of the original design. Figure\ref{fig:bugbasedht} illustrates the Bug-Based HT impact on a target circuit.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/bug_based_ht}
+	\caption{Bug-Based HT using logic inverter}
+	\label{fig:bugbasedht}
+\end{figure}
+\pagebreak
+\paragraph*{}
+The bug-based HT instance can be considered simply as a design flaw, albeit with malicious intent, since the design fails to realize all of its normal functionalities specified in the design requirements. Consequently, extensive simulation/emulation is likely to identify this type of HT scenario. In this regard, bug-based HT are generally not a preferred choice for attackers seeking stealthiness in HT attacks.
+\subsection*{Parasite-Based HT}
+\paragraph*{}
+A parasite-based hardware trojan instance coexists with the original circuit without compromising any of the normal functions of the original design. consider Figure \ref{fig:parasitebasedht} , To regulate the execution of the design, switching between its regular and malicious functions, the attacker may utilize supplementary inputs(X1,X2) as triggering mechanisms. To evade trust validation, trigger inputs are typically meticulously chosen, and the trigger condition is crafted to be an exceedingly uncommon event that is rarely encountered during verification tests.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/parasite_based_ht}
+	\caption{Parasite-Baset HT using logic Multiplexer to trigger malicious input.}
+	\label{fig:parasitebasedht}
+\end{figure}
+
+\paragraph*{}
+By evaluating the output, we observe that The circuit can then perform the normal and malicious functions alternately, controlled by trigger inputs.
+\subsection{Bhunia et al. classification}
+\paragraph*{}
+in their study \cite{6856140}, They suggested categorizing HTs into \textbf{analog Trojans} and \textbf{digital Trojans}, depending on the trigger and payload mechanisms.
+\paragraph*{}
+Various versions of the taxonomy for Trojan circuits have been introduced, and it is continuously developing with the discovery of new Trojan types and attacks. In this context, a broad classification is presented in Figure \ref{fig:bhuniamodel} , focusing on variations in activation mechanisms and Trojan effects. Hardware Trojans are categorized into analog and digital Trojans based on the trigger condition. Analog Trojans are activated by analog factors such as temperature, delay, or device aging effects, while digital Trojans are triggered by Boolean logic functions. Digitally triggered Trojans can be further divided into combinational and sequential types. Analog Trojans encompass attacks on process steps that compromise the reliability of either all or specific chips.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/Bhunia_model}
+	\caption{Analog/Digital HT classification}
+	\label{fig:bhuniamodel}
+\end{figure}
+\pagebreak
+\subsection{Huang et al. classification}
+\paragraph*{}
+In their study \cite{8952724}, a novel and organized classification is established based on the correlation between the placements of Hardware Trojan (HT) circuits within a System-on-Chip (SoC) and the specific targets impacted by the Trojan attacks upon activation. This results in the categorization of HT circuits into three types: IP-level HTs, bus-level HTs, and  SoC-level HTs.
+
+\subsection*{IP-level Trojans}
+\paragraph*{}
+Hardware trojan is directly implanted into the IP core of the targeted SoC, activation is performed internally by rare condition inputs. Upon activation, its impact is limited solely to the specific IP cores in which it has been implanted (see Figure \ref{fig:ipleveltrojan}).
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/ip_level_trojan}
+	\caption{Ip-level HT}
+	\label{fig:ipleveltrojan}
+\end{figure}
+
+\subsection*{Bus-level Trojans}
+\paragraph*{}
+This particular type of Hardware Trojan (HT) is associated with the network fabrics of buses, either through linkers, or integration into the modules of on-chip buses, including routing nodes, control units, and network interfaces. Activation is primarily induced by internal uncommon signals or the flow of data within the on-chip buses (see Figure \ref{fig:busleveltrojan}).
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/bus_level_trojan}
+	\caption{Bus-level HT}
+	\label{fig:busleveltrojan}
+\end{figure}
+
+\subsection*{SoC-level Trojans}
+\paragraph*{}
+Moreover, the trigger conditions of this type of HT vary,
+e.g., rare conditions occurring within the implanted IP
+cores, special instructions or external sequences, etc.
+This type of HT is designed to affect the overall system
+functions rather than the infected IP cores (see Figure \ref{fig:soclevelht}).
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/soc_level_ht}
+	\caption{SoC-level HT}
+	\label{fig:soclevelht}
+\end{figure}
+
+\section{Activation Mechanism}
+\paragraph*{}
+Trojans can be categorized into two types based on their activation: those that are constantly active (always ON) and those that are triggered.
+
+\subsection{Always ON}
+\paragraph*{}
+An "always ON" hardware Trojan is a type of malicious circuit that remains continuously active within an integrated circuit (IC) or electronic system. Unlike triggered Trojans that activate under specific conditions, an always ON Trojan operates persistently, potentially exerting its detrimental effects without any external stimulus. The continuous activity of an always ON hardware Trojan makes it particularly challenging to detect, as it remains in an operational state, possibly compromising the integrity and security of the affected system over an extended period. Detection and mitigation strategies for always ON hardware Trojans are crucial for ensuring the reliability and trustworthiness of electronic devices.
+\subsection{Internally triggered}
+\paragraph*{}
+An internally triggered hardware Trojan is a type of malicious circuit or modification within an integrated circuit (IC) that activates based on specific internal conditions or triggers, as opposed to external stimuli. In contrast to always ON Trojans that remain continuously active, internally triggered Trojans initiate their malicious behavior in response to predetermined internal factors. These triggers could be associated with certain logic states, input patterns, counter values, or other internal conditions within the circuit.
+\paragraph*{}
+Internally triggered hardware Trojans add a layer of complexity to their detection, as their activation may not be externally visible or easily discernible during routine testing. Detecting and mitigating internally triggered Trojans require sophisticated analysis techniques and comprehensive testing strategies to uncover their presence and prevent potential security threats within electronic systems.
+\paragraph*{}
+There are in general two types of internally triggered mechanisms one is combinational and other is sequential.
+\subsubsection{Combinational Trigger Mechanism}
+\paragraph*{}
+A combinational trigger mechanism in a hardware Trojan refers to a method by which the malicious circuit is activated based on specific conditions within the combinational logic of an integrated circuit. In this context, "combinational" denotes that the trigger mechanism relies on the instantaneous input values to determine when the Trojan becomes active.
+\paragraph*{}
+The combinational trigger mechanism involves manipulating the combinational logic gates or paths in such a way that the hardware Trojan activates when a particular combination of input values is present. This could involve introducing specific logical conditions or patterns in the circuit design, which, when satisfied, trigger the malicious behavior of the Trojan.
+\paragraph*{}
+Compared to sequential trigger mechanisms that may rely on specific sequences of inputs over time, combinational triggers are more instantaneous, making them potentially harder to detect during functional testing. Researchers and security analysts need to develop advanced methods to identify and counter hardware Trojans with combinational trigger mechanisms to ensure the integrity and security of electronic systems.
+\paragraph*{}
+Figure \ref{fig:combAndSequ}.(a) illustrates a generic representation of a hardware Trojan featuring a combinational trigger mechanism. The trigger logic will be in inactive state when node T has the value 1, the output of good circuit will appear at the same nodes O and G. the trigger logic is enabled only when X=1, Y=1, Z=1. Rare condition for trigger activation, results that the value at output node O will be complement of node G when node T has the value of 0.
+% side by side figures
+\begin{figure}[h]
+	\centering
+	\subfloat[\centering Combinational trigger mechanism]{{\includegraphics[width=7cm]{../Figures/mechanism} }}%
+	\qquad
+	\subfloat[\centering Sequential trigger mechanism]{{\includegraphics[width=7cm]{../Figures/event_sequence} }}%
+	\caption{Combinational and Sequential trigger mechanism.}%
+	\label{fig:combAndSequ}%
+\end{figure}
+% End side by side Figures %
+\subsubsection{Sequential Trigger Mechanism}
+\paragraph*{}
+A sequential trigger mechanism in a hardware Trojan refers to a method by which the malicious circuit is activated based on specific sequences or patterns of input values over time within the integrated circuit. In contrast to combinational triggers, which rely on instantaneous input values, sequential triggers involve a temporal aspect in their activation conditions.
+\paragraph*{}
+The sequential trigger mechanism typically involves monitoring the state transitions of certain components, such as flip-flops or registers, within the circuit. The Trojan remains inactive until a predefined sequence of state changes occurs. This sequence might be related to specific input patterns, internal logic states, or other dynamic conditions that unfold over successive clock cycles.
+\paragraph*{}
+A hardware counter, also known as a ticking time-bomb, serves as a straightforward sequential trigger logic. Activation of the trigger occurs when the hardware counter value reaches a predefined threshold. Implementing a basic timebomb design involves a single increment per clock cycle, making it uncomplicated to integrate into the hardware. The strength of this triggering mechanism lies in its independence from any input data, eliminating the need for software intervention to activate the hardware Trojan. However, the malicious designer must be knowledgeable about the required number of clock cycles for activation. In the case of a more intricate timebomb, the hardware counter value is not incremented per clock cycle but rather increases per occurrence of specific events, as depicted in Figure \ref*{fig:combAndSequ}.(b).
+\paragraph*{}
+Figure \ref{fig:hardwarecounter} presents a conceptual representation of a sequential triggering mechanism utilizing a hardware counter for a Hardware Trojan. In this model, the enabling input for a hardware counter can be either the clock of the design or the occurrence of a specific event within the design. The counter value increases with each transition at the enable input. The trigger logic becomes active only when all bits of the counter are set to 1, causing node T to have a value of 0. Consequently, the output node O will be the complement of node G.
+\paragraph*{}
+The hybrid sequential trigger logic employs a combination of a hardware counter and a sequence of infrequent events to establish the trigger condition for the hardware Trojan. The intricacy of this design, concerning hardware aspects, lies in the synchronization between the hardware counter and the system software responsible for generating the sequence of rare events.
+\paragraph*{}
+Detecting hardware Trojans with sequential trigger mechanisms poses challenges during functional testing, as the activation conditions may not be evident in isolated test scenarios. Researchers and security experts employ advanced techniques, such as dynamic analysis and specialized testing methodologies, to uncover and mitigate the risks associated with hardware Trojans utilizing sequential trigger mechanisms(see Figure \ref*{fig:combAndSequ}.(b)) .
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/hardware_counter}
+	\caption{Hardware counter triggering Trojan}
+	\label{fig:hardwarecounter}
+\end{figure}
+
+\section{Trojan activation methods}
+\paragraph*{}
+Activation techniques for Trojans have the potential to expedite the process of detecting these malicious components. In certain instances, these strategies have been integrated with power analysis during the implementation phase. When a segment of the Trojan circuit is activated, it results in increased dynamic power consumption. This elevation in power consumption aids in distinguishing the power signatures between circuits with inserted Trojans and those without. The prevailing methods for Trojan activation can be classified into distinct categories.
+
+\subsection{Region-free Trojan Activation}
+\paragraph*{}
+These approaches do not hinge on a specific region but rather rely on the inadvertent or intentional activation of Trojans. For instance, Jha and Jha introduced a randomization-based probabilistic method for Trojan detection \cite{jha2008randomization}. They demonstrated the feasibility of constructing a distinctive probabilistic signature for a circuit by applying specific probability-assigned patterns to its inputs. The input patterns, determined by this probability, are employed on an Identical Unit Analysis (IUA), and the resulting outputs are compared to those of the original circuit. Any disparities in the outputs signal the presence of a Trojan. When detecting Trojans in a manufactured Integrated Circuit (IC), applying patterns based on this probability helps establish a confidence level in determining whether the original design matches the fabricated chip.
+\paragraph*{}
+Wolff et al. conducted an examination of infrequently occurring net combinations within designs \cite{wolff2008towards}. These nets, activated rarely, serve as triggers for Trojans. Simultaneously, nets with low observability are employed as payloads, as illustrated in Figure \ref{fig:rarelynets}. Wolff et al. developed a series of vectors designed to activate these specific nets, proposing their integration with conventional Automatic Test Pattern Generation (ATPG)\footnote{ATPG s an electronic design automation method or technology used to find an input (or test) sequence that, when applied to a digital circuit, enables automatic test equipment to distinguish between the correct circuit behavior and the faulty circuit behavior caused by defects. The generated patterns are used to test semiconductor devices after manufacture, or to assist with determining the cause of failure. For more information visit (https://www.fpgakey.com/wiki/details/68)}test vectors. This combined approach aims to activate a Trojan and propagate its effects, particularly if the Trojan is linked to these identified nets.
+
+\subsection{Region-aware Trojan Activation}
+\paragraph*{}
+Banga and Hsiao introduced a dual-phase test generation approach aimed at amplifying distinctions between Identical Unit Analysis (IUA) and authentic design power waveforms \cite{banga2008region}. In the initial phase involving circuit partitioning, a pattern sensitive to specific regions aids in identifying potential areas for Trojan insertion. To uncover a Trojan circuit, activity is heightened within a designated part of the circuit while simultaneously minimizing activity in the remaining portion. Flip-flops in the circuit are categorized into distinct groups based on structural connectivity. The subsequent phase involves activity magnification, where new test patterns focused on the identified regions are applied to accentuate the differences between the original circuit and the one with a Trojan inserted. Regions, defined as sets of flip-flops, displaying augmented relative activity are pinpointed by comparing power profiles using the vector sequence generated in the first stage. This phase involves generating additional vectors for these specified regions, labeled as potential Trojan areas, utilizing the same test generation approach employed in the circuit-partitioning stage.
+\paragraph*{}
+Banga and Hsiao investigated the amplification of Trojan effects through the reduction of circuit activity \cite{banga2009novel}. This entails maintaining the input pins unchanged for multiple clock cycles, directing the circuit activity to originate solely from the state elements of the design. Consequently, the overall switching activity is minimized and can be concentrated on specific segments of the design crucial for Trojan localization. To explore different sections of the design for Trojan identification, input vectors can be modified. Simultaneously, each gate is equipped with two counters: TrojanCount and NonTrojanCount. With each vector, if the number of transitions at a gate's output surpasses a defined threshold, the TrojanCount increases, and vice versa. The gate weight, represented by the TrojanCount/NonTrojanCount ratio, reflects a gate's activity. A high gate-weight ratio signifies significant Trojan impact on the gate, as it corresponds to a substantial power difference during the activation of that gate.
+\paragraph*{}
+Given the unknown type or size of the Trojan, it is essential for the test engineer to employ both region-free and region-aware methods. The effectiveness of the region-aware method is notable when the inputs of a Trojan circuit are functionally dependent, originating from the same logic cone. Conversely, if the Trojan inputs are randomly selected from diverse areas of the circuit, utilizing region-free methods could enhance the likelihood of detection.
+\begin{figure}[h]
+	\centering
+	\includegraphics{../Figures/rarely_nets}
+	\caption{Trojan circuit model with a rare triggering condition. Note. Reprinted from “Towards trojan-free trusted ics: Problem analysis and detection scheme”, by Wolff, F., (2008)}
+	\label{fig:rarelynets}
+\end{figure}
+
+\section{Hardware Trojan Payload}
+\paragraph*{}
+Payload part of the hardware Trojan does the intended job of Trojan designer. It is the malicious functionality that is integrated into the hardware during the design or manufacturing phase. Here are some examples of hardware Trojan payloads:
+\subsection{Data Leakage}
+\paragraph*{}
+The hardware Trojan could be designed to leak sensitive information or data from the affected system (Figure \ref{fig:leakage}). This could involve transmitting confidential data to an external entity without the knowledge of the system owner.
+%\vfill
+\begin{figure}[h]
+	\centering
+	\includegraphics{../Figures/leakage}
+	\caption{Information leakage hardware Trojan.}
+	\label{fig:leakage}
+\end{figure}
+\pagebreak
+\subsection{Denial of Service (DoS)}
+\paragraph*{}
+The hardware Trojan might contain a payload that disrupts the normal operation of the system or renders it unusable. This could involve triggering certain conditions that lead to a system crash or malfunction.
+
+\subsection{Unauthorized Access}
+\paragraph*{}
+The hardware Trojan may include a backdoor that provides unauthorized access to the system. This could allow attackers to control or manipulate the system remotely.
+
+\subsection{Functionality Alteration}
+\paragraph*{}
+The Trojan could modify the intended functionality of the hardware, leading to unexpected behavior. For example, it might alter the output of a cryptographic module, compromise the randomness of a random number generator, or modify the behavior of a microprocessor.
+
+\subsection{Triggered Malware Activation}
+\paragraph*{}
+The Trojan may be designed to remain dormant until a specific trigger condition is met, at which point it activates additional malware or malicious behavior.
+
+\section{Operation Based payload classification}
+\paragraph*{}
+The aim of the device attacker is to corrupt the normal operation of the entire circuit and that is ensured by the payload logic. The payload logic can be classified into two categories.
+\paragraph*{}
+The first type of payload is designed to create new, extra processes that do not interfere with the device's regular functionality, allowing the extra work to be done discretely. The second type of payload, on the other hand, will alter the ongoing activity without producing any new ones. In order to prevent the system from crashing when changing the current operation, the malicious creator of this kind of payload needs to be aware of the current running program. The second category of payload can be further divided into two parts: payload modifying the data interface of the current operation, and payload modifying the control interface of the current operation. Figure \ref{fig:payloadclassification} shows the classification of payload logic based on the operation performed when Hardware Trojan is activated.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\textwidth]{../Figures/payload_classification}
+	\caption{Operation Based payload classification.}
+	\label{fig:payloadclassification}
+\end{figure}
+\subsection{Payload generates new operations}
+\paragraph*{}
+The payload circuit discreetly executes additional operations as directed by the attacker, ensuring that the regular functioning of the device remains unaffected. This is primarily employed to release confidential information and may also encompass side-channel attacks. In microprocessor-based design, one variation of this attack involves generating fresh instructions fetched from a specific address when a particular instruction is executed. Another variant is to generate additional loads or stores to a specific address whenever a specific instruction is executed. These two approaches can serve as a foundation for software-based attacks. To illustrate, both methods can be utilized to clandestinely store malicious firmware in on-chip memory, specifically within the instruction and data caches. Subsequently, the malicious software can be executed within the processor, all the while maintaining concealment from the standard software operating on the system. In alternative designs, information leakage occurs through the execution of additional tasks via interfaces like the RS-232C port or through thermal emission. This form of attack can be employed to extract encryption keys and steal passwords.
+
+\subsection{Payload modifies control interface for current operations}
+\paragraph*{}
+The payload circuit modifies the control interface of the design to disrupt ongoing operations, such as altering the access permissions of the current processes. This is primarily employed to elevate privileges, enabling the attacker to circumvent the standard hardware-enforced protections. A Hardware Trojan can serve as a starting point to support software-based attacks. For instance, the supervisor transition facilitated by the Hardware Trojan creates a foothold, enabling unprivileged programs to access privileged instructions and protected resources. In a microprocessor-based design, the decoder unit produces control signals for every executed instruction. In this scenario, the attack involves manipulating the control signal generated for ongoing operations, such as transforming a no-operation instruction into a load or store instruction by the decoder unit, without introducing any additional operations.
+
+\subsection{Payload modifies data interface for current operations}
+\paragraph*{}
+The payload circuit alters the data interface of a design to disrupt the ongoing operations. In a microprocessor-based design, this attack entails changing the data in memory access operations, modifying the address of memory access operations, altering the input data of the register file, or adjusting the address used to access the register file. This attack can also be employed to alter the order of instructions executed within a program by tampering with specific register values. In this context, a Hardware Trojan can serve as a foundation to support software-based attacks. For instance, altering the address of the current memory access operation method enables access to arbitrary memory locations. Consequently, this can serve as a basis for unprivileged malicious software to circumvent the protections enforced by the memory management unit. This attack enables the extraction of the encryption key from memory, bypassing authentication checks by modifying the content of a specific memory location, and disrupting the program flow of the system.
+\paragraph*{}
+In summary, the most straightforward approach to implement is having the payload circuit conduct additional operations discreetly, as this method does not disrupt the regular program flow of the system. The primary rationale is that this method can be easily concealed during the normal operation of the system compared to other approaches.
+
+\section{Hardware Trojan architecture and design}
+\paragraph*{}
+There are two main parts in HT decomposition: the payload and the trigger. The payload is considered to be the main function that performs nefarious operations in the target circuit. The trigger is the function that serves as mechanism to activate the payload when certain activation condition will be satisfied. This strategy helps to make the HT stealthier during the verification and validation steps. Most of the time, the HT model is a dormant circuit that when triggered it modifies the targeted system original behavior (see Figure \ref{fig:trojaninsertion}).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/trojan_insertion}
+	\caption{Architecture of a Trojan inserted on a target circuit.}
+	\label{fig:trojaninsertion}
+\end{figure}
+\pagebreak
+\subsection{Combinational Trojans}
+\paragraph*{}
+A combinational hardware Trojan refers to a specific type of malicious modification in the design of an integrated circuit (IC) at the combinational logic level. Combinational logic is a fundamental building block in digital circuits where the output is solely determined by the current input values, with no consideration of previous inputs or outputs. In the context of hardware Trojans, the term "combinational" indicates that the malicious modification occurs within this type of logic.
+\paragraph*{}
+They specifically target the combinational logic components of integrated circuits. These are areas where the output depends only on the current input values, with no regard for previous inputs or outputs. These Trojans can be strategically inserted at various points within the combinational logic circuit during the design process. Common insertion points include specific gates, wires, or nodes where the Trojan can be inconspicuously integrated.
+\paragraph*{}
+Combinational Hardware Trojans typically involve subtle alterations to logic gates. This may include modifying gate parameters, such as delay or threshold voltage, to introduce malicious behavior without raising suspicions during conventional testing.
+\paragraph*{}
+This type of Trojans relies on logic gates, for that a trigger that is taken from the primary inputs of a circuit and a payload that can be activated once trigger is asserted. The trigger can be designed from an AND gate with p-inputs. Any other combinational logic can also serve the purpose of trigger, which produces logic 1 upon activation, such combinational Trojans delivers the payload in the original netlist and manifests its effects once a unique specification condition is satisfied (see Figure \ref{fig:combinational}). The most important thing for such type of Trojans to be effective is that it should not come across any condition that activates the Trojan during functional tests.
+\paragraph*{}
+Trojans in the combinational logic stage may manipulate the output of the circuit under certain conditions. This could involve altering the logic values produced by the affected gates, potentially leading to unauthorized information leakage or system disruption. Besides,They aim to bypass security measures by exploiting vulnerabilities in the combinational logic stage. This enables them to avoid detection and infiltrate systems, making them a potent threat to overall semiconductor security.
+\paragraph*{}
+Due to their subtle nature, Combinational Hardware Trojans are often challenging to detect through traditional functional testing methods. Their activation may be triggered by specific conditions, making them dormant during routine testing scenarios.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/combinational}
+	\caption{Combinational Trojan}
+	\label{fig:combinational}
+\end{figure}
+
+\subsection{Sequential Trojans}
+\paragraph*{}
+The mechanism of a sequential hardware Trojan involves the insertion of malicious modifications into the sequential logic elements of an integrated circuit (IC) or hardware design. The objective is to manipulate the behavior of the sequential logic in a way that compromises the security or functionality of the system.
+\paragraph*{}
+Sequential Trojans activate their payload either when a specific sequence of input patterns occurs or after a designated time period has passed since being triggered. The triggering mechanism of a sequential Trojan incorporates state elements along with combinational logic, as illustrated in Figure \ref{fig:sequential}. The payload becomes effective only when the Finite State Machine (FSM) of the trigger reaches its final state. This characteristic adds to the complexity of detecting sequential Trojans since it is improbable for particular test patterns or inputs to occur consecutively multiple times during the testing or normal operations of an Integrated Circuit (IC).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/sequential}
+	\caption{Sequential Trojan (Timebombs).}
+	\label{fig:sequential}
+\end{figure}
+\pagebreak
+\subsection{Analog/RF Trojans}
+\paragraph*{}
+In designing hardware Trojans, adversaries can exploit analog characteristics, as discussed in \cite{ghandali2016design}. The trigger implementation varies for analog/RF Trojan designs, with Yang et al. \cite{yang2016a2} proposing a capacitor-based trigger circuit. This circuit activates when the charge accumulated from the toggling of a nearby victim wire surpasses a certain threshold, causing the voltage of the capacitor to rise.
+\paragraph*{}
+In \cite{subramani2020amplitude}, a threat scenario has been presented. In this scenario, Device\_1 and Device\_2 are two wireless devices adhering to established standards and engaged in legitimate communication. Unbeknownst to Device\_1, the wireless hardware mechanism has been compromised by an attacker who introduced a hardware Trojan circuit. The focal point of this malicious component is located in the analog/RF front-end of Device\_1's, systematically altering transmission power to illicitly extract confidential information. Simultaneously, Device\_3, a third wireless device representing the rogue receiver, monitors these systematic distortions and captures the leaked data (Figure \ref{fig:threatmodel}).
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/threat_model}
+	\caption{Threat model}
+	\label{fig:threatmodel}
+\end{figure}
+
+\paragraph*{}
+The threat model posits that the hardware Trojan was implanted either during the design phase or during IC fabrication of the transmitter and can be activated once the device is in use. The information leaked through a covert channel, such as an encryption key, plaintext, or other sensitive data, resides in the baseband part of the wireless device. This information is then directed to the analog/RF front-end—where the attack occurs—via additional malicious modifications, as illustrated in Figure \ref{fig:rftrojan}. Consequently, the leaked information bits become embedded in the transmitted signal through subtle amplitude modifications.
+\paragraph*{}
+It's noteworthy that an analog Trojan can be conceptualized as a specific type of sequential Trojan, requiring multiple triggers or affecting the circuit after a set period. The primary distinction lies in the trigger design: sequential Trojans involve state elements (e.g., counters), while analog Trojans involve discrete elements (e.g., transistors and capacitors). Additionally, both sequential and analog Trojans can be modeled using combinational Trojans.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/RF_trojan}
+	\caption{Amplitude modulating hardware Trojans.}
+	\label{fig:rftrojan}
+\end{figure}
+\subsection{Piggybacking}
+\paragraph*{}
+\begin{itemize}
+	\item Insertion into IP Cores: Adding Trojan functionality within existing intellectual property (IP) cores.
+	\item Malicious Components: Including Trojan components within the design alongside legitimate components.
+\end{itemize}
+\subsection{Fault-based Trojans}
+\paragraph*{}
+\begin{itemize}
+	\item Fault Injection: Inducing faults to trigger malicious behavior when specific conditions are met.
+	\item Fault Tolerance Exploitation: Exploiting the fault tolerance mechanisms to trigger Trojans.
+\end{itemize}
+
+\section{Location of hardware Trojans }
+\paragraph*{}
+Trojans might operate at different levels on the IC. According to that, they are also classified regarding to their location in the design, which leads to multiple possible attacks.
+
+\subsection{Processor}
+\paragraph*{}
+A hardware trojan in a processor represents a potentially severe security threat that involves the insertion of malicious modifications into the design or manufacturing process of the processor. This kind of trojan can compromise the integrity, security, and functionality of the processor in various ways. Here are some aspects of how a hardware trojan might manifest in a processor:
+\begin{enumerate}
+	\item \textbf{Data Manipulation:} A hardware trojan in a processor could manipulate data as it passes through different stages of execution. This might lead to unauthorized access, data corruption, or the extraction of sensitive information.
+	\item \textbf{Instruction Manipulation:} Trojans might alter the instructions executed by the processor, leading to unexpected and potentially malicious operations. This could compromise the overall functionality of the processor and the systems it powers.
+	\item \textbf{Performance Impact:} Hardware trojans could introduce subtle changes that impact the performance of the processor. This might include slowing down specific operations or degrading overall processing speed.
+	\item \textbf{Backdoor Insertion:} One of the severe consequences of a hardware trojan in a processor is the potential introduction of a hidden backdoor. This backdoor could provide unauthorized access to the system, allowing external entities to control or manipulate the processor.
+	\item \textbf{Security Key Leakage:} Processors often handle encryption and decryption tasks, and a hardware trojan might be designed to leak cryptographic keys. This compromises the security of encrypted communications and data.
+	\item \textbf{Denial of Service:} Trojans could be programmed to trigger a denial of service by disrupting the normal operation of the processor. This might render the entire system or specific functionalities inoperable.
+\end{enumerate}
+\subsection{Memory}
+\paragraph*{}
+A hardware trojan in memory represents a serious security concern where malicious modifications are introduced into the design or manufacturing process of memory components. Memory devices, such as RAM (Random Access Memory) or non-volatile memory, play a critical role in storing and retrieving data in electronic systems. Here are some potential implications of a hardware trojan in memory:
+\begin{enumerate}
+	\item \textbf{Data Corruption or Manipulation:} A hardware trojan in memory could manipulate stored data, leading to corruption or unauthorized access. This might result in the compromise of sensitive information stored in the memory.
+	\item \textbf{False Readings:} Trojans may introduce errors in memory read operations, providing false or altered data to the processor. This can impact the accuracy and reliability of the information retrieved from the memory.
+	\item \textbf{Data Leakage:} Trojans might be designed to leak sensitive data from the memory, compromising the confidentiality of stored information. This could include personal data, encryption keys, or other critical data.
+	\item \textbf{Denial of Service:} Introducing a hardware trojan into memory could lead to disruptions in memory access or cause the memory to become unusable. This could result in a denial of service, affecting the normal operation of the entire system.
+	\item \textbf{Altered Access Control:} Hardware trojans could modify the access control mechanisms of the memory, allowing unauthorized entities to read, write, or manipulate data stored in the memory.
+	\item \textbf{Persistent Malicious Code:} In non-volatile memory (such as Flash memory), trojans might embed persistent malicious code that survives power cycles. This could lead to the execution of unauthorized instructions or actions every time the system boots.
+	\item \textbf{Compromised Security Protocols:} Memory is often involved in storing security-related information and cryptographic keys. Trojans targeting memory could compromise the security protocols implemented in the system.
+\end{enumerate}
+\subsection{I/O}
+\paragraph*{}
+One potential target of hardware trojans could be the I/O (Input/Output) pins of a device. I/O pins are crucial for communication between the IC and external components or systems. Here are some ways I/O pins might be affected by hardware trojans:
+\begin{enumerate}
+	\item \textbf{Data Manipulation:} A trojan could alter the data being transmitted through the I/O pins, leading to data corruption or unauthorized access.
+	\item \textbf{Signal Manipulation:} Hardware trojans might modify the signal characteristics on the I/O pins, affecting the integrity of communication protocols and potentially causing communication errors.
+	\item \textbf{Key Leakage:} Trojans may be designed to leak cryptographic keys or sensitive information through the I/O pins, compromising the security of the system.
+	\item \textbf{Functionality Alteration:} I/O pins are used to control various functions of a device. Hardware trojans could change the functionality of these pins, leading to unexpected behavior.
+	\item \textbf{Denial of Service:} Trojans might be programmed to disrupt or disable the I/O functionality, leading to a denial of service or rendering the device inoperable.
+	\item \textbf{Backdoor Insertion:} A trojan could introduce a hidden backdoor accessible through specific I/O configurations, allowing unauthorized access to the system.
+	\item \textbf{Sensor Manipulation:} If the I/O pins are connected to sensors, trojans might manipulate sensor readings, leading to incorrect data being processed by the system.
+\end{enumerate} 
+\subsection{Power supply}
+\paragraph*{}
+A hardware trojan in the power supply of a system represents a unique and potentially devastating threat. The power supply unit (PSU) is a critical component responsible for providing the necessary electrical power to the various components of a system. A trojan affecting the power supply can have far-reaching consequences on the entire system's functionality and security. Here are some potential implications:
+\begin{enumerate}
+	\item \textbf{Voltage Manipulation:} A hardware trojan in the power supply may alter the voltage levels supplied to different components. Incorrect voltage can lead to erratic behavior, malfunctions, or permanent damage to sensitive electronic components.
+	\item \textbf{Brownouts or Blackouts:} Trojans might induce intentional voltage drops (brownouts) or complete power shutdowns (blackouts), causing disruptions to the normal operation of the system. This can lead to data loss, system crashes, or denial of service.
+	\item \textbf{Frequency Manipulation:} The trojan may manipulate the frequency of the power supplied to the system. Deviations in frequency can impact the synchronization of components, potentially leading to performance degradation or malfunctions.
+	\item \textbf{Electromagnetic Interference (EMI):} Hardware trojans might introduce intentional electromagnetic interference in the power supply, affecting the electromagnetic compatibility of the system and potentially disrupting nearby electronic devices.
+	\item \textbf{Power-Related Attacks on Security Mechanisms:} Trojans could target the power supply to conduct power analysis attacks, which involve analyzing power consumption patterns to extract sensitive information like cryptographic keys. This poses a threat to the security of the system.
+	\item \textbf{Remote Triggering of Power-Related Vulnerabilities:} In the context of remote attacks, trojans in the power supply might exploit vulnerabilities remotely, leading to malicious actions such as power cycling, shutdowns, or manipulation of power-related functions.
+	\item\textbf{ Circuitry Manipulation:} Trojans may tamper with the internal circuitry of the power supply, allowing for backdoor access or control by external entities. This could potentially compromise the overall security of the system.
+\end{enumerate}
+\subsection{Clock}
+\paragraph*{}
+A hardware trojan in the clock, often referred to as a clock trojan, can pose a significant threat to the proper functioning and security of a digital system. The clock is a fundamental component in electronic systems, providing synchronization for various operations. Here are some potential implications of a hardware trojan in the clock:
+\begin{enumerate}
+	\item \textbf{Clock Frequency Manipulation:} A clock trojan might manipulate the frequency of the system clock. This can lead to performance issues, disrupt timing-sensitive operations, or create synchronization problems between different components.
+	\item \textbf{Clock Skewing:} Trojans could introduce intentional delays or skewing in the clock signal. This can affect the alignment of signals, leading to misbehavior or unexpected outcomes in the operation of the digital system.
+	\item \textbf{Clock Gating Control:} Hardware trojans might manipulate the control signals for clock gating, affecting the power consumption of the system. Unauthorized control of clock gating could lead to inefficient power usage or unintended activation/deactivation of specific circuitry.
+	\item \textbf{Introduction of Jitter:} Trojans may introduce jitter into the clock signal, causing irregularities in the timing of operations. Jitter can impact the reliability of communication protocols and introduce vulnerabilities.
+	\item \textbf{Clock Domain Crossing Violations:} Intentional violations of clock domain boundaries can be introduced by trojans, leading to issues related to data integrity and synchronization between different clock domains within the system.
+	\item \textbf{Frequency Modulation Attacks:} Sophisticated trojans might employ frequency modulation attacks, dynamically changing the clock frequency during specific intervals. This can make detection challenging and potentially evade traditional security measures.
+	\item \textbf{Synchronization Attacks:} Clock trojans might aim to desynchronize multiple components within a system, disrupting the coordinated operation of these components and potentially causing malfunctions.
+	\item \textbf{Cryptographic Timing Attacks:} In systems employing cryptographic algorithms, clock trojans might be designed to exploit timing variations introduced by clock manipulation. This could potentially lead to the extraction of sensitive cryptographic information.
+\end{enumerate}
+
+\section{Effects of hardware Trojans}
+\paragraph*{}
+Different effects of a HT on the device that depends on the adversary possibilities and intentions. The following, are some of those effects.
+
+\subsection{Change function}
+\paragraph*{}
+original circuit functions might be altered depending on adding or removing several instructions. That leads to an improper calculations under specific conditions, compromising the main system operations. For example, a miscalculated airstrike that leads to hit a completely wrong target.
+\subsection{Reduce reliability}
+\paragraph*{}
+downgrading system performance and rendering it more vulnerable to side-channel attacks are the most intended goals by an adversary. For example, Trojan may increase the power consumption, causing a faster battery discharge to interrupt the circuit operation.
+\subsection{Leak information}
+\paragraph*{}
+keys and plaintexts of cryptographic circuits are the most targeted information to be leak. An adversary could add a comparator Trojan that enables the key leakage whenever a certain input or sequence of outputs is set.
+\subsection{Denial of service (DoS)}
+\paragraph*{}
+ The entire circuit might be put out of service. For instance, much load on a military radar system may lead it to not detect some specific threats.
+ 
+ \section{Comparison of some hardware Trojans attacks}
+ \paragraph*{}
+ Different hardware Trojan attacks can vary significantly in their techniques, goals, and potential impact. Here is a comparison of some common types of hardware Trojan attacks.
+ 
+ \subsection{Logic Trojans vs Analog Trojans}
+ \begin{itemize}
+ 	\item Logic Trojans: These involve inserting additional logic gates or modifying existing ones to achieve a specific malicious function. Logic Trojans are often digital in nature and can be triggered by specific conditions.
+ 	\item Analog Trojans: Analog Trojans typically target the analog components of a circuit, such as resistors and transistors, to subtly alter the behavior of the circuit. They can be harder to detect due to the continuous nature of analog signals.
+ \end{itemize}
+ \subsection{Design-Level Trojans vs. Piggybacking}
+ \begin{itemize}
+ 	\item Design-Level Trojans: These involve making modifications at the gate or netlist level, often requiring a deep understanding of the target design. Design-level Trojans can be strategically placed to avoid detection.
+ 	\item Piggybacking: Involves adding Trojan functionality within existing IP cores or components. Piggybacking can leverage legitimate functionality to mask malicious behavior.
+ \end{itemize}
+ \subsection{Fault-based Trojans vs. Physical Attacks}
+ \begin{itemize}
+ 	\item Fault-based Trojans: These Trojans exploit faults or errors in the circuit, such as induced glitches or timing violations, to trigger malicious behavior. They can be activated under specific conditions.
+ 	\item Physical Attacks: Involve direct manipulation of the hardware, such as doping changes or optical masking during the fabrication process. Physical attacks can be more challenging to implement but can have a significant impact.
+ \end{itemize}
+ \subsection{Supply Chain Attacks vs. Stealth Techniques}
+ \begin{itemize}
+ 	\item Supply Chain Attacks: These involve introducing Trojans during the manufacturing process, either at the foundry or fabrication plant. This type of attack can be orchestrated at various stages of the supply chain.
+ 	\item Stealth Techniques: Focus on making the Trojans difficult to detect. Techniques such as camouflaging and probabilistic activation are designed to evade traditional testing and analysis methods.
+ \end{itemize}
+ \subsection{Side-Channel Attacks vs. Time-based Activation}
+ \begin{itemize}
+ 	\item Side-Channel Attacks: Involve analyzing unintended emanations from a device, such as power consumption or timing variations, to deduce information about the Trojan's behavior.
+ 	\item Time-based Activation: Specifies a particular time or number of clock cycles for the Trojan to activate. This can make the Trojan more challenging to detect, as it may remain dormant until specific conditions are met.
+ \end{itemize}
+ \subsection{Environmental Activation vs. Parameter Variation}
+ \begin{itemize}
+ 	\item Environmental Activation: Involves triggering the Trojan based on external conditions such as temperature or voltage levels. This can be used to make the Trojan behavior context-dependent.
+ 	\item Parameter Variation: Modifies parameters of components, such as resistor values or transistor sizes, to subtly alter the behavior of the circuit. Parameter variation can be harder to detect due to its subtle nature.
+ \end{itemize}
+ \paragraph*{}
+ Understanding the characteristics of different hardware Trojan attacks is crucial for developing effective detection and mitigation strategies. Combining various countermeasures, including testing, formal verification, and supply chain security measures, is often necessary to enhance the overall resilience of hardware systems against Trojan threats.
+ 
+ \section{Case study (Trojan in an AES-128)}
+ \paragraph*{}
+ The Trust-Hub (https://www.trust-hub.org), sponsored by the USA National Science Foundation (NSF). It is a source of benchmarks infected by different types of Trojans at diverse abstraction levels in order to support the security community to compare the behavior of Trojan-free and Trojan-infected circuits to evaluate HT detection methods. A set of benchmarks are available, considering different categories in the Trojan taxonomy.
+ \paragraph*{}
+ The AES\-T2000 benchmark consists of a Trojan surrounding an AES\-128 encrypting block with the purpose of leaking its secret key. This HT is triggered after detecting a sequence of 4 input plaintexts. The payload is responsible for generating a significant current leakage indicating the actual state of each bit of the secret key. An attacker with access to the manufactured device can therefore exploit its current leakage to have access to the key. The code in (see Figure \ref{fig:aes128code}) illustrates the whole process. The library aes\-128 is the original AES circuit, whilst Trojan\_Trigger and TSC Trojan are respectively the trigger and the payload circuit.
+ 
+ \begin{figure}
+ 	\centering
+ 	\includegraphics[width=0.7\linewidth]{../Figures/aes128_code}
+ 	\caption{Architecture of the Trojan-infected AES-T2000 benchmark}
+ 	\label{fig:aes128code}
+ \end{figure}
+ \paragraph*{}
+ The Trojan classification according to the Trojan taxonomy is:
+ \begin{itemize}
+ 	
+ 	\item Insertion phase: Design
+ 	\item Abstraction level: Register Transfer level
+ 	\item Activation mechanism: Internally conditionally triggered
+ 	\item Effects: Leak information
+ 	\item Location: Processor
+ 	\item Physical characteristics: Functional
+ 	
+ \end{itemize}
+ 
+ \section{Conclusion}
+ \paragraph*{}
+In conclusion, this chapter has provided an in-depth exploration of the general concepts surrounding Hardware Trojans. It commenced with an introduction to the subject, followed by a definition and an examination of the threats posed by Hardware Trojans in various domains, such as the IC market, SoC designers, foundries, IP vendors, and end users.
+ \paragraph*{}
+The discussion then delved into the critical fields affected by Trojans, including military, banking and finance, nuclear centers, and drilling rigs. A thorough classification and taxonomy of Trojans were introduced, drawing upon contributions from various research studies. Furthermore, the activation mechanisms of Hardware Trojans were explored, including the "Always ON" and "Internally triggered" methods.
+ \paragraph*{}
+The chapter proceeded to investigate Trojan activation methods, distinguishing between region-free and region-aware activation. It also delved into the diverse payloads of Hardware Trojans, encompassing data leakage, denial of service (DoS), unauthorized access, functionality alteration, and triggered malware activation. Operation-based payload classification was introduced, categorizing payloads based on whether they generate new operations, modify control interfaces, or alter data interfaces for current operations. 
+\paragraph*{}
+The architecture and design of Hardware Trojans were thoroughly examined, covering various types such as combinational, sequential, analog/RF, piggybacking, and fault-based Trojans. The chapter also explored the potential locations of Hardware Trojans within a system, including processors, memory, I/O, power supply, and clocks.
+\paragraph*{}
+A comprehensive overview of the effects of Hardware Trojans was presented, discussing their potential to change function, reduce reliability, leak information, and cause denial of service (DoS) incidents. A comparative analysis of different Hardware Trojan attacks was provided, contrasting logic Trojans with analog Trojans, design-level Trojans with piggybacking, fault-based Trojans with physical attacks, supply chain attacks with stealth techniques, and side-channel attacks with time-based activation.
+\paragraph*{}
+The chapter concluded with a practical case study involving a Trojan in an AES-128, offering a real-world illustration of the discussed concepts. In summary, this chapter has laid a strong foundation for understanding the multifaceted nature of Hardware Trojans, their activation mechanisms, diverse payloads, architectural considerations, and potential impact on different systems and industries. 
+
+
+
+%\paragraph*{}
+% An HTH can be inserted into the circuit by altering the FSM and embedding states into it. The modified FSM should have a trigger as an input and a driver hidden in the structure of the FSM. This FSM can be systematically hidden in the design by merging its states within the states of the original design’s FSM. Thus, the HTH would be inseparable from the original design’s functionality. A stealth communication, which uses the medium for legitimate communications, can serve as a covert channel to transfer confidential data from the working chips to the adversary. This Trojan-embedding approach provides a low-level mechanism for bypassing higher-level authentication techniques. Jin, kupp, and makris investigated different types of attacks on a design at the RTL [7].
+% \paragraph*{} 
+% In particular, they designed and implemented the Illinois Malicious Processor with a modified CPU. The malicious modifications allow memory access and shadow-mode mechanisms. The former lets an attacker violate operation system isolation expectations, whereas the latter admits stealthy execution of malevolent firmware. The attacks were evaluated on an FPGA development board by modifying the VHDL code of the Leon processor, an open-source Sparc v8 processor that includes a memory management unit. The overhead in logic is less than 1\% for both modifications, but the timing overhead is about 12\%. The authors further designed and implemented three potential attacks: a privilege escalation attack, which gives an intruder access to the root without checking credentials or generating log entries; a log-in backdoor in shadow mode, which lets an intruder log in as a root without using a password; and a service for stealing passwords and sending them to the attacker.
+% \paragraph*{} 
+% They concluded that hardware tampering is practical and could support various attacks, while also being difficult to detect. Mechanisms for actively controlling an IC can also be used to insert a malicious circuit in a design. For example, manipulation of the states in an FSM that cannot be reverse-engineered could be used to embed Trojan circuitry by providing mechanisms for remotely activating, controlling, and disabling Trojan [8].
+%\begin{figure}[h]
+%	\centering
+%	\includegraphics{../Figures/alkabani}
+%	\caption{Three components of a hardware Trojan horse (HTH). (Source: Alkabani and Koushanfar)}
+%	\label{fig:alkabani}
+%\end{figure}
+%\paragraph*{}
+%When these Trojans becomes active is decided by activation/trigger mechanism and what it does when activated is called as payload.
+
+ 
+ 
+ 
+ 
+ 
