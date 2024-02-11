@@ -1,4 +1,4 @@
-\chapter{Hardware trojan Insertion/Detection Principle approaches and tools}
+\chapter{Hardware Trojan Insertion/Detection Principle Approaches and Tools}
 \section{Introduction}
 \paragraph*{}
 In the contemporary landscape of electronic systems and integrated circuits, the increasing complexity and interconnectedness have given rise to unprecedented challenges in ensuring the security and trustworthiness of these critical components. One particularly insidious threat that has garnered significant attention is the insertion of Hardware Trojans (HTs) - clandestine modifications in the hardware design or manufacturing process that compromise the functionality, reliability, or security of the targeted system. As electronic devices play an integral role in our daily lives, ranging from critical infrastructure to personal communication devices, the detection and prevention of Hardware Trojans have become paramount in safeguarding the integrity of these systems.
@@ -19,7 +19,13 @@ Verification step is intended to check that a product, service, or system meets 
 At the fabrication phase, third-party mask shops have access to genuine stream files (GDSII, OASIS), which might be an easy access to system applications and mess with genuine design. The most common attack at the assembly and package phase is to modify authentic hardware components during chip integration and replace them by malicious ones.
 \paragraph*{}
 In the end, the post-silicon test and validation phase will be safer if it is performed locally in the concerned factory or by another fully certified company instead of outsourcing from an untrusted third-party one, and this phase is considered the last to detect Trojans before delivering the IC for deployment.
-% here put figure of design phases where possible ht insertion could be
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{../Figures/Trojan_insetion}
+	\caption{Hardware trojan insertion in circuit design phases}
+	\label{fig:trojaninsetion}
+\end{figure}
+
 \paragraph*{}
 To assess the risks associated with Hardware trojans (HTs), various studies, such as \cite{insert01} , have presented taxonomies. These taxonomies abstract different categories related to the architecture, effects, and insertion of Trojans in Integrated Circuits (ICs).
 \subsection{Insertion phase}
@@ -76,10 +82,116 @@ Cruz et al. have presented A Machine Learning Based Automatic Hardware Trojan At
 \paragraph*{}
 Hardware Trojan detection is a critical aspect of ensuring the security and reliability of integrated circuits and electronic systems. The primary goal of hardware Trojan detection is to identify the presence of such malicious entities within a chip and prevent their adverse impact on system performance. Several detection techniques and methodologies have been developed to address the growing sophistication of Hardware Trojans.
 \paragraph*{}
-The methods essentially assess the deviations induced by Hardware Trojans (HTs) on the system's behavior or seek potential HT profiles. In order to achieve this, designers need to be familiar with at least one specific parameter from the authentic device or define a target HT model for detection. If the deviation observed in the assessed parameter of a design under Trojan test (DUTT) surpasses an acceptable margin, the DUTT is categorized as being infected by a Trojan. A scheme derived from earlier surveys and research outlines the primary classifications of testing methods employed for identifying Trojans.
+The methods essentially assess the deviations induced by Hardware Trojans (HTs) on the system's behavior or seek potential HT profiles. In order to achieve this, designers need to be familiar with at least one specific parameter from the authentic device or define a target HT model for detection. If the deviation observed in the assessed parameter of a design under Trojan test (DUTT) surpasses an acceptable margin, the DUTT is categorized as being infected by a Trojan. A scheme derived from earlier surveys and research outlines the primary classifications of testing methods employed for identifying Trojans \hl {[put figure here]}.
 \paragraph*{}
-The majority of current methods focus on detecting Trojans in manufactured integrated circuits (ICs) and presume the presence of a gate-level golden netlist. There have been limited studies addressing Trojan detection at higher-level design descriptions, such as the register transfer level IP. In reference \cite{smith2007detecting}, a method based on structural checking is proposed for validating the integrity of third-party intellectual property (IP). However, this technique faces challenges in scalability when applied to extensive designs \cite{abramovici2009integrated}. It's important to highlight that there is currently no singular, universally effective technique that can be employed to detect all types of Trojans.
+The majority of current methods focus on detecting Trojans in manufactured integrated circuits (ICs) and presume the presence of a gate-level golden netlist. There have been limited studies addressing Trojan detection at higher-level design descriptions, such as the register transfer level IP. It's important to highlight that there is currently no singular, universally effective technique that can be employed to detect all types of Trojans.
 \paragraph*{}
-Trojan detection methods can be categorized into two primary types: destructive and non-destructive. Destructive techniques, as outlined in references [36-37], involve employing a subset of manufactured integrated circuits (ICs) that undergo de-metallization using Chemical Mechanical Polishing (CMP)\footnote{Chemical mechanical polishing (CMP) is a planarization technique that was developed for semiconductor applications in the late 1980s and early 1990s. During this period, the number of metal layers increased dramatically and device topographies began to exhibit features that inhibited conformal deposition and gap fill by photoresist, metal, and insulator films. For more info visit: https://www.mks.com/n/chemical-mechanical-polishing, accessed 04 February 2024.}, followed by Scanning Electron Microscope (SEM) image reconstruction and analysis [3].
-\section{Software and Hardware Materials in Trojan Mitigation}
+Trojan detection methods can be categorized into two primary types: destructive and non-destructive \cite{tehranipoor2011introduction}. Destructive techniques, involve employing a subset of manufactured integrated circuits (ICs) that undergo de-metallization using Chemical Mechanical Polishing (CMP)\footnote{Chemical mechanical polishing (CMP) is a planarization technique that was developed for semiconductor applications in the late 1980s and early 1990s. During this period, the number of metal layers increased dramatically and device topographies began to exhibit features that inhibited conformal deposition and gap fill by photoresist, metal, and insulator films. For more info visit: https://www.mks.com/n/chemical-mechanical-polishing, accessed 04 February 2024.}, followed by Scanning Electron Microscope (SEM) image reconstruction and analysis \hl {[search for suitable ref]}. The non-destructive methods can be categorized into two primary types: non-invasive and invasive. Non-invasive techniques preserve the original design without any alterations, whereas invasive techniques involve modifying the design to incorporate specific features aimed at detecting Trojans.
+\subsection{Invasive Trojan Detection Technique}
 \paragraph*{}
+The invasive methods for detecting Trojans can be further categorized into two groups: one focuses on preventing the insertion of Trojans during the design or fabrication of an integrated circuit (IC), while the other enables the detection of inserted Trojans through post-manufacturing testing.
+\paragraph*{}
+In \cite{9491099}, The proposed framework employs self-testing, advanced imaging, and image processing with machine learning to detect hardware Trojans inserted by untrusted foundries. They incorporate on-chip test structures with minimal power, delay, and silicon area overheads. The central aspect of the framework involves on-chip golden circuit design, allowing the generation of authentic samples for image-based Trojan detection through self-testing. A fundamental aspect of this framework involves the creation of the golden circuit (GC), which is designed to generate trusted on-chip cell images for training machine learning algorithms. This is accomplished by populating the remaining vacant spaces with logic cells from the original circuit design after the Place and Route process. These additional cells are interconnected in a tree structure to attain full test coverage. Due to their limited number, these cells can be easily verified through logic testing to ensure the absence of inserted Trojans. Once authenticated, these cells serve as on-chip golden cells, acting as training samples for the image analysis-based Trojan detection.
+\paragraph*{}
+In \cite{9130873}, An innovative tamper-resistant approach is introduced to capture the electromagnetic signature of integrated circuits, enhancing their security. In this proposed method, the unused metal and polysilicon layers are maximally employed as internal magnetic probes to monitor the device's signature, simultaneously restricting attackers' access to layout resources for routing Hardware Trojans. In the proposed approach, following the routing of the main circuit, the unused metal and polysilicon layers are filled with minimum feature wires. These wires can be placed in various ways, either randomly or with the metals configured as inductive sensors. Opting for inductive sensors offers distinct advantages over random distribution. These sensors serve as internal magnetic probes capable of capturing the induced signature of the chip when specific sections of the main circuit are activated. By the end of this process, no resources remain for connecting Trojan circuits. If an attacker attempts to modify the magnetic probes' design or alter the main circuit placement to gain access to resources for inserting and routing a Trojan, it will alter the IC's signature. Additionally, the probes undergo separate testing to identify any changes in their properties.
+\paragraph*{}
+In \cite{5224960}, A design method named VITAMIN is introduced, relying on the inversion of the supply voltage for alternate logic levels within an integrated circuit (IC). In this technique, the logic behavior of a gate, functioning with an inverted supply voltage, undergoes inversion during the test mode. Consequently, the activity of a seldom activated Trojan circuit is heightened, facilitating its detection through a comparison of the power profiles among different ICs.
+\paragraph*{}
+In \cite{8993719}, They propose a hardware Trojan triggered by threshold voltage, operating within the 0.45V to 0.998V threshold voltage range. It consumes ultra-low power (10.5nW) and maintains stealthiness, with an area overhead as low as 1.5\% for a 28 nm technology node. The hardware Trojan detection sub-scheme introduces a lightweight, threshold voltage-aware sensor with a detection sensitivity of 0.251mV/nA. Using fixed and dynamic ring oscillator-based sensor segments, the proposal includes precise measurements of frequency and delay variations in response to threshold voltage shifts in a PMOS transistor. Lastly, the FPGA security scheme is strengthened by online transistor dynamic scaling (OTDS) to address hardware Trojan impact through run-time tolerant circuitry capable of identifying critical gates with worst-case drain current degradation.
+\subsection{Non-invasive Trojan Detection Technique}
+\paragraph*{}
+In non-invasive Trojan detection methods, Trojans are identified by comparing the behavior of the test IC with either the golden IC instance or a golden functional model. These techniques can be categorized into two primary types: run-time and test-time methods. Run-time techniques utilize an online monitoring system to identify suspicious activities during in-field operation, whereas test-time techniques focus on detecting Trojan-infected chips before their deployment.
+\subsubsection{Run-time, non-invasive Trojan detection approaches:}
+\paragraph*{}
+Run-time Trojan detection techniques involve monitoring and analyzing system behavior in real-time to identify potential malicious activities or the presence of Trojans during active operation. Several techniques are employed for this purpose:
+\paragraph*{}
+In \cite{7300085}, the focus is on detecting advanced Hardware Trojans using a run-time detection approach. They aim to identify high-level and critical behavioral invariants, checking them during the circuit operation. The properties to be verified are described using Assertion and Property Specification Language (PSL). Subsequently, a Hardware Property Checker (HPC) is developed and integrated into the IC to verify these properties in real-time.
+\paragraph*{}
+In \cite{6881484}, High-level synthesis for run-time hardware Trojan detection and recovery has been presented, They suggest establishing design guidelines to aid in run-time Trojan detection and swift recovery by exploring the diversity of untrusted third-party IP cores. Using these design guidelines, they demonstrate an optimization strategy aimed at reducing the implementation cost, specifically in terms of the number of distinct IP cores utilized in the implementation.
+\paragraph*{}
+In \cite{9840090}, they have presented Partial Reconfiguration for Run-time Memory Faults and Hardware Trojan Attacks Detection. The solution primarily relies on a centralized security detection controller for partially reconfigurable inspection content and a static memory wrapper to manage access conflicts and buffer testing cells. They demonstrate that a field programmable gate array prototype of the proposed framework can achieve the detection of 16 memory faults and three types of Hardware Trojans with one reconfigurable partition. This results in a 12.7\% reduction in area and a 2.9\% decrease in power overhead compared to a static implementation.
+\paragraph*{}
+In \cite{10251968}, a Secure Run-Time Hardware Trojan Detection Using Lightweight Analytical Models has been presented. They concentrate on hardware Trojans affecting the processor's performance. Current advanced detectors employ complex machine-learning models that monitor hardware counters for anomalies. These models necessitate a dedicated off-chip processor and extensive training for each target processor. In this study, they present a lightweight solution that utilizes data from a single reference run to accurately identify whether a Trojan is impeding processor performance across various CPU configurations, eliminating the need for new profiles. To achieve this, they employ an analytical model based on the application's inherent microarchitecturally independent characteristics. These models predict expected microarchitectural events across different processor configurations without requiring reference values for each application-hardware configuration pair. By comparing predicted values to actual hardware events, one can promptly identify unexpected application slowdowns, which are key indicators of many hardware Trojans.
+\subsubsection{Test-time, non-invasive Trojan detection approaches:}
+\paragraph*{}
+Test-time, non-invasive Trojan detection approaches refer to methods employed to identify potential hardware Trojans during the testing phase of integrated circuits without causing any physical or operational harm. These approaches focus on examining the characteristics and behavior of the circuits before deployment. There are two primary categories of testing approaches for detecting Trojans: those centered on logic testing and those focused on measuring side-channel parameters like power and delay. Test-time techniques offer the advantage of no hardware overhead, contrasting with run-time methods. However, a drawback is the need for a "golden" (Trojan-free) manufactured IC or functional model. Run-time methods often come with notable performance and power overhead, yet they serve as the ultimate defense, ensuring 100\% confidence in computed results. Here are some common techniques in this category:
+\paragraph*{}
+In \cite{9684502}, they have introduced a golden-free multidimensional self-referencing technique that utilizes side-channel signatures in both the time and frequency domains. They significantly expand Trojan coverage and enhance detection confidence. The article presents a fully automated detection framework with systematic methodologies for generating tests, extracting signatures, processing signals, calculating thresholds, and making decisions based on metrics. They effectively enable the synergistic self-referencing approach. Finally, they assess the proposed technique using a comprehensive hardware measurement setup involving 96 Trojan-inserted test chips.
+\paragraph*{}
+In \cite{s13638022021659}, The article introduces a technique based on ring oscillators to enhance both wire and net coverage. The circuit under test is partitioned into numerous blocks, each incorporating a ring oscillator for detecting hardware Trojans. Additionally, a path tracking algorithm is outlined to optimize path assignments.
+\paragraph*{}
+In \cite{8885273}, This study introduces a compact supervisory circuit that classifies the operation of a Bluetooth (BT) System on Chip (SoC) at low frequencies. It achieves this by monitoring the input power and the radio frequency (RF) output of the BT chip through an envelope detector. The concept involves cost-effective fabrication of an envelope detector, power supply current monitor, and classification algorithm on a customized low-frequency integrated circuit in a trusted legacy technology. When unexpected behavior is detected, the supervisory circuit has the capability to cut off power to the BT SoC. In this initial phase, they prototype the supervisory circuit using readily available components. Simple yet descriptive features are extracted from the RF output signal envelope. Subsequently, machine learning (ML) models are trained to classify various BT operation modes, such as BT advertising and transmit modes.
+\paragraph*{}
+In \cite{9137882}, they have performed System Level Hardware Trojan Detection Using Side-Channel Power Analysis and Machine Learning. This paper suggests the detection of Hardware Trojans at the system level in the AES-256 decryption algorithm implemented in the Atmel XMega Controller (Target Board). The approach combines side-channel power analysis and machine learning. The ChipWhisperer-Lite board is employed for power analysis. Power traces from both the golden algorithm (Hardware Trojan-free) and Hardware Trojan-infected algorithms are acquired and utilized to train the machine learning model following the 80/20 rule. The resulting machine learning model achieves an accuracy range of 97\%-100\% for all the inserted Trojans.
+\paragraph*{}
+The Side Channel Analysis method involves detecting Hardware Trojans by measuring circuit parameters and comparing them with the golden circuit (trojan-free circuit). In this approach, the detection relies on measuring the path delay caused by Hardware Trojans in a digital circuit. However, if the impact of the path delay is minimal, detection becomes challenging. In \cite{9393058} addresses two key aspects. Firstly, it aims to increase the path delay, and secondly, it explores an alternative method to overcome the challenge of implausible differences between delays in the golden and trojan-infected circuits. The entire experiment is carried out in Cadence, utilizing a library with a feature size of 45nm. For the first part, combined sweeping is employed. In the second part, it is demonstrated that trojans can be detected by measuring the slope of the observed delay. 
+\subsection{Advantages/disadvantages of invasive/non-invasive detection techniques}
+\paragraph*{}
+\subsubsection{Invasive Hardware Trojan Detection Techniques:}
+\paragraph*{}
+\subsubsection{Advantages}
+\begin{enumerate}
+	\item \textbf{Higher Sensitivity:} Invasive techniques often involve physical modifications or probing, providing higher sensitivity to detect subtle hardware Trojans that may be missed by non-invasive methods.
+	\item \textbf{Direct Physical Examination:} Invasive techniques allow for a direct physical examination of the integrated circuit, making it easier to identify and analyze modifications at the hardware level.
+	\item \textbf{Potential for Root Cause Analysis:} Invasive methods can facilitate a more detailed analysis, aiding in identifying the root cause of a Trojan and understanding its behavior.
+\end{enumerate}
+\subsubsection{Disadvantages}
+\begin{enumerate}
+	\item \textbf{Destructive Nature:} Invasive methods can be destructive, rendering the tested hardware unusable. This is a significant drawback if post-analysis or forensic examination of the hardware is desired.
+	\item \textbf{Costly and Time-Consuming:} Invasive techniques often require specialized equipment and expertise, making them more costly and time-consuming compared to non-invasive methods.
+	\item\textbf{ Ethical and Legal Concerns:} The invasive nature of these techniques raises ethical and legal concerns, especially if the hardware being tested is valuable or if the testing involves proprietary technology.
+\end{enumerate}
+\subsubsection{Non-Invasive Hardware Trojan Detection Techniques:}
+\paragraph*{}
+\subsubsection{Advantages}
+\begin{enumerate}
+	\item \textbf{Preservation of Hardware:} Non-invasive methods preserve the integrity of the hardware being tested, allowing it to remain functional after the detection process.
+	\item \textbf{Lower Cost:} Non-invasive techniques are generally more cost-effective as they do not require specialized equipment for physical alterations or probing.
+	\item \textbf{Applicability to Operational Systems:} Non-invasive methods can be applied to operational systems without the need for disrupting their functionality, making them suitable for real-world scenarios.
+\end{enumerate}
+\subsubsection{Disadvantages}
+\begin{enumerate}
+	\item \textbf{Lower Sensitivity:} Non-invasive techniques may have lower sensitivity compared to invasive methods, potentially missing subtle or well-hidden hardware Trojans.
+	\item\textbf{ Indirect Detection:} Non-invasive methods often rely on indirect indicators such as power consumption or electromagnetic emissions, which may not provide a complete picture of the hardware.
+	\item \textbf{Potential for False Positives/Negatives:} Non-invasive techniques may be prone to false positives or negatives, especially if the Trojans are designed to evade detection by these methods.
+	\item \textbf{Limited Insight into Trojan Behavior:} Non-invasive techniques may provide limited insight into the behavior of detected Trojans compared to invasive methods.
+\end{enumerate}
+\paragraph*{}
+In practice, a combination of both invasive and non-invasive techniques may be employed to achieve a more comprehensive and accurate hardware Trojan detection strategy. The choice depends on factors such as the specific characteristics of the hardware, the desired level of sensitivity, ethical considerations, and the resources available for testing.
+
+\section{Software and Hardware Materials in HT Mitigation}
+\paragraph*{}
+Mitigating hardware Trojans, which are malicious modifications or additions to electronic circuits during the manufacturing process, requires a combination of software and hardware materials. Here are some software and hardware materials commonly used in hardware Trojan mitigation:
+\subsection{Software Materials:}
+%Mitigating hardware Trojans, which are malicious modifications or additions to electronic circuits during the manufacturing process, requires a combination of software and hardware materials. Here are some software and hardware materials commonly used in hardware Trojan mitigation:
+%
+%**Software Materials:**
+%
+%1. **Design Verification Tools:**
+%- Advanced design verification tools are used to analyze hardware designs for potential vulnerabilities and detect any unauthorized modifications or Trojans. These tools help ensure the integrity of the design before fabrication.
+%
+%2. **Formal Verification:**
+%- Formal verification techniques use mathematical methods to prove the correctness of hardware designs. They can help identify and eliminate potential security vulnerabilities, including those introduced by hardware Trojans.
+%
+%3. **Hardware Trojans Detection Software:**
+%- Specialized software tools are available for detecting hardware Trojans in fabricated chips. These tools analyze chip behavior or perform side-channel analysis to identify suspicious patterns indicative of Trojan activity.
+%
+%4. **Secure Supply Chain Management Software:**
+%- Supply chain management software helps track the flow of electronic components and verify their authenticity throughout the manufacturing process. It can help prevent the insertion of Trojans at various stages of production.
+%
+%5. **Security Patching and Updates:**
+%- Regular updates to design tools, verification software, and security protocols are essential for addressing newly discovered vulnerabilities and mitigating potential risks associated with hardware Trojans.
+%
+%**Hardware Materials:**
+%
+%1. **Physical Unclonable Functions (PUFs):**
+%- PUFs are hardware-based security features that exploit the inherent variations in manufacturing processes to create unique identifiers or cryptographic keys. They can be used to verify the authenticity of hardware components and detect potential Trojans.
+%
+%2. **Built-In Self-Test (BIST) and Built-In Self-Repair (BISR):**
+%- BIST and BISR mechanisms are integrated into hardware designs to enable self-testing and repair capabilities. They can help detect and mitigate the impact of hardware Trojans by identifying and isolating faulty components.
+%
+%3. **Tamper-Resistant Packaging:**
+%- Secure packaging techniques are employed to protect integrated circuits from physical tampering or reverse engineering attempts. Tamper-evident seals and enclosures can help prevent unauthorized access to hardware components and mitigate the risk of Trojan insertion.
+%
+%4. **Trusted Foundries and Fabrication Processes:**
+%- Choosing reputable foundries and fabrication processes with stringent security measures can help reduce the risk of hardware Trojans. Trusted manufacturing facilities employ rigorous inspection and testing procedures to

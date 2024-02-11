@@ -1,36 +1,43 @@
 \begin{thebibliography}{}
 
-\bibitem[Abramovici and Bradley, 2009]{abramovici2009integrated}
-Abramovici, M. and Bradley, P. (2009).
-\newblock Integrated circuit security: new threats and solutions.
-\newblock In {\em Proceedings of the 5th Annual Workshop on Cyber Security and
-  Information Intelligence Research: Cyber Security and Information
-  Intelligence Challenges and Strategies}, pages 1--3.
-
 \bibitem[Alkabani and Koushanfar, 2008]{4559059}
 Alkabani, Y. and Koushanfar, F. (2008).
 \newblock Extended abstract: Designer’s hardware trojan horse.
 \newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
   Security and Trust}, pages 82--83.
 
-\bibitem[Banga and Hsiao, 2008a]{4559047a}
-Banga, M. and Hsiao, M.~S. (2008a).
-\newblock A region based approach for the identification of hardware trojans.
-\newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
-  Security and Trust}, pages 40--47.
+\bibitem[Amornpaisannon et~al., 2024]{10251968}
+Amornpaisannon, B., Diavastos, A., Peh, L.-S., and Carlson, T.~E. (2024).
+\newblock Secure run-time hardware trojan detection using lightweight
+  analytical models.
+\newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems}, 43(2):431--441.
 
-\bibitem[Banga and Hsiao, 2008b]{banga2008region}
-Banga, M. and Hsiao, M.~S. (2008b).
+\bibitem[Aslam et~al., 2020]{8993719}
+Aslam, S., Jennions, I.~K., Samie, M., Perinpanayagam, S., and Fang, Y. (2020).
+\newblock Ingress of threshold voltage-triggered hardware trojan in the modern
+  fpga fabric–detection methodology and mitigation.
+\newblock {\em IEEE Access}, 8:31371--31397.
+
+\bibitem[Banga and Hsiao, 2008]{banga2008region}
+Banga, M. and Hsiao, M.~S. (2008).
 \newblock A region based approach for the identification of hardware trojans.
 \newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
   Security and Trust}, pages 40--47. IEEE.
 
-\bibitem[Banga and Hsiao, 2009]{banga2009novel}
-Banga, M. and Hsiao, M.~S. (2009).
+\bibitem[Banga and Hsiao, 2009a]{banga2009novel}
+Banga, M. and Hsiao, M.~S. (2009a).
 \newblock A novel sustained vector technique for the detection of hardware
   trojans.
 \newblock In {\em 2009 22nd international conference on VLSI design}, pages
   327--332. IEEE.
+
+\bibitem[Banga and Hsiao, 2009b]{5224960}
+Banga, M. and Hsiao, M.~S. (2009b).
+\newblock Vitamin: Voltage inversion technique to ascertain malicious
+  insertions in ics.
+\newblock In {\em 2009 IEEE International Workshop on Hardware-Oriented
+  Security and Trust}, pages 104--107.
 
 \bibitem[Bhunia et~al., 2014]{6856140}
 Bhunia, S., Hsiao, M.~S., Banga, M., and Narasimhan, S. (2014).
@@ -44,6 +51,28 @@ Cruz, J., Gaikwad, P., Nair, A., Chakraborty, P., and Bhunia, S. (2022).
 \newblock In {\em 2022 Asian Hardware Oriented Security and Trust Symposium
   (AsianHOST)}, pages 1--6. IEEE.
 
+\bibitem[Cui et~al., 2014]{6881484}
+Cui, X., Ma, K., Shi, L., and Wu, K. (2014).
+\newblock High-level synthesis for run-time hardware trojan detection and
+  recovery.
+\newblock In {\em 2014 51st ACM/EDAC/IEEE Design Automation Conference (DAC)},
+  pages 1--6.
+
+\bibitem[Elkanishy et~al., 2019]{8885273}
+Elkanishy, A., Badawy, A.-H.~A., Furth, P.~M., Boucheron, L.~E., and Michael,
+  C.~P. (2019).
+\newblock Supervising communication soc for secure operation using machine
+  learning.
+\newblock In {\em 2019 IEEE 62nd International Midwest Symposium on Circuits
+  and Systems (MWSCAS)}, pages 582--585.
+
+\bibitem[Gayatri~et al., 2020]{9137882}
+Gayatri~et al., Mitra, M.~P. (2020).
+\newblock System level hardware trojan detection using side-channel power
+  analysis and machine learning.
+\newblock In {\em 2020 5th International Conference on Communication and
+  Electronics Systems (ICCES)}.
+
 \bibitem[Ghandali et~al., 2016]{ghandali2016design}
 Ghandali, S., Becker, G.~T., Holcomb, D., and Paar, C. (2016).
 \newblock A design methodology for stealthy parametric trojans and its
@@ -52,19 +81,27 @@ Ghandali, S., Becker, G.~T., Holcomb, D., and Paar, C. (2016).
   International Conference, Santa Barbara, CA, USA, August 17-19, 2016,
   Proceedings 18}, pages 625--647. Springer.
 
+\bibitem[Hasan et~al., 2020]{9393058}
+Hasan, M.~M., Baul, S., Hashem, M.~B., and Rahman, H. (2020).
+\newblock Hardware trojan detection using slope of path delay trend:
+  Combination of clock and dc sweep.
+\newblock In {\em 2020 11th International Conference on Electrical and Computer
+  Engineering (ICECE)}, pages 145--148.
+
 \bibitem[Huang et~al., 2020]{8952724}
 Huang, Z., Wang, Q., Chen, Y., and Jiang, X. (2020).
 \newblock A survey on machine learning against hardware trojan attacks: Recent
   advances and challenges.
 \newblock {\em IEEE Access}, 8:10796--10826.
 
-\bibitem[Jacob et~al., 2014a]{jacob2014hardware}
-Jacob, N., Merli, D., Heyszl, J., and Sigl, G. (2014a).
-\newblock Hardware trojans: current challenges and approaches.
-\newblock {\em IET Computers \& Digital Techniques}, 8(6):264--273.
+\bibitem[Huang~et al., 2022]{s13638022021659}
+Huang~et al., Hsiao, C. (2022).
+\newblock A security method of hardware trojan detection using path tracking
+  algorithm.
+\newblock {\em J Wireless Com Network}, 81.
 
-\bibitem[Jacob et~al., 2014b]{insert01}
-Jacob, N., Merli, D., Heyszl, J., and Sigl, G. (2014b).
+\bibitem[Jacob et~al., 2014]{jacob2014hardware}
+Jacob, N., Merli, D., Heyszl, J., and Sigl, G. (2014).
 \newblock Hardware trojans: current challenges and approaches.
 \newblock {\em IET Computers \& Digital Techniques}, 8(6):264--273.
 
@@ -79,6 +116,13 @@ King, S.~T., Tucek, J., Cozzie, A., Grier, C., Jiang, W., and Zhou, Y. (2008).
 \newblock Designing and implementing malicious hardware.
 \newblock {\em Leet}, 8:1--8.
 
+\bibitem[Li et~al., 2022]{9840090}
+Li, Y., Chen, L., Wang, J., and Gong, G. (2022).
+\newblock Partial reconfiguration for run-time memory faults and hardware
+  trojan attacks detection.
+\newblock In {\em 2022 IEEE International Symposium on Hardware Oriented
+  Security and Trust (HOST)}, pages 173--176.
+
 \bibitem[Liu et~al., 2017]{7792718}
 Liu, Y., Jin, Y., Nosratinia, A., and Makris, Y. (2017).
 \newblock Silicon demonstration of hardware trojan design and detection in
@@ -86,9 +130,15 @@ Liu, Y., Jin, Y., Nosratinia, A., and Makris, Y. (2017).
 \newblock {\em IEEE Transactions on Very Large Scale Integration (VLSI)
   Systems}, 25(4):1506--1519.
 
-\bibitem[Ngo et~al., 2015]{7092492}
+\bibitem[Ngo et~al., 2015a]{7300085}
+Ngo, X.~T., Danger, J.-L., Guilley, S., Najm, Z., and Emery, O. (2015a).
+\newblock Hardware property checker for run-time hardware trojan detection.
+\newblock In {\em 2015 European Conference on Circuit Theory and Design
+  (ECCTD)}, pages 1--4.
+
+\bibitem[Ngo et~al., 2015b]{7092492}
 Ngo, X.-T., Exurville, I., Bhasin, S., Danger, J.-L., Guilley, S., Najm, Z.,
-  Rigaud, J.-B., and Robisson, B. (2015).
+  Rigaud, J.-B., and Robisson, B. (2015b).
 \newblock Hardware trojan detection by delay and electromagnetic measurements.
 \newblock pages 782--787.
 
@@ -109,12 +159,6 @@ Qu, G. and Yuan, L. (2014).
 Skorobogatov, S.
 \newblock Hardware assurance and its importance to national security (2012).
 
-\bibitem[Smith and Di, 2007]{smith2007detecting}
-Smith, S.~C. and Di, J. (2007).
-\newblock Detecting malicious logic through structural checking.
-\newblock In {\em 2007 IEEE Region 5 Technical Conference}, pages 217--222.
-  IEEE.
-
 \bibitem[Subramani et~al., 2020]{subramani2020amplitude}
 Subramani, K.~S., Helal, N., Antonopoulos, A., Nosratinia, A., and Makris, Y.
   (2020).
@@ -122,6 +166,24 @@ Subramani, K.~S., Helal, N., Antonopoulos, A., Nosratinia, A., and Makris, Y.
   Risks and remedies.
 \newblock {\em IEEE Transactions on Information Forensics and Security},
   15:3497--3510.
+
+\bibitem[Supon and Rashidzadeh, 2021]{9130873}
+Supon, T.~M. and Rashidzadeh, R. (2021).
+\newblock On-chip magnetic probes for hardware trojan prevention and detection.
+\newblock {\em IEEE Transactions on Electromagnetic Compatibility},
+  63(2):353--364.
+
+\bibitem[Tehranipoor and Wang, 2011]{tehranipoor2011introduction}
+Tehranipoor, M. and Wang, C. (2011).
+\newblock {\em Introduction to hardware security and trust}.
+\newblock Springer Science \& Business Media.
+
+\bibitem[Vashistha et~al., 2022]{9491099}
+Vashistha, N., Lu, H., Shi, Q., Woodard, D.~L., Asadizanjani, N., and
+  Tehranipoor, M.~M. (2022).
+\newblock Detecting hardware trojans using combined self-testing and imaging.
+\newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
+  Circuits and Systems}, 41(6):1730--1743.
 
 \bibitem[Wang et~al., 2008]{wang2008detecting}
 Wang, X., Tehranipoor, M., and Plusquellic, J. (2008).
@@ -148,6 +210,12 @@ Yang, K., Hicks, M., Dong, Q., Austin, T., and Sylvester, D. (2016b).
 \newblock A2: Analog malicious hardware.
 \newblock In {\em 2016 IEEE Symposium on Security and Privacy (SP)}, pages
   18--37.
+
+\bibitem[Yang et~al., 2022]{9684502}
+Yang, S., Hoque, T., Chakraborty, P., and Bhunia, S. (2022).
+\newblock Golden-free hardware trojan detection using self-referencing.
+\newblock {\em IEEE Transactions on Very Large Scale Integration (VLSI)
+  Systems}, 30(3):325--338.
 
 \bibitem[Zhang and Qu, 2014]{zhang2014survey}
 Zhang, J. and Qu, G. (2014).

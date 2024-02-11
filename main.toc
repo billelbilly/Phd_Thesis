@@ -1,4 +1,4 @@
-\contentsline {chapter}{\numberline {1}General concepts of Hardware Trojans}{4}{chapter.1}%
+\contentsline {chapter}{\numberline {1}General Concepts of Hardware Trojans}{4}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Introduction}{4}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Definition}{4}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Hardware Trojan threats}{4}{section.1.3}%
@@ -61,11 +61,24 @@
 \contentsline {subsection}{\numberline {1.13.6}Environmental Activation vs. Parameter Variation}{33}{subsection.1.13.6}%
 \contentsline {section}{\numberline {1.14}Case study (Trojan in an AES-128)}{33}{section.1.14}%
 \contentsline {section}{\numberline {1.15}Conclusion}{34}{section.1.15}%
-\contentsline {chapter}{\numberline {2}Hardware trojan Insertion/Detection Principle approaches and tools}{36}{chapter.2}%
+\contentsline {chapter}{\numberline {2}Hardware Trojan Insertion/Detection Principle Approaches and Tools}{36}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Introduction}{36}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Insertion Approaches}{36}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Insertion phase}{38}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2} Abstraction Level}{38}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Some employed strategies in the insertion of HTs}{39}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Detection Techniques}{41}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Software and Hardware Materials in Trojan Mitigation}{42}{section.2.4}%
+\contentsline {subsection}{\numberline {2.2.2} Abstraction Level}{39}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Some employed strategies in the insertion of HTs}{40}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Detection Techniques}{42}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Invasive Trojan Detection Technique}{42}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Non-invasive Trojan Detection Technique}{44}{subsection.2.3.2}%
+\contentsline {subsubsection}{Run-time, non-invasive Trojan detection approaches:}{44}{section*.180}%
+\contentsline {subsubsection}{Test-time, non-invasive Trojan detection approaches:}{45}{section*.186}%
+\contentsline {subsection}{\numberline {2.3.3}Advantages/disadvantages of invasive/non-invasive detection techniques}{46}{subsection.2.3.3}%
+\contentsline {subsubsection}{Invasive Hardware Trojan Detection Techniques:}{46}{section*.194}%
+\contentsline {subsubsection}{Advantages}{46}{section*.196}%
+\contentsline {subsubsection}{Disadvantages}{47}{section*.197}%
+\contentsline {subsubsection}{Non-Invasive Hardware Trojan Detection Techniques:}{47}{section*.198}%
+\contentsline {subsubsection}{Advantages}{47}{section*.200}%
+\contentsline {subsubsection}{Disadvantages}{47}{section*.201}%
+\contentsline {section}{\numberline {2.4}Software and Hardware Materials in HT Mitigation}{48}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Software Materials:}{48}{subsection.2.4.1}%
+\contentsline {subsubsection}{Design Verification Tools}{48}{section*.205}%
