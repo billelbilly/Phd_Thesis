@@ -161,8 +161,109 @@ In practice, a combination of both invasive and non-invasive techniques may be e
 
 \section{Software and Hardware Materials in HT Mitigation}
 \paragraph*{}
-Mitigating hardware Trojans, which are malicious modifications or additions to electronic circuits during the manufacturing process, requires a combination of software and hardware materials. Here are some software and hardware materials commonly used in hardware Trojan mitigation:
-\subsection{Software Materials:}
+Mitigating hardware Trojans, which are malicious modifications or additions to electronic circuits during the manufacturing process, requires a combination of software and hardware materials. The principal validation methods for complex systems are
+simulation, testing, deductive verification, and Formal verification (Model checking).
+%\subsection{Software Materials:}
+%\paragraph*{}
+\subsection{Simulation and testing}
+\paragraph*{}
+Conducting experiments prior to field deployment is common in both simulation and testing processes. Simulation is executed on a system's abstraction or model, while testing involves the actual product. In both approaches, signals or inputs are typically introduced at specific points within the system, and the resulting outputs are observed at other points. Although these methods are often cost-effective in identifying numerous errors, thoroughly examining all potential interactions and pitfalls through simulation and testing is rarely possible.
+\subsection{Deductive verification}
+\paragraph*{}
+Deductive verification methods employ axioms and proof rules to establish the accuracy of systems. Initially, these proofs were manually crafted. Over time, researchers recognized that software tools could be employed to propose different approaches for advancing from the current proof stage. Deductive verification offers the benefit of being applicable to the analysis of systems with infinite states. While there is some automation possible for this task, it is important to note that, even if the property under verification is valid, there is no restriction on the potential time or memory resources required to discover a proof.
+\paragraph*{}
+Deductive verification is a labor-intensive procedure that is typically carried out by individuals with expertise in logical reasoning. As a result, it is primarily employed in critical systems, particularly those with high sensitivity such as security protocols.
+%In \cite{FormalVerifThesis}, An approach of using a formal verification method, the model checking, to verify whether a particular component of hardware design matches its specification has been presented.
+%\paragraph*{}
+\subsection{Formal Verification:}
+\paragraph*{}
+Formal verification techniques use mathematical methods to prove the correctness of hardware designs. They can help identify and eliminate potential security vulnerabilities, including those introduced by hardware Trojans. The primary techniques for validating hardware systems include simulation, testing, and formal verification. Both simulation and testing entail conducting experiments prior to the system's deployment in real-world settings. Simulation is carried out on the design of the hardware system, while testing is executed on its actual implementation. These approaches are frequently employed as economical means of identifying numerous errors. Nevertheless, achieving a comprehensive examination of all potential behaviors in hardware systems through simulation and testing methods is rarely possible.
+\paragraph*{}
+Formal verification is employed, specifically model checking, to assess if a hardware system meets specified properties. Unlike simulation and testing approaches, model checking enables the examination of the system's behavior for all conceivable inputs. The goal is to assist hardware designers in developing transparent and accurate systems with assured functionality. Organizations such as Cadence Design Systems, IBM, and Mentor Graphics create tools that facilitate what is known as functional verification, aiming for identical objectives. They employ the Assertion-Based Verification (ABV) methodology to promptly identify errors in hardware design.
+\paragraph*{}
+\subsubsection{Temporal Logic}
+\paragraph*{}
+Temporal logic is a formal system used in the field of computer science and formal verification to reason about and specify the temporal aspects of system behavior. Temporal logic provides a way to express statements and properties about the order and timing of events in a system over time. There are two main branches of temporal logic: Linear Temporal Logic (LTL) and Computation Tree Logic (CTL). Both are used to specify and verify temporal properties, but they have different approaches and applications.
+\paragraph*{}
+Formal specification comprises one or more characteristics that can be represented as formulas in either Linear Temporal Logic (LTL) or Computational Tree Logic (CTL).
+\paragraph*{}
+\begin{enumerate}
+	\item \textbf{Linear Temporal Logic (LTL):} LTL deals with linear sequences of time, expressing properties about the future along a single path. It includes temporal operators such as "next" (X), "until" (U), "always" (G), and "eventually" (F). For example, the LTL formula G(p → Xq) states that "it is always the case that if p holds, then in the next state, q will eventually hold."
+	\item \textbf{Computation Tree Logic (CTL):} CTL is designed to reason about branching time, where multiple possible paths of execution exist. CTL introduces existential and universal path quantifiers, allowing the specification of properties that hold along some or all possible paths. CTL includes operators such as "AX" (for "for all next"), "EX" (for "there exists next"), "AG" (for "always globally"), and "EF" (for "eventually in the future").
+\end{enumerate}
+\paragraph*{}
+Temporal logic is commonly used in formal verification methods, especially in model checking, where it helps specify and verify system properties over time. Model checking tools use temporal logic formulas to automatically explore all possible states of a system and check whether the specified properties hold in each state or along each possible path of execution.
+\paragraph*{}
+The application of temporal logic extends beyond formal verification and is also used in areas like real-time systems, concurrent programming, and specification of reactive systems, where understanding and reasoning about the temporal aspects of system behavior are crucial.
+\paragraph*{}
+\subsubsection{Model Checking}
+\paragraph*{}
+Model checking is a formal verification technique used to automatically check whether a given system or model satisfies a set of specified properties. It involves systematically exploring the entire state space of a system to verify if certain desired properties hold or if there are any violations. Model of the system and its specification are formulated in some precise mathematical language. To this end, the problem is formulated as a task in logic, namely to check whether a structure satisfies a given logical formula. This general concept applies to many kinds of logic and many kinds of structures. A simple model-checking problem consists of verifying whether a formula in the propositional logic is satisfied by a given structure. Model checking is widely employed in various domains, including hardware and software systems, communication protocols, and concurrent systems.
+\paragraph*{}
+The model checker typically employs a thorough exploration of the finite state space of the system to ascertain the truth or falsity of a given specification, which represents a property of the system. If the system does not meet a specified property, the model checker generates a counterexample that illustrates an incorrect behavior. This problematic sequence offers valuable insights into comprehending the underlying cause of the failure, along with crucial hints for resolving the issue.
+\paragraph*{}
+With adequate resources, the model checker will invariably conclude with either an affirmative or negative response. Additionally, it can be executed through algorithms that demonstrate reasonable efficiency.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.45\linewidth]{../Figures/model_checker}
+	\caption{Model checker}
+	\label{fig:modelchecker}
+\end{figure}
+\pagebreak
+\paragraph*{}
+Applying model checking to a design consists of several tasks:
+\begin{enumerate}
+	\item \textbf{Modeling:} The initial step involves transforming the system's design into an abstract model that is compatible with a model checking tool. The abstract model aims to remove extraneous details from the design, and while automated conversion is feasible in certain instances, human guidance and assistance are often necessary, especially in cases where it is challenging to automate (such as in software design).
+	\paragraph*{}
+	The behavioral modeling describes how the circuit should behave.	For these reasons, behavioral modeling is considered highest abstraction level as compared to data-flow or structural models.
+	The VHDL synthesizer tool decides the actual circuit implementation.
+	The VHDL behavioral model is widely used in test bench design, since the test bench design doesn’t care about the hardware realization
+	\item \textbf{Specification:} The specification is typically presented in a logical formalism, often employing temporal logic to articulate the progression of system behavior over time. Key concerns in specification include:
+	\begin{itemize}
+		\item \textbf{ Consistency:} Is the provided specification free of contradictions?
+		\item \textbf{Completeness:} Does the provided specification encompass all the properties that the system is required to fulfill?\\
+		These matters are not explicitly tackled within the realm of model checking.		
+	\end{itemize} 
+	
+	\item \textbf{Verification:} In an ideal scenario, verification is entirely automated. Nevertheless, practical implementation frequently requires human involvement. An example of such manual intervention is the examination of verification outcomes. In instances of a negative result, the user receives an error trace, aiding the designer in pinpointing the source of the error. Addressing the error may involve modifying the system and reapplying the model checking algorithm. An error trace can also result from a false negative, that is from:
+		\begin{itemize}
+		\item incorrect modeling of the system.
+		\item incorrect formalization of the specification.
+		\item inconsistent specification.
+		\paragraph*{}
+		A final possibility is that the verification task will fail to terminate normally, due to the size of the model, which is too large to fit into the computer memory
+				
+	\end{itemize} 
+	
+\end{enumerate}
+
+\subsection{Physically Unclonable Functions (PUFs):}
+\paragraph*{}
+PUFs stand for Physically Unclonable Functions. PUFs are electronic components or systems that leverage the inherent physical variations in manufacturing processes to create unique and unpredictable identifiers for individual devices. These identifiers are difficult to clone or replicate, providing a form of hardware-based security.
+\paragraph*{}
+Because of variations in the deep submicron manufacturing process, each transistor within an integrated circuit possesses slightly distinct physical characteristics. These variances result in minor yet quantifiable discrepancies in electronic properties like transistor threshold voltages and gain factor. As these process variations are beyond full control during manufacturing, the physical attributes of the devices cannot be duplicated or replicated.
+\paragraph*{}
+Leveraging these inherent variations, PUFs prove highly beneficial as distinctive identifiers for individual integrated circuits (ICs). Achieved through the IC's internal circuitry, these minute variations are translated into a digital pattern of 0s and 1s, exclusive to that particular chip and consistently reproducible. This pattern serves as a "silicon fingerprint," analogous to the biometric characteristics found in humans.
+\paragraph*{}
+The application of this technology spans from employing Physical Unclonable Functions for IoT security, capitalizing on its cost-effectiveness and adaptable implementation for significant advantages, to utilizing Physical Unclonable Functions in Aerospace \& Defense. This demonstrates the technology's capability to provide the utmost level of security.
+\subsubsection{The Advantages of a Physical Unclonable Function}
+\paragraph*{}
+Devices, especially those integrated into the Internet of Things (IoT), necessitate keys for safeguarding their data, intellectual property (IP), and functionalities. These keys may be embedded onto the devices either by the device manufacturers, also known as OEMs, or at an earlier stage by a chip vendor. When chip vendors furnish pre-provisioned chips, they enhance the overall worth of the product offered to OEMs. Alternatively, if OEMs opt for self-provisioning, they usually acquire chips at a lower cost.
+\paragraph*{}
+Regardless of whether the duty of provisioning cryptographic keys falls on the chip vendor or the device manufacturer, it is always a non-trivial undertaking. Introducing confidential keys into chips demands a reliable factory, introduces additional expenses and intricacies to the manufacturing process, and imposes restrictions on flexibility. This intricacy can be circumvented by generating the keys internally within the chip, utilizing either an internal random number generator (RNG) or a PUF.
+\paragraph*{}
+Nevertheless, generating a key poses only one aspect of the challenge. This is because securely storing keys on devices is also far from straightforward. Storing secret keys in non-volatile memory (NVM) is not a viable option, as NVM is susceptible to hardware attacks. With hardware attacks that enable adversaries to access NVM content becoming more prevalent, relying on unprotected key storage becomes impractical. Thus, there is a demand for alternative secure key storage solutions. One possible approach involves incorporating a secure element into the device. However, introducing additional hardware also brings heightened complexity and cost. A silicon PUF, on the other hand, offers a secure means of storing cryptographic keys without the necessity of adding extra hardware.
+\subsubsection{Typical Use Cases for a Physical Unclonable Function in IoT Devices}
+\paragraph*{}
+\begin{itemize}
+	\item \textbf{Key Vault:} The most widely recognized application of PUF technology involves generating and safeguarding the cryptographic root key for a device. The cryptographic root key, produced by the PUF, eliminates the need for key injection and is impervious to duplication from one device to another. This is because the key is never stored; instead, it is reconstructed from the unique silicon fingerprint of the device each time it is required. Given that this fingerprint varies for every chip, there is no conceivable method for an attacker to replicate a key from one device to another.
+	\item \textbf{Firmware IP Protection:} Imagine an IoT device holding sensitive information that demands protection—perhaps valuable intellectual property containing confidential trade secrets or measurement data that is either privacy-sensitive or crucial to the system. In such cases, the device necessitates a secure vault. Within this secure vault, any form of data can be securely stored and inherently linked to the device's hardware. Achieving this is straightforward with a PUF, wherein all sensitive data is encrypted using a key derived from the PUF root key.
+	\item \textbf{Edge-to-Cloud Security:} Establishing a secure channel between an IoT device and the cloud, utilizing a public key infrastructure like a Transport Layer Security (TLS) connection with a cloud service, involves the exchange of certificates between the device and the cloud. These certificates serve to authenticate the entities to one another. Generating a certificate to authenticate a device entails creating a public/private key pair derived from the PUF fingerprint.
+\end{itemize}
+
+
+
+
 %Mitigating hardware Trojans, which are malicious modifications or additions to electronic circuits during the manufacturing process, requires a combination of software and hardware materials. Here are some software and hardware materials commonly used in hardware Trojan mitigation:
 %
 %**Software Materials:**
@@ -182,16 +283,23 @@ Mitigating hardware Trojans, which are malicious modifications or additions to e
 %5. **Security Patching and Updates:**
 %- Regular updates to design tools, verification software, and security protocols are essential for addressing newly discovered vulnerabilities and mitigating potential risks associated with hardware Trojans.
 %
-%**Hardware Materials:**
+%Hardware Materials:
 %
-%1. **Physical Unclonable Functions (PUFs):**
-%- PUFs are hardware-based security features that exploit the inherent variations in manufacturing processes to create unique identifiers or cryptographic keys. They can be used to verify the authenticity of hardware components and detect potential Trojans.
+%Physically Unclonable Functions (PUFs):
 %
-%2. **Built-In Self-Test (BIST) and Built-In Self-Repair (BISR):**
-%- BIST and BISR mechanisms are integrated into hardware designs to enable self-testing and repair capabilities. They can help detect and mitigate the impact of hardware Trojans by identifying and isolating faulty components.
+%PUFs generate unique identifiers based on physical characteristics of the hardware, making it difficult for attackers to clone or tamper with hardware components without detection.
+%Hardware-based Encryption:
 %
-%3. **Tamper-Resistant Packaging:**
-%- Secure packaging techniques are employed to protect integrated circuits from physical tampering or reverse engineering attempts. Tamper-evident seals and enclosures can help prevent unauthorized access to hardware components and mitigate the risk of Trojan insertion.
+%Incorporating hardware-based encryption mechanisms can protect sensitive data from being intercepted or manipulated by hardware Trojans.
+%Trusted Platform Module (TPM):
 %
-%4. **Trusted Foundries and Fabrication Processes:**
-%- Choosing reputable foundries and fabrication processes with stringent security measures can help reduce the risk of hardware Trojans. Trusted manufacturing facilities employ rigorous inspection and testing procedures to
+%TPM, in addition to its software applications, can also provide hardware-based security features that help ensure the integrity and authenticity of the system.
+%Dual and Redundant Hardware Designs:
+%
+%Implementing redundant hardware designs or dual-die configurations can provide a backup mechanism that helps mitigate the impact of a hardware Trojan by allowing the system to switch to a trusted component.
+%Formal Verification Techniques:
+%
+%Use formal methods and verification techniques during the design and manufacturing processes to rigorously analyze and validate the correctness of the hardware components, reducing the likelihood of Trojan insertion.
+%Anti-tamper Packaging:
+%
+%Employing anti-tamper packaging techniques, such as coatings or encapsulation, can make it more challenging for attackers to physically access and tamper with the hardware.

@@ -1,1 +1,4 @@
 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
+
+git remote set-url origin https://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@github.com/billelbilly/Phd_Thesis
+git push origin master

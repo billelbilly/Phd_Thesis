@@ -9,7 +9,9 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
-You're missing a field name---line 709 of file ref.bib
+Warning--entry type for "FormalVerifThesis" isn't style-file defined
+--line 671 of file ref.bib
+You're missing a field name---line 721 of file ref.bib
  : 
  : % author={Hayashi, Yuichi and Kawamura, Shinichi},
 (Error may have been on previous line)
@@ -24,45 +26,45 @@ Too many commas in name 1 of "Gayatri et al., Mitra , Mekala, Priyatharishini" f
 while executing---line 1098 of file apalike.bst
 Warning--empty booktitle in 7092492
 Warning--empty year in skorobogatovhardware
-You've used 36 entries,
+You've used 37 entries,
             1935 wiz_defined-function locations,
-            669 strings with 10836 characters,
-and the built_in function-call counts, 17730 in all, are:
-= -- 1752
-> -- 755
-< -- 32
-+ -- 277
-- -- 260
-* -- 1435
-:= -- 2875
-add.period$ -- 116
-call.type$ -- 36
-change.case$ -- 309
-chr.to.int$ -- 33
-cite$ -- 38
-duplicate$ -- 729
-empty$ -- 1256
-format.name$ -- 316
-if$ -- 3681
+            676 strings with 10968 characters,
+and the built_in function-call counts, 17966 in all, are:
+= -- 1776
+> -- 762
+< -- 33
++ -- 279
+- -- 262
+* -- 1450
+:= -- 2922
+add.period$ -- 118
+call.type$ -- 37
+change.case$ -- 315
+chr.to.int$ -- 34
+cite$ -- 39
+duplicate$ -- 739
+empty$ -- 1271
+format.name$ -- 319
+if$ -- 3724
 int.to.chr$ -- 4
 int.to.str$ -- 0
 missing$ -- 36
-newline$ -- 182
-num.names$ -- 108
-pop$ -- 346
+newline$ -- 186
+num.names$ -- 111
+pop$ -- 350
 preamble$ -- 1
-purify$ -- 310
+purify$ -- 316
 quote$ -- 0
-skip$ -- 544
+skip$ -- 553
 stack$ -- 0
-substring$ -- 1271
+substring$ -- 1283
 swap$ -- 185
 text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 214
+type$ -- 220
 warning$ -- 2
-while$ -- 136
+while$ -- 138
 width$ -- 0
-write$ -- 472
+write$ -- 482
 (There were 4 error messages)

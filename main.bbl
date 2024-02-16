@@ -116,6 +116,10 @@ King, S.~T., Tucek, J., Cozzie, A., Grier, C., Jiang, W., and Zhou, Y. (2008).
 \newblock Designing and implementing malicious hardware.
 \newblock {\em Leet}, 8:1--8.
 
+\bibitem[Kratochvíla, 2005]{FormalVerifThesis}
+Kratochvíla, T. (2005).
+\newblock Formal verification of hardware design.
+
 \bibitem[Li et~al., 2022]{9840090}
 Li, Y., Chen, L., Wang, J., and Gong, G. (2022).
 \newblock Partial reconfiguration for run-time memory faults and hardware

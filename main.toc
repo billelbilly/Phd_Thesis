@@ -80,5 +80,11 @@
 \contentsline {subsubsection}{Advantages}{47}{section*.200}%
 \contentsline {subsubsection}{Disadvantages}{47}{section*.201}%
 \contentsline {section}{\numberline {2.4}Software and Hardware Materials in HT Mitigation}{48}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Software Materials:}{48}{subsection.2.4.1}%
-\contentsline {subsubsection}{Design Verification Tools}{48}{section*.205}%
+\contentsline {subsection}{\numberline {2.4.1}Simulation and testing}{48}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Deductive verification}{48}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Formal Verification:}{48}{subsection.2.4.3}%
+\contentsline {subsubsection}{Temporal Logic}{49}{section*.210}%
+\contentsline {subsubsection}{Model Checking}{50}{section*.217}%
+\contentsline {subsection}{\numberline {2.4.4}Physically Unclonable Functions (PUFs):}{51}{subsection.2.4.4}%
+\contentsline {subsubsection}{The Advantages of a Physical Unclonable Function}{52}{section*.229}%
+\contentsline {subsubsection}{Typical Use Cases for a Physical Unclonable Function in IoT Devices}{53}{section*.233}%
