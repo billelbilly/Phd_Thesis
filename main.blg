@@ -9,9 +9,12 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
-Warning--entry type for "FormalVerifThesis" isn't style-file defined
---line 671 of file ref.bib
-You're missing a field name---line 721 of file ref.bib
+You're missing a field name---line 775 of file ref.bib
+ :  
+ :  ,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 849 of file ref.bib
  : 
  : % author={Hayashi, Yuichi and Kawamura, Shinichi},
 (Error may have been on previous line)
@@ -26,45 +29,45 @@ Too many commas in name 1 of "Gayatri et al., Mitra , Mekala, Priyatharishini" f
 while executing---line 1098 of file apalike.bst
 Warning--empty booktitle in 7092492
 Warning--empty year in skorobogatovhardware
-You've used 37 entries,
+You've used 42 entries,
             1935 wiz_defined-function locations,
-            676 strings with 10968 characters,
-and the built_in function-call counts, 17966 in all, are:
-= -- 1776
-> -- 762
-< -- 33
-+ -- 279
-- -- 262
-* -- 1450
-:= -- 2922
-add.period$ -- 118
-call.type$ -- 37
-change.case$ -- 315
-chr.to.int$ -- 34
-cite$ -- 39
-duplicate$ -- 739
-empty$ -- 1271
-format.name$ -- 319
-if$ -- 3724
+            704 strings with 12245 characters,
+and the built_in function-call counts, 20433 in all, are:
+= -- 2012
+> -- 867
+< -- 35
++ -- 321
+- -- 298
+* -- 1668
+:= -- 3329
+add.period$ -- 134
+call.type$ -- 42
+change.case$ -- 358
+chr.to.int$ -- 39
+cite$ -- 44
+duplicate$ -- 831
+empty$ -- 1448
+format.name$ -- 360
+if$ -- 4223
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 36
-newline$ -- 186
-num.names$ -- 111
-pop$ -- 350
+missing$ -- 42
+newline$ -- 212
+num.names$ -- 126
+pop$ -- 390
 preamble$ -- 1
-purify$ -- 316
+purify$ -- 359
 quote$ -- 0
-skip$ -- 553
+skip$ -- 622
 stack$ -- 0
-substring$ -- 1283
-swap$ -- 185
-text.length$ -- 19
+substring$ -- 1483
+swap$ -- 205
+text.length$ -- 21
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 220
+type$ -- 250
 warning$ -- 2
-while$ -- 138
+while$ -- 157
 width$ -- 0
-write$ -- 482
-(There were 4 error messages)
+write$ -- 550
+(There were 5 error messages)

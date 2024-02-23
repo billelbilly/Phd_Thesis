@@ -19,6 +19,12 @@ Aslam, S., Jennions, I.~K., Samie, M., Perinpanayagam, S., and Fang, Y. (2020).
   fpga fabric–detection methodology and mitigation.
 \newblock {\em IEEE Access}, 8:31371--31397.
 
+\bibitem[Azzaz et~al., 2020]{https://doi.org/10.1002/dac.4211}
+Azzaz, M.~S., Tanougast, C., Maali, A., and Benssalah, M. (2020).
+\newblock An efficient and lightweight multi-scroll chaos-based hardware
+  solution for protecting fingerprint biometric templates.
+\newblock {\em International Journal of Communication Systems}, 33(10):e4211.
+
 \bibitem[Banga and Hsiao, 2008]{banga2008region}
 Banga, M. and Hsiao, M.~S. (2008).
 \newblock A region based approach for the identification of hardware trojans.
@@ -111,14 +117,16 @@ Jha, S. and Jha, S.~K. (2008).
 \newblock In {\em 2008 11th IEEE High Assurance Systems Engineering Symposium},
   pages 117--124. IEEE.
 
+\bibitem[Khan et~al., 2021]{9326396}
+Khan, S., Lee, W.-K., and Hwang, S.~O. (2021).
+\newblock Scalable and efficient hardware architectures for authenticated
+  encryption in iot applications.
+\newblock {\em IEEE Internet of Things Journal}, 8(14):11260--11275.
+
 \bibitem[King et~al., 2008]{king2008designing}
 King, S.~T., Tucek, J., Cozzie, A., Grier, C., Jiang, W., and Zhou, Y. (2008).
 \newblock Designing and implementing malicious hardware.
 \newblock {\em Leet}, 8:1--8.
-
-\bibitem[Kratochvíla, 2005]{FormalVerifThesis}
-Kratochvíla, T. (2005).
-\newblock Formal verification of hardware design.
 
 \bibitem[Li et~al., 2022]{9840090}
 Li, Y., Chen, L., Wang, J., and Gong, G. (2022).
@@ -134,6 +142,12 @@ Liu, Y., Jin, Y., Nosratinia, A., and Makris, Y. (2017).
 \newblock {\em IEEE Transactions on Very Large Scale Integration (VLSI)
   Systems}, 25(4):1506--1519.
 
+\bibitem[Masoumi, 2019]{MASOUMI2019102371}
+Masoumi, M. (2019).
+\newblock A highly efficient and secure hardware implementation of the advanced
+  encryption standard.
+\newblock {\em Journal of Information Security and Applications}, 48:102371.
+
 \bibitem[Ngo et~al., 2015a]{7300085}
 Ngo, X.~T., Danger, J.-L., Guilley, S., Najm, Z., and Emery, O. (2015a).
 \newblock Hardware property checker for run-time hardware trojan detection.
@@ -145,6 +159,12 @@ Ngo, X.-T., Exurville, I., Bhasin, S., Danger, J.-L., Guilley, S., Najm, Z.,
   Rigaud, J.-B., and Robisson, B. (2015b).
 \newblock Hardware trojan detection by delay and electromagnetic measurements.
 \newblock pages 782--787.
+
+\bibitem[Ning et~al., 2020]{https://doi.org/10.1049/iet-cds.2019.0175}
+Ning, H., Farha, F., Ullah, A., and Mao, L. (2020).
+\newblock Physical unclonable function: architectures, applications and
+  challenges for dependable security.
+\newblock {\em IET Circuits, Devices \& Systems}, 14(4):407--424.
 
 \bibitem[Perez and Pagliarini, 2023]{9956883}
 Perez, T.~D. and Pagliarini, S. (2023).
@@ -189,6 +209,13 @@ Vashistha, N., Lu, H., Shi, Q., Woodard, D.~L., Asadizanjani, N., and
 \newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
   Circuits and Systems}, 41(6):1730--1743.
 
+\bibitem[Vatajelu et~al., 2019]{8854387}
+Vatajelu, E.~I., Natale, G.~D., Mispan, M.~S., and Halak, B. (2019).
+\newblock On the encryption of the challenge in physically unclonable
+  functions.
+\newblock In {\em 2019 IEEE 25th International Symposium on On-Line Testing and
+  Robust System Design (IOLTS)}, pages 115--120.
+
 \bibitem[Wang et~al., 2008]{wang2008detecting}
 Wang, X., Tehranipoor, M., and Plusquellic, J. (2008).
 \newblock Detecting malicious inclusions in secure hardware: Challenges and
@@ -202,6 +229,13 @@ Wolff, F., Papachristou, C., Bhunia, S., and Chakraborty, R.~S. (2008).
   scheme.
 \newblock In {\em Proceedings of the conference on Design, automation and test
   in Europe}, pages 1362--1365.
+
+\bibitem[Yadav et~al., 2022]{yadav2022review}
+Yadav, A., Kumar, S., and Singh, J. (2022).
+\newblock A review of physical unclonable functions (pufs) and its applications
+  in iot environment.
+\newblock {\em Ambient Communications and Computer Systems: Proceedings of
+  RACCCS 2021}, pages 1--13.
 
 \bibitem[Yang et~al., 2016a]{yang2016a2}
 Yang, K., Hicks, M., Dong, Q., Austin, T., and Sylvester, D. (2016a).

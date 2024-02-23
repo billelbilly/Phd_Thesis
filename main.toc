@@ -85,6 +85,15 @@
 \contentsline {subsection}{\numberline {2.4.3}Formal Verification:}{48}{subsection.2.4.3}%
 \contentsline {subsubsection}{Temporal Logic}{49}{section*.210}%
 \contentsline {subsubsection}{Model Checking}{50}{section*.217}%
-\contentsline {subsection}{\numberline {2.4.4}Physically Unclonable Functions (PUFs):}{51}{subsection.2.4.4}%
+\contentsline {subsection}{\numberline {2.4.4}Physically Unclonable Functions (PUFs)}{51}{subsection.2.4.4}%
 \contentsline {subsubsection}{The Advantages of a Physical Unclonable Function}{52}{section*.229}%
 \contentsline {subsubsection}{Typical Use Cases for a Physical Unclonable Function in IoT Devices}{53}{section*.233}%
+\contentsline {subsubsection}{PUF Processing Algorithms}{53}{section*.235}%
+\contentsline {subsubsection}{Error Correction}{53}{section*.237}%
+\contentsline {subsubsection}{Privacy Amplification}{54}{section*.241}%
+\contentsline {subsubsection}{What Are the Challenges When Implementing a Physical Unclonable Function?}{54}{section*.243}%
+\contentsline {subsubsection}{Typical CMOS Implementations of Physical Unclonable Functions}{55}{section*.246}%
+\contentsline {subsubsection}{A Review of Some Studies on Physical Unclonable Functions (PUFs)}{56}{section*.250}%
+\contentsline {subsection}{\numberline {2.4.5}Hardware-based Encryption}{57}{subsection.2.4.5}%
+\contentsline {subsubsection}{A Review of Some Studies on Hardware-based encryption}{57}{section*.258}%
+\contentsline {subsection}{\numberline {2.4.6}Trusted Platform Module (TPM)}{58}{subsection.2.4.6}%
