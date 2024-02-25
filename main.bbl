@@ -6,6 +6,13 @@ Alkabani, Y. and Koushanfar, F. (2008).
 \newblock In {\em 2008 IEEE International Workshop on Hardware-Oriented
   Security and Trust}, pages 82--83.
 
+\bibitem[Amin and Mahmood-ul Hasan, 2022]{Amin2022}
+Amin, A.~A. and Mahmood-ul Hasan, K. (2022).
+\newblock Unified fault-tolerant control for air-fuel ratio control of internal
+  combustion engines with advanced analytical and hardware redundancies.
+\newblock {\em Journal of Electrical Engineering \& Technology},
+  17(3):1947--1959.
+
 \bibitem[Amornpaisannon et~al., 2024]{10251968}
 Amornpaisannon, B., Diavastos, A., Peh, L.-S., and Carlson, T.~E. (2024).
 \newblock Secure run-time hardware trojan detection using lightweight
@@ -44,6 +51,14 @@ Banga, M. and Hsiao, M.~S. (2009b).
   insertions in ics.
 \newblock In {\em 2009 IEEE International Workshop on Hardware-Oriented
   Security and Trust}, pages 104--107.
+
+\bibitem[Bas et~al., 2022]{9774540}
+Bas, F., Benedicte, P., Alcaide, S., Cabo, G., Mazzocchetti, F., and Abella, J.
+  (2022).
+\newblock Safedm: a hardware diversity monitor for redundant execution on
+  non-lockstepped cores.
+\newblock In {\em 2022 Design, Automation \& Test in Europe Conference \&
+  Exhibition (DATE)}, pages 358--363.
 
 \bibitem[Bhunia et~al., 2014]{6856140}
 Bhunia, S., Hsiao, M.~S., Banga, M., and Narasimhan, S. (2014).
@@ -123,6 +138,11 @@ Khan, S., Lee, W.-K., and Hwang, S.~O. (2021).
   encryption in iot applications.
 \newblock {\em IEEE Internet of Things Journal}, 8(14):11260--11275.
 
+\bibitem[Kim and Kim, 2019]{10.1145/3338511.3357348}
+Kim, Y. and Kim, E. (2019).
+\newblock htpm: Hybrid implementation of trusted platform module.
+\newblock page 3–10. Association for Computing Machinery.
+
 \bibitem[King et~al., 2008]{king2008designing}
 King, S.~T., Tucek, J., Cozzie, A., Grier, C., Jiang, W., and Zhou, Y. (2008).
 \newblock Designing and implementing malicious hardware.
@@ -147,6 +167,11 @@ Masoumi, M. (2019).
 \newblock A highly efficient and secure hardware implementation of the advanced
   encryption standard.
 \newblock {\em Journal of Information Security and Applications}, 48:102371.
+
+\bibitem[Mu\~{n}oz and Fernandez, 2020]{10.1145/3424771.3424781}
+Mu\~{n}oz, A. and Fernandez, E.~B. (2020).
+\newblock Tpm, a pattern for an architecture for trusted computing.
+\newblock New York, NY, USA. Association for Computing Machinery.
 
 \bibitem[Ngo et~al., 2015a]{7300085}
 Ngo, X.~T., Danger, J.-L., Guilley, S., Najm, Z., and Emery, O. (2015a).
@@ -179,6 +204,14 @@ Qu, G. and Yuan, L. (2014).
 \newblock In {\em 2014 IEEE/ACM international conference on Computer-Aided
   Design (ICCAD)}, pages 411--416. IEEE.
 
+\bibitem[Shi et~al., 2019]{8741031}
+Shi, Q., Vashistha, N., Lu, H., Shen, H., Tehranipoor, B., Woodard, D.~L., and
+  Asadizanjani, N. (2019).
+\newblock Golden gates: A new hybrid approach for rapid hardware trojan
+  detection using testing and imaging.
+\newblock In {\em 2019 IEEE International Symposium on Hardware Oriented
+  Security and Trust (HOST)}, pages 61--71.
+
 \bibitem[Skorobogatov, ]{skorobogatovhardware}
 Skorobogatov, S.
 \newblock Hardware assurance and its importance to national security (2012).
@@ -201,6 +234,12 @@ Supon, T.~M. and Rashidzadeh, R. (2021).
 Tehranipoor, M. and Wang, C. (2011).
 \newblock {\em Introduction to hardware security and trust}.
 \newblock Springer Science \& Business Media.
+
+\bibitem[Tidrea et~al., 2019]{s19194191}
+Tidrea, A., Korodi, A., and Silea, I. (2019).
+\newblock Cryptographic considerations for automation and scada systems using
+  trusted platform modules.
+\newblock {\em Sensors}, 19(19).
 
 \bibitem[Vashistha et~al., 2022]{9491099}
 Vashistha, N., Lu, H., Shi, Q., Woodard, D.~L., Asadizanjani, N., and
@@ -266,5 +305,11 @@ Zhang, J., Yuan, F., Wei, L., Liu, Y., and Xu, Q. (2015).
 \newblock Veritrust: Verification for hardware trust.
 \newblock {\em IEEE Transactions on Computer-Aided Design of Integrated
   Circuits and Systems}, 34(7):1148--1161.
+
+\bibitem[Zhang and Zhao, 2021]{9201531}
+Zhang, X. and Zhao, X. (2021).
+\newblock Architecture design of distributed redundant flight control computer
+  based on time-triggered buses for uavs.
+\newblock {\em IEEE Sensors Journal}, 21(3):3944--3954.
 
 \end{thebibliography}

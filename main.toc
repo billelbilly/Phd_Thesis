@@ -3,8 +3,8 @@
 \contentsline {section}{\numberline {1.2}Definition}{4}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Hardware Trojan threats}{4}{section.1.3}%
 \contentsline {subsection}{\numberline {1.3.1}IC market model}{5}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}HT threat between SoC designers and foundries}{6}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}HT threat between SoC designers and IP vendors}{6}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.2}HT threat between SoC designers and foundries}{7}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}HT threat between SoC designers and IP vendors}{7}{subsection.1.3.3}%
 \contentsline {subsection}{\numberline {1.3.4}HT threat between IP vendors (or SoC designers) and EDA vendors}{7}{subsection.1.3.4}%
 \contentsline {subsection}{\numberline {1.3.5}HT threat between end users and SoC designers}{7}{subsection.1.3.5}%
 \contentsline {section}{\numberline {1.4}Critical fields affected by Trojans}{8}{section.1.4}%
@@ -15,85 +15,90 @@
 \contentsline {subsection}{\numberline {1.5.1}Banga et al. classification}{9}{subsection.1.5.1}%
 \contentsline {subsection}{\numberline {1.5.2}Tehranipoor et al. classification}{9}{subsection.1.5.2}%
 \contentsline {subsection}{\numberline {1.5.3}Zhang et al. classification}{11}{subsection.1.5.3}%
-\contentsline {subsection}{\numberline {1.5.4}Bhunia et al. classification}{13}{subsection.1.5.4}%
-\contentsline {subsection}{\numberline {1.5.5}Huang et al. classification}{14}{subsection.1.5.5}%
-\contentsline {section}{\numberline {1.6}Activation Mechanism}{15}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}Always ON}{15}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}Internally triggered}{15}{subsection.1.6.2}%
-\contentsline {subsubsection}{Combinational Trigger Mechanism}{16}{section*.61}%
-\contentsline {subsubsection}{Sequential Trigger Mechanism}{17}{section*.67}%
-\contentsline {section}{\numberline {1.7}Trojan activation methods}{18}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}Region-free Trojan Activation}{18}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}Region-aware Trojan Activation}{19}{subsection.1.7.2}%
-\contentsline {section}{\numberline {1.8}Hardware Trojan Payload}{19}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}Data Leakage}{20}{subsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.8.2}Denial of Service (DoS)}{21}{subsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.8.3}Unauthorized Access}{21}{subsection.1.8.3}%
-\contentsline {subsection}{\numberline {1.8.4}Functionality Alteration}{21}{subsection.1.8.4}%
-\contentsline {subsection}{\numberline {1.8.5}Triggered Malware Activation}{21}{subsection.1.8.5}%
-\contentsline {section}{\numberline {1.9}Operation Based payload classification}{21}{section.1.9}%
-\contentsline {subsection}{\numberline {1.9.1}Payload generates new operations}{22}{subsection.1.9.1}%
-\contentsline {subsection}{\numberline {1.9.2}Payload modifies control interface for current operations}{22}{subsection.1.9.2}%
-\contentsline {subsection}{\numberline {1.9.3}Payload modifies data interface for current operations}{23}{subsection.1.9.3}%
-\contentsline {section}{\numberline {1.10}Hardware Trojan architecture and design}{23}{section.1.10}%
-\contentsline {subsection}{\numberline {1.10.1}Combinational Trojans}{24}{subsection.1.10.1}%
-\contentsline {subsection}{\numberline {1.10.2}Sequential Trojans}{25}{subsection.1.10.2}%
-\contentsline {subsection}{\numberline {1.10.3}Analog/RF Trojans}{26}{subsection.1.10.3}%
-\contentsline {subsection}{\numberline {1.10.4}Piggybacking}{27}{subsection.1.10.4}%
-\contentsline {subsection}{\numberline {1.10.5}Fault-based Trojans}{27}{subsection.1.10.5}%
-\contentsline {section}{\numberline {1.11}Location of hardware Trojans }{28}{section.1.11}%
-\contentsline {subsection}{\numberline {1.11.1}Processor}{28}{subsection.1.11.1}%
-\contentsline {subsection}{\numberline {1.11.2}Memory}{28}{subsection.1.11.2}%
-\contentsline {subsection}{\numberline {1.11.3}I/O}{29}{subsection.1.11.3}%
-\contentsline {subsection}{\numberline {1.11.4}Power supply}{30}{subsection.1.11.4}%
-\contentsline {subsection}{\numberline {1.11.5}Clock}{30}{subsection.1.11.5}%
-\contentsline {section}{\numberline {1.12}Effects of hardware Trojans}{31}{section.1.12}%
-\contentsline {subsection}{\numberline {1.12.1}Change function}{31}{subsection.1.12.1}%
-\contentsline {subsection}{\numberline {1.12.2}Reduce reliability}{32}{subsection.1.12.2}%
-\contentsline {subsection}{\numberline {1.12.3}Leak information}{32}{subsection.1.12.3}%
-\contentsline {subsection}{\numberline {1.12.4}Denial of service (DoS)}{32}{subsection.1.12.4}%
-\contentsline {section}{\numberline {1.13}Comparison of some hardware Trojans attacks}{32}{section.1.13}%
-\contentsline {subsection}{\numberline {1.13.1}Logic Trojans vs Analog Trojans}{32}{subsection.1.13.1}%
-\contentsline {subsection}{\numberline {1.13.2}Design-Level Trojans vs. Piggybacking}{32}{subsection.1.13.2}%
-\contentsline {subsection}{\numberline {1.13.3}Fault-based Trojans vs. Physical Attacks}{32}{subsection.1.13.3}%
-\contentsline {subsection}{\numberline {1.13.4}Supply Chain Attacks vs. Stealth Techniques}{33}{subsection.1.13.4}%
-\contentsline {subsection}{\numberline {1.13.5}Side-Channel Attacks vs. Time-based Activation}{33}{subsection.1.13.5}%
-\contentsline {subsection}{\numberline {1.13.6}Environmental Activation vs. Parameter Variation}{33}{subsection.1.13.6}%
-\contentsline {section}{\numberline {1.14}Case study (Trojan in an AES-128)}{33}{section.1.14}%
-\contentsline {section}{\numberline {1.15}Conclusion}{34}{section.1.15}%
-\contentsline {chapter}{\numberline {2}Hardware Trojan Insertion/Detection Principle Approaches and Tools}{36}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Introduction}{36}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Insertion Approaches}{36}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Insertion phase}{38}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2} Abstraction Level}{39}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Some employed strategies in the insertion of HTs}{40}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Detection Techniques}{42}{section.2.3}%
+\contentsline {subsection}{\numberline {1.5.4}Bhunia et al. classification}{12}{subsection.1.5.4}%
+\contentsline {subsection}{\numberline {1.5.5}Huang et al. classification}{13}{subsection.1.5.5}%
+\contentsline {section}{\numberline {1.6}Activation Mechanism}{14}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Always ON}{14}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Internally triggered}{14}{subsection.1.6.2}%
+\contentsline {subsubsection}{Combinational Trigger Mechanism}{15}{section*.61}%
+\contentsline {subsubsection}{Sequential Trigger Mechanism}{16}{section*.67}%
+\contentsline {section}{\numberline {1.7}Trojan activation methods}{17}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}Region-free Trojan Activation}{17}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}Region-aware Trojan Activation}{18}{subsection.1.7.2}%
+\contentsline {section}{\numberline {1.8}Hardware Trojan Payload}{18}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}Data Leakage}{19}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}Denial of Service (DoS)}{20}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}Unauthorized Access}{20}{subsection.1.8.3}%
+\contentsline {subsection}{\numberline {1.8.4}Functionality Alteration}{20}{subsection.1.8.4}%
+\contentsline {subsection}{\numberline {1.8.5}Triggered Malware Activation}{20}{subsection.1.8.5}%
+\contentsline {section}{\numberline {1.9}Operation Based payload classification}{20}{section.1.9}%
+\contentsline {subsection}{\numberline {1.9.1}Payload generates new operations}{21}{subsection.1.9.1}%
+\contentsline {subsection}{\numberline {1.9.2}Payload modifies control interface for current operations}{21}{subsection.1.9.2}%
+\contentsline {subsection}{\numberline {1.9.3}Payload modifies data interface for current operations}{22}{subsection.1.9.3}%
+\contentsline {section}{\numberline {1.10}Hardware Trojan architecture and design}{22}{section.1.10}%
+\contentsline {subsection}{\numberline {1.10.1}Combinational Trojans}{23}{subsection.1.10.1}%
+\contentsline {subsection}{\numberline {1.10.2}Sequential Trojans}{24}{subsection.1.10.2}%
+\contentsline {subsection}{\numberline {1.10.3}Analog/RF Trojans}{25}{subsection.1.10.3}%
+\contentsline {subsection}{\numberline {1.10.4}Piggybacking}{26}{subsection.1.10.4}%
+\contentsline {subsection}{\numberline {1.10.5}Fault-based Trojans}{26}{subsection.1.10.5}%
+\contentsline {section}{\numberline {1.11}Location of hardware Trojans }{27}{section.1.11}%
+\contentsline {subsection}{\numberline {1.11.1}Processor}{27}{subsection.1.11.1}%
+\contentsline {subsection}{\numberline {1.11.2}Memory}{27}{subsection.1.11.2}%
+\contentsline {subsection}{\numberline {1.11.3}I/O}{28}{subsection.1.11.3}%
+\contentsline {subsection}{\numberline {1.11.4}Power supply}{29}{subsection.1.11.4}%
+\contentsline {subsection}{\numberline {1.11.5}Clock}{29}{subsection.1.11.5}%
+\contentsline {section}{\numberline {1.12}Effects of hardware Trojans}{30}{section.1.12}%
+\contentsline {subsection}{\numberline {1.12.1}Change function}{30}{subsection.1.12.1}%
+\contentsline {subsection}{\numberline {1.12.2}Reduce reliability}{30}{subsection.1.12.2}%
+\contentsline {subsection}{\numberline {1.12.3}Leak information}{30}{subsection.1.12.3}%
+\contentsline {subsection}{\numberline {1.12.4}Denial of service (DoS)}{31}{subsection.1.12.4}%
+\contentsline {section}{\numberline {1.13}Comparison of some hardware Trojans attacks}{31}{section.1.13}%
+\contentsline {subsection}{\numberline {1.13.1}Logic Trojans vs Analog Trojans}{31}{subsection.1.13.1}%
+\contentsline {subsection}{\numberline {1.13.2}Design-Level Trojans vs. Piggybacking}{31}{subsection.1.13.2}%
+\contentsline {subsection}{\numberline {1.13.3}Fault-based Trojans vs. Physical Attacks}{31}{subsection.1.13.3}%
+\contentsline {subsection}{\numberline {1.13.4}Supply Chain Attacks vs. Stealth Techniques}{31}{subsection.1.13.4}%
+\contentsline {subsection}{\numberline {1.13.5}Side-Channel Attacks vs. Time-based Activation}{32}{subsection.1.13.5}%
+\contentsline {subsection}{\numberline {1.13.6}Environmental Activation vs. Parameter Variation}{32}{subsection.1.13.6}%
+\contentsline {section}{\numberline {1.14}Case study (Trojan in an AES-128)}{32}{section.1.14}%
+\contentsline {section}{\numberline {1.15}Conclusion}{33}{section.1.15}%
+\contentsline {chapter}{\numberline {2}Hardware Trojan Insertion/Detection Principle Approaches and Tools}{35}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Introduction}{35}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Insertion Approaches}{35}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Insertion phase}{37}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2} Abstraction Level}{38}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Some employed strategies in the insertion of HTs}{39}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Detection Techniques}{41}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Invasive Trojan Detection Technique}{42}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Non-invasive Trojan Detection Technique}{44}{subsection.2.3.2}%
-\contentsline {subsubsection}{Run-time, non-invasive Trojan detection approaches:}{44}{section*.180}%
-\contentsline {subsubsection}{Test-time, non-invasive Trojan detection approaches:}{45}{section*.186}%
-\contentsline {subsection}{\numberline {2.3.3}Advantages/disadvantages of invasive/non-invasive detection techniques}{46}{subsection.2.3.3}%
-\contentsline {subsubsection}{Invasive Hardware Trojan Detection Techniques:}{46}{section*.194}%
-\contentsline {subsubsection}{Advantages}{46}{section*.196}%
-\contentsline {subsubsection}{Disadvantages}{47}{section*.197}%
-\contentsline {subsubsection}{Non-Invasive Hardware Trojan Detection Techniques:}{47}{section*.198}%
-\contentsline {subsubsection}{Advantages}{47}{section*.200}%
-\contentsline {subsubsection}{Disadvantages}{47}{section*.201}%
-\contentsline {section}{\numberline {2.4}Software and Hardware Materials in HT Mitigation}{48}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Simulation and testing}{48}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Deductive verification}{48}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.3.2}Non-invasive Trojan Detection Technique}{43}{subsection.2.3.2}%
+\contentsline {subsubsection}{Run-time, non-invasive Trojan detection approaches:}{43}{section*.181}%
+\contentsline {subsubsection}{Test-time, non-invasive Trojan detection approaches:}{44}{section*.187}%
+\contentsline {subsection}{\numberline {2.3.3}Advantages/disadvantages of invasive/non-invasive detection techniques}{45}{subsection.2.3.3}%
+\contentsline {subsubsection}{Invasive Hardware Trojan Detection Techniques:}{45}{section*.195}%
+\contentsline {subsubsection}{Advantages}{46}{section*.197}%
+\contentsline {subsubsection}{Disadvantages}{46}{section*.198}%
+\contentsline {subsubsection}{Non-Invasive Hardware Trojan Detection Techniques:}{46}{section*.199}%
+\contentsline {subsubsection}{Advantages}{46}{section*.201}%
+\contentsline {subsubsection}{Disadvantages}{46}{section*.202}%
+\contentsline {section}{\numberline {2.4}Software and Hardware Materials in HT Mitigation}{47}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Simulation and testing}{47}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Deductive verification}{47}{subsection.2.4.2}%
 \contentsline {subsection}{\numberline {2.4.3}Formal Verification:}{48}{subsection.2.4.3}%
-\contentsline {subsubsection}{Temporal Logic}{49}{section*.210}%
-\contentsline {subsubsection}{Model Checking}{50}{section*.217}%
+\contentsline {subsubsection}{Temporal Logic}{48}{section*.211}%
+\contentsline {subsubsection}{Model Checking}{49}{section*.218}%
 \contentsline {subsection}{\numberline {2.4.4}Physically Unclonable Functions (PUFs)}{51}{subsection.2.4.4}%
-\contentsline {subsubsection}{The Advantages of a Physical Unclonable Function}{52}{section*.229}%
-\contentsline {subsubsection}{Typical Use Cases for a Physical Unclonable Function in IoT Devices}{53}{section*.233}%
-\contentsline {subsubsection}{PUF Processing Algorithms}{53}{section*.235}%
-\contentsline {subsubsection}{Error Correction}{53}{section*.237}%
-\contentsline {subsubsection}{Privacy Amplification}{54}{section*.241}%
-\contentsline {subsubsection}{What Are the Challenges When Implementing a Physical Unclonable Function?}{54}{section*.243}%
-\contentsline {subsubsection}{Typical CMOS Implementations of Physical Unclonable Functions}{55}{section*.246}%
-\contentsline {subsubsection}{A Review of Some Studies on Physical Unclonable Functions (PUFs)}{56}{section*.250}%
-\contentsline {subsection}{\numberline {2.4.5}Hardware-based Encryption}{57}{subsection.2.4.5}%
-\contentsline {subsubsection}{A Review of Some Studies on Hardware-based encryption}{57}{section*.258}%
+\contentsline {subsubsection}{The Advantages of a Physical Unclonable Function}{51}{section*.230}%
+\contentsline {subsubsection}{Typical Use Cases for a Physical Unclonable Function in IoT Devices}{52}{section*.234}%
+\contentsline {subsubsection}{PUF Processing Algorithms}{52}{section*.236}%
+\contentsline {subsubsection}{Error Correction}{53}{section*.238}%
+\contentsline {subsubsection}{Privacy Amplification}{53}{section*.242}%
+\contentsline {subsubsection}{What Are the Challenges When Implementing a Physical Unclonable Function?}{53}{section*.244}%
+\contentsline {subsubsection}{Typical CMOS Implementations of Physical Unclonable Functions}{54}{section*.247}%
+\contentsline {subsubsection}{A Review of Some Studies on Physical Unclonable Functions (PUFs)}{55}{section*.251}%
+\contentsline {subsection}{\numberline {2.4.5}Hardware-based Encryption}{56}{subsection.2.4.5}%
+\contentsline {subsubsection}{A Review of Some Studies on Hardware-based encryption}{57}{section*.259}%
 \contentsline {subsection}{\numberline {2.4.6}Trusted Platform Module (TPM)}{58}{subsection.2.4.6}%
+\contentsline {subsubsection}{A Review of Some Studies on The Trusted Platform Module (TPM)}{59}{section*.266}%
+\contentsline {subsection}{\numberline {2.4.7}Dual and Redundant Hardware Designs}{60}{subsection.2.4.7}%
+\contentsline {subsubsection}{A Review of Some Studies on Dual and Redundant Hardware designs}{61}{section*.273}%
+\contentsline {subsection}{\numberline {2.4.8}Anti-tamper Packaging}{62}{subsection.2.4.8}%
+\contentsline {subsubsection}{Anti-tampering Techniques}{63}{section*.283}%

@@ -1,26 +1,27 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces IC market model}}{7}{figure.caption.10}%
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Taxonomy of Trojans}}{10}{figure.caption.26}%
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Bug-Based HT using logic inverter}}{12}{figure.caption.37}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces IC market model}}{6}{figure.caption.10}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Taxonomy of Trojans}}{9}{figure.caption.26}%
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Bug-Based HT using logic inverter}}{11}{figure.caption.37}%
 \contentsline {figure}{\numberline {1.4}{\ignorespaces Parasite-Baset HT using logic Multiplexer to trigger malicious input.}}{12}{figure.caption.41}%
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Analog/Digital HT classification}}{13}{figure.caption.45}%
-\contentsline {figure}{\numberline {1.6}{\ignorespaces Ip-level HT}}{14}{figure.caption.49}%
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Bus-level HT}}{14}{figure.caption.52}%
-\contentsline {figure}{\numberline {1.8}{\ignorespaces SoC-level HT}}{15}{figure.caption.55}%
-\contentsline {figure}{\numberline {1.9}{\ignorespaces Combinational and Sequential trigger mechanism.}}{16}{figure.caption.66}%
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Combinational trigger mechanism}}}{16}{subfigure.9.1}%
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Sequential trigger mechanism}}}{16}{subfigure.9.2}%
-\contentsline {figure}{\numberline {1.10}{\ignorespaces Hardware counter triggering Trojan}}{18}{figure.caption.74}%
-\contentsline {figure}{\numberline {1.11}{\ignorespaces Trojan circuit model with a rare triggering condition. Note. Reprinted from “Towards trojan-free trusted ics: Problem analysis and detection scheme”, by Wolff, F., (2008)}}{20}{figure.caption.81}%
-\contentsline {figure}{\numberline {1.12}{\ignorespaces Information leakage hardware Trojan.}}{21}{figure.caption.84}%
-\contentsline {figure}{\numberline {1.13}{\ignorespaces Operation Based payload classification.}}{22}{figure.caption.91}%
-\contentsline {figure}{\numberline {1.14}{\ignorespaces Architecture of a Trojan inserted on a target circuit.}}{24}{figure.caption.97}%
-\contentsline {figure}{\numberline {1.15}{\ignorespaces Combinational Trojan}}{25}{figure.caption.104}%
-\contentsline {figure}{\numberline {1.16}{\ignorespaces Sequential Trojan (Timebombs).}}{26}{figure.caption.107}%
-\contentsline {figure}{\numberline {1.17}{\ignorespaces Threat model}}{26}{figure.caption.110}%
-\contentsline {figure}{\numberline {1.18}{\ignorespaces Amplitude modulating hardware Trojans.}}{27}{figure.caption.113}%
-\contentsline {figure}{\numberline {1.19}{\ignorespaces Architecture of the Trojan-infected AES-T2000 benchmark}}{34}{figure.caption.131}%
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Analog/Digital HT classification}}{12}{figure.caption.45}%
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Ip-level HT}}{13}{figure.caption.49}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Bus-level HT}}{13}{figure.caption.52}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces SoC-level HT}}{14}{figure.caption.55}%
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Combinational and Sequential trigger mechanism.}}{15}{figure.caption.66}%
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\centering Combinational trigger mechanism}}}{15}{subfigure.9.1}%
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\centering Sequential trigger mechanism}}}{15}{subfigure.9.2}%
+\contentsline {figure}{\numberline {1.10}{\ignorespaces Hardware counter triggering Trojan}}{17}{figure.caption.74}%
+\contentsline {figure}{\numberline {1.11}{\ignorespaces Trojan circuit model with a rare triggering condition. Note. Reprinted from “Towards trojan-free trusted ics: Problem analysis and detection scheme”, by Wolff, F., (2008)}}{19}{figure.caption.81}%
+\contentsline {figure}{\numberline {1.12}{\ignorespaces Information leakage hardware Trojan.}}{20}{figure.caption.84}%
+\contentsline {figure}{\numberline {1.13}{\ignorespaces Operation Based payload classification.}}{21}{figure.caption.91}%
+\contentsline {figure}{\numberline {1.14}{\ignorespaces Architecture of a Trojan inserted on a target circuit.}}{23}{figure.caption.97}%
+\contentsline {figure}{\numberline {1.15}{\ignorespaces Combinational Trojan}}{24}{figure.caption.104}%
+\contentsline {figure}{\numberline {1.16}{\ignorespaces Sequential Trojan (Timebombs).}}{25}{figure.caption.107}%
+\contentsline {figure}{\numberline {1.17}{\ignorespaces Threat model}}{25}{figure.caption.110}%
+\contentsline {figure}{\numberline {1.18}{\ignorespaces Amplitude modulating hardware Trojans.}}{26}{figure.caption.113}%
+\contentsline {figure}{\numberline {1.19}{\ignorespaces Architecture of the Trojan-infected AES-T2000 benchmark}}{33}{figure.caption.131}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Hardware trojan insertion in circuit design phases}}{38}{figure.caption.148}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Model checker}}{50}{figure.caption.221}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Error correction techniques for cryptographic key reconstruction}}{54}{figure.caption.240}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Hardware trojan insertion in circuit design phases}}{37}{figure.caption.148}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Classification of hardware Trojan Detection Techniques.}}{41}{figure.caption.172}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Model checker}}{50}{figure.caption.222}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Error correction techniques for cryptographic key reconstruction}}{53}{figure.caption.241}%
