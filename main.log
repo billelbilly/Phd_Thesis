@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2024.1.25)  25 FEB 2024 16:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10) (preloaded format=pdflatex 2024.1.25)  26 FEB 2024 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,7 +430,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 
 ] [5]
-<../Figures/ic_market_model.png, id=500, 525.46312pt x 385.44pt>
+<../Figures/ic_market_model.png, id=517, 525.46312pt x 385.44pt>
 File: ../Figures/ic_market_model.png Graphic file (type png)
 <use ../Figures/ic_market_model.png>
 Package pdftex.def Info: ../Figures/ic_market_model.png  used on input line 44.
@@ -445,19 +445,19 @@ Overfull \hbox (70.21773pt too wide) in paragraph at lines 44--45
 
 LaTeX Warning: Citation `4559047a' on page 9 undefined on input line 78.
 
-<../Figures/Trojan_classification.png, id=534, 648.92438pt x 408.02437pt>
+<../Figures/Trojan_classification.png, id=551, 648.92438pt x 408.02437pt>
 File: ../Figures/Trojan_classification.png Graphic file (type png)
 <use ../Figures/Trojan_classification.png>
 Package pdftex.def Info: ../Figures/Trojan_classification.png  used on input li
 ne 90.
 (pdftex.def)             Requested size: 409.71692pt x 257.62328pt.
 [9 <../Figures/Trojan_classification.png>] [10]
-<../Figures/bug_based_ht.png, id=562, 385.44pt x 225.09094pt>
+<../Figures/bug_based_ht.png, id=579, 385.44pt x 225.09094pt>
 File: ../Figures/bug_based_ht.png Graphic file (type png)
 <use ../Figures/bug_based_ht.png>
 Package pdftex.def Info: ../Figures/bug_based_ht.png  used on input line 114.
 (pdftex.def)             Requested size: 318.66948pt x 186.09727pt.
-<../Figures/parasite_based_ht.png, id=564, 385.44pt x 225.84375pt>
+<../Figures/parasite_based_ht.png, id=581, 385.44pt x 225.84375pt>
 File: ../Figures/parasite_based_ht.png Graphic file (type png)
 <use ../Figures/parasite_based_ht.png>
 Package pdftex.def Info: ../Figures/parasite_based_ht.png  used on input line 1
@@ -468,44 +468,44 @@ Package pdftex.def Info: ../Figures/parasite_based_ht.png  used on input line 1
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [11 <../Figures/bug_based_ht.png>]
-<../Figures/Bhunia_model.png, id=579, 453.94594pt x 240.14719pt>
+<../Figures/Bhunia_model.png, id=596, 453.94594pt x 240.14719pt>
 File: ../Figures/Bhunia_model.png Graphic file (type png)
 <use ../Figures/Bhunia_model.png>
 Package pdftex.def Info: ../Figures/Bhunia_model.png  used on input line 140.
 (pdftex.def)             Requested size: 318.66948pt x 168.58556pt.
  [12 <../Figures/parasite_based_ht.png> <../Figures/Bhunia_model.png>]
-<../Figures/ip_level_trojan.png, id=589, 609.77812pt x 271.0125pt>
+<../Figures/ip_level_trojan.png, id=606, 609.77812pt x 271.0125pt>
 File: ../Figures/ip_level_trojan.png Graphic file (type png)
 <use ../Figures/ip_level_trojan.png>
 Package pdftex.def Info: ../Figures/ip_level_trojan.png  used on input line 154
 .
 (pdftex.def)             Requested size: 318.66948pt x 141.63445pt.
-<../Figures/bus_level_trojan.png, id=592, 614.295pt x 271.0125pt>
+<../Figures/bus_level_trojan.png, id=609, 614.295pt x 271.0125pt>
 File: ../Figures/bus_level_trojan.png Graphic file (type png)
 <use ../Figures/bus_level_trojan.png>
 Package pdftex.def Info: ../Figures/bus_level_trojan.png  used on input line 16
 4.
 (pdftex.def)             Requested size: 318.66948pt x 140.58821pt.
-<../Figures/soc_level_ht.png, id=594, 614.295pt x 271.0125pt>
+<../Figures/soc_level_ht.png, id=611, 614.295pt x 271.0125pt>
 File: ../Figures/soc_level_ht.png Graphic file (type png)
 <use ../Figures/soc_level_ht.png>
 Package pdftex.def Info: ../Figures/soc_level_ht.png  used on input line 178.
 (pdftex.def)             Requested size: 318.66948pt x 140.58821pt.
  [13 <../Figures/ip_level_trojan.png> <../Figures/bus_level_trojan.png>] [14 <.
 ./Figures/soc_level_ht.png>]
-<../Figures/mechanism.png, id=619, 298.86656pt x 167.87718pt>
+<../Figures/mechanism.png, id=636, 298.86656pt x 167.87718pt>
 File: ../Figures/mechanism.png Graphic file (type png)
 <use ../Figures/mechanism.png>
 Package pdftex.def Info: ../Figures/mechanism.png  used on input line 209.
 (pdftex.def)             Requested size: 199.16928pt x 111.8777pt.
-<../Figures/event_sequence.png, id=620, 377.15906pt x 204.765pt>
+<../Figures/event_sequence.png, id=637, 377.15906pt x 204.765pt>
 File: ../Figures/event_sequence.png Graphic file (type png)
 <use ../Figures/event_sequence.png>
 Package pdftex.def Info: ../Figures/event_sequence.png  used on input line 211.
 
 (pdftex.def)             Requested size: 199.16928pt x 108.13124pt.
  [15 <../Figures/mechanism.png> <../Figures/event_sequence.png>]
-<../Figures/hardware_counter.png, id=637, 410.2828pt x 238.64156pt>
+<../Figures/hardware_counter.png, id=654, 410.2828pt x 238.64156pt>
 File: ../Figures/hardware_counter.png Graphic file (type png)
 <use ../Figures/hardware_counter.png>
 Package pdftex.def Info: ../Figures/hardware_counter.png  used on input line 23
@@ -516,7 +516,7 @@ Package pdftex.def Info: ../Figures/hardware_counter.png  used on input line 23
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [16] [17 <../Figures/hardware_counter.png>]
-<../Figures/rarely_nets.png, id=666, 414.79968pt x 225.84375pt>
+<../Figures/rarely_nets.png, id=683, 414.79968pt x 225.84375pt>
 File: ../Figures/rarely_nets.png Graphic file (type png)
 <use ../Figures/rarely_nets.png>
 Package pdftex.def Info: ../Figures/rarely_nets.png  used on input line 255.
@@ -525,7 +525,7 @@ Package pdftex.def Info: ../Figures/rarely_nets.png  used on input line 255.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<../Figures/leakage.png, id=668, 478.03593pt x 243.91125pt>
+<../Figures/leakage.png, id=685, 478.03593pt x 243.91125pt>
 File: ../Figures/leakage.png Graphic file (type png)
 <use ../Figures/leakage.png>
 Package pdftex.def Info: ../Figures/leakage.png  used on input line 269.
@@ -540,14 +540,14 @@ Overfull \hbox (22.79065pt too wide) in paragraph at lines 269--270
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [19 <../Figures/rarely_nets.png>]
-<../Figures/payload_classification.png, id=687, 513.41812pt x 268.00125pt>
+<../Figures/payload_classification.png, id=704, 513.41812pt x 268.00125pt>
 File: ../Figures/payload_classification.png Graphic file (type png)
 <use ../Figures/payload_classification.png>
 Package pdftex.def Info: ../Figures/payload_classification.png  used on input l
 ine 297.
 (pdftex.def)             Requested size: 318.66948pt x 166.34306pt.
  [20 <../Figures/leakage.png>] [21 <../Figures/payload_classification.png>]
-<../Figures/trojan_insertion.png, id=705, 292.09125pt x 177.66376pt>
+<../Figures/trojan_insertion.png, id=722, 292.09125pt x 177.66376pt>
 File: ../Figures/trojan_insertion.png Graphic file (type png)
 <use ../Figures/trojan_insertion.png>
 Package pdftex.def Info: ../Figures/trojan_insertion.png  used on input line 32
@@ -558,12 +558,12 @@ Package pdftex.def Info: ../Figures/trojan_insertion.png  used on input line 32
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [22] [23 <../Figures/trojan_insertion.png>]
-<../Figures/combinational.png, id=724, 488.57532pt x 228.855pt>
+<../Figures/combinational.png, id=741, 488.57532pt x 228.855pt>
 File: ../Figures/combinational.png Graphic file (type png)
 <use ../Figures/combinational.png>
 Package pdftex.def Info: ../Figures/combinational.png  used on input line 341.
 (pdftex.def)             Requested size: 318.66948pt x 149.2708pt.
-<../Figures/sequential.png, id=726, 480.29437pt x 243.91125pt>
+<../Figures/sequential.png, id=743, 480.29437pt x 243.91125pt>
 File: ../Figures/sequential.png Graphic file (type png)
 <use ../Figures/sequential.png>
 Package pdftex.def Info: ../Figures/sequential.png  used on input line 354.
@@ -573,13 +573,13 @@ Package pdftex.def Info: ../Figures/sequential.png  used on input line 354.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [24 <../Figures/combinational.png>]
-<../Figures/threat_model.png, id=739, 441.90094pt x 274.02374pt>
+<../Figures/threat_model.png, id=756, 441.90094pt x 274.02374pt>
 File: ../Figures/threat_model.png Graphic file (type png)
 <use ../Figures/threat_model.png>
 Package pdftex.def Info: ../Figures/threat_model.png  used on input line 366.
 (pdftex.def)             Requested size: 318.66948pt x 197.61472pt.
  [25 <../Figures/sequential.png> <../Figures/threat_model.png>]
-<../Figures/RF_trojan.png, id=751, 435.12563pt x 182.93344pt>
+<../Figures/RF_trojan.png, id=768, 435.12563pt x 182.93344pt>
 File: ../Figures/RF_trojan.png Graphic file (type png)
 <use ../Figures/RF_trojan.png>
 Package pdftex.def Info: ../Figures/RF_trojan.png  used on input line 377.
@@ -597,7 +597,7 @@ em-ploy-ing cryp-to-graphic al-go-rithms,
  []
 
 [30] [31]
-<../Figures/aes128_code.png, id=829, 315.42844pt x 161.10187pt>
+<../Figures/aes128_code.png, id=846, 315.42844pt x 161.10187pt>
 File: ../Figures/aes128_code.png Graphic file (type png)
 <use ../Figures/aes128_code.png>
 Package pdftex.def Info: ../Figures/aes128_code.png  used on input line 521.
@@ -613,7 +613,7 @@ Chapter 2.
 
 
 ]
-<../Figures/Trojan_insetion.png, id=859, 662.475pt x 271.0125pt>
+<../Figures/Trojan_insetion.png, id=876, 662.475pt x 271.0125pt>
 File: ../Figures/Trojan_insetion.png Graphic file (type png)
 <use ../Figures/Trojan_insetion.png>
 Package pdftex.def Info: ../Figures/Trojan_insetion.png  used on input line 24.
@@ -623,62 +623,105 @@ Package pdftex.def Info: ../Figures/Trojan_insetion.png  used on input line 24.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `insert01' on page 36 undefined on input line 30.
-
-[36] [37 <../Figures/Trojan_insetion.png>] [38] [39] [40]
-<../Figures/classification_ht_detection.png, id=926, 597.73312pt x 354.57469pt>
-
-File: ../Figures/classification_ht_detection.png Graphic file (type png)
-<use ../Figures/classification_ht_detection.png>
-Package pdftex.def Info: ../Figures/classification_ht_detection.png  used on in
-put line 88.
-(pdftex.def)             Requested size: 409.71692pt x 243.04451pt.
- [41 <../Figures/classification_ht_detection.png>] [42] [43]
-Overfull \hbox (11.5441pt too wide) in paragraph at lines 126--127
- [] \OT1/cmr/m/n/12 In [[]], they have in-tro-duced a golden-free mul-ti-di-men
--sional self-referencing
- []
-
-[44] [45]
-Overfull \hbox (4.18483pt too wide) in paragraph at lines 148--149
-[]\OT1/cmr/bx/n/12 Costly and Time-Consuming: \OT1/cmr/m/n/12 In-va-sive tech-n
-iques of-ten re-quire spe-cial-ized equip-
- []
-
-[46] [47] [48]
-<../Figures/model_checker.png, id=1052, 380.92313pt x 401.24907pt>
-File: ../Figures/model_checker.png Graphic file (type png)
-<use ../Figures/model_checker.png>
-Package pdftex.def Info: ../Figures/model_checker.png  used on input line 215.
-(pdftex.def)             Requested size: 204.85846pt x 215.78961pt.
+[36] [37 <../Figures/Trojan_insetion.png>] [38]
+<../Figures/ht_outside_ic.png, id=912, 285.31593pt x 188.95593pt>
+File: ../Figures/ht_outside_ic.png Graphic file (type png)
+<use ../Figures/ht_outside_ic.png>
+Package pdftex.def Info: ../Figures/ht_outside_ic.png  used on input line 69.
+(pdftex.def)             Requested size: 318.66948pt x 211.04677pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[49] [50 <../Figures/model_checker.png>] [51] [52]
-<../Figures/PUF_algorithm.png, id=1097, 697.8572pt x 205.5178pt>
+[39] [40 <../Figures/ht_outside_ic.png>] [41]
+<../Figures/classification_ht_detection.png, id=954, 597.73312pt x 354.57469pt>
+
+File: ../Figures/classification_ht_detection.png Graphic file (type png)
+<use ../Figures/classification_ht_detection.png>
+Package pdftex.def Info: ../Figures/classification_ht_detection.png  used on in
+put line 104.
+(pdftex.def)             Requested size: 409.71692pt x 243.04451pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[42] [43 <../Figures/classification_ht_detection.png>] [44] [45]
+Overfull \hbox (11.5441pt too wide) in paragraph at lines 142--143
+ [] \OT1/cmr/m/n/12 In [[]], they have in-tro-duced a golden-free mul-ti-di-men
+-sional self-referencing
+ []
+
+[46]
+Overfull \hbox (4.18483pt too wide) in paragraph at lines 164--165
+[]\OT1/cmr/bx/n/12 Costly and Time-Consuming: \OT1/cmr/m/n/12 In-va-sive tech-n
+iques of-ten re-quire spe-cial-ized equip-
+ []
+
+[47] [48] [49]
+<../Figures/model_checker.png, id=1080, 380.92313pt x 401.24907pt>
+File: ../Figures/model_checker.png Graphic file (type png)
+<use ../Figures/model_checker.png>
+Package pdftex.def Info: ../Figures/model_checker.png  used on input line 231.
+(pdftex.def)             Requested size: 204.85846pt x 215.78961pt.
+ [50] [51 <../Figures/model_checker.png>] [52]
+<../Figures/puf_solution.png, id=1110, 770.88pt x 304.13625pt>
+File: ../Figures/puf_solution.png Graphic file (type png)
+<use ../Figures/puf_solution.png>
+Package pdftex.def Info: ../Figures/puf_solution.png  used on input line 274.
+(pdftex.def)             Requested size: 318.66948pt x 125.72226pt.
+ [53 <../Figures/puf_solution.png>] [54]
+<../Figures/PUF_algorithm.png, id=1133, 697.8572pt x 205.5178pt>
 File: ../Figures/PUF_algorithm.png Graphic file (type png)
 <use ../Figures/PUF_algorithm.png>
-Package pdftex.def Info: ../Figures/PUF_algorithm.png  used on input line 284.
+Package pdftex.def Info: ../Figures/PUF_algorithm.png  used on input line 307.
 (pdftex.def)             Requested size: 409.71692pt x 120.66176pt.
- [53 <../Figures/PUF_algorithm.png>] [54] [55]
-Overfull \hbox (8.98282pt too wide) in paragraph at lines 326--327
+ [55 <../Figures/PUF_algorithm.png>] [56] [57]
+<../Figures/Hardware_based_encrypt.png, id=1172, 770.88pt x 495.35063pt>
+File: ../Figures/Hardware_based_encrypt.png Graphic file (type png)
+<use ../Figures/Hardware_based_encrypt.png>
+Package pdftex.def Info: ../Figures/Hardware_based_encrypt.png  used on input l
+ine 345.
+(pdftex.def)             Requested size: 318.66948pt x 204.76549pt.
+
+Overfull \hbox (8.98282pt too wide) in paragraph at lines 356--357
 []\OT1/cmr/bx/n/12 Tamper Re-sis-tance: \OT1/cmr/m/n/12 Hardware-based en-cryp-
 tion so-lu-tions may in-cor-po-rate tamper-
  []
 
-[56] [57] [58] [59] [60] [61]
-Overfull \hbox (18.04283pt too wide) in paragraph at lines 398--399
+[58 <../Figures/Hardware_based_encrypt.png>] [59]
+<../Figures/tpm.png, id=1192, 505.89pt x 246.9225pt>
+File: ../Figures/tpm.png Graphic file (type png)
+<use ../Figures/tpm.png>
+Package pdftex.def Info: ../Figures/tpm.png  used on input line 375.
+(pdftex.def)             Requested size: 318.66948pt x 155.54314pt.
+ [60 <../Figures/tpm.png>]
+[61]
+<../Figures/landing_gear.png, id=1213, 316.18124pt x 290.58563pt>
+File: ../Figures/landing_gear.png Graphic file (type png)
+<use ../Figures/landing_gear.png>
+Package pdftex.def Info: ../Figures/landing_gear.png  used on input line 406.
+(pdftex.def)             Requested size: 227.62206pt x 209.19931pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[62] [63 <../Figures/landing_gear.png>] [64]
+<../Figures/anti_tamper.jpg, id=1242, 268.75406pt x 115.18031pt>
+File: ../Figures/anti_tamper.jpg Graphic file (type jpg)
+<use ../Figures/anti_tamper.jpg>
+Package pdftex.def Info: ../Figures/anti_tamper.jpg  used on input line 439.
+(pdftex.def)             Requested size: 318.66948pt x 136.57414pt.
+ [65 <../Figures/anti_tamper.jpg>]
+Overfull \hbox (18.04283pt too wide) in paragraph at lines 451--452
 []\OT1/cmr/bx/n/12 Self-Destructive Fea-tures: \OT1/cmr/m/n/12 Some anti-tamper
  pack-ag-ing in-cor-po-rates self-destructive
  []
 
-[62] [63]) [64] (main.bbl [65
+[66]) [67] (main.bbl [68
 
 
 
-] [66] [67]) [68] (main.aux (chapter_1.aux)
+] [69] [70] [71]) [72] (main.aux (chapter_1.aux)
 (chapter_2.aux))
  ***********
 LaTeX2e <2023-06-01> patch level 1
@@ -689,16 +732,16 @@ L3 programming layer <2023-08-29>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3440330F38408960121419109BD80300;16651.
+(rerunfilecheck)             Checksum: C6254BC0057A9B961F1758562D157B1E;16855.
  ) 
 Here is how much of TeX's memory you used:
- 12131 strings out of 475247
- 198446 string characters out of 5757792
+ 12224 strings out of 475247
+ 201086 string characters out of 5757792
  1941785 words of memory out of 5000000
- 32963 multiletter control sequences out of 15000+600000
+ 33039 multiletter control sequences out of 15000+600000
  563926 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,1471b,596s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,1471b,532s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\bille\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
 1200.pk><C:/Users/bille/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmbx12.pfb><C:/Users/bille/AppData/Local/Programs/MiKTeX/fonts/type1/publ
@@ -708,9 +751,9 @@ ype1/public/amsfonts/cm/cmr10.pfb><C:/Users/bille/AppData/Local/Programs/MiKTeX
 s/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/bille/AppData/Local/
 Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/bille/AppData
 /Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (68 pages, 1367622 bytes).
+Output written on main.pdf (72 pages, 1852892 bytes).
 PDF statistics:
- 1395 PDF objects out of 1440 (max. 8388607)
- 556 named destinations out of 1000 (max. 500000)
- 761 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1448 PDF objects out of 1728 (max. 8388607)
+ 573 named destinations out of 1000 (max. 500000)
+ 799 words of extra memory for PDF output out of 10000 (max. 10000000)
 

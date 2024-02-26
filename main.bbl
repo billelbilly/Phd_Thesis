@@ -148,6 +148,13 @@ King, S.~T., Tucek, J., Cozzie, A., Grier, C., Jiang, W., and Zhou, Y. (2008).
 \newblock Designing and implementing malicious hardware.
 \newblock {\em Leet}, 8:1--8.
 
+\bibitem[Kinugawa et~al., 2019]{Kinugawa_Fujimoto_Hayashi_2019}
+Kinugawa, M., Fujimoto, D., and Hayashi, Y. (2019).
+\newblock Electromagnetic information extortion from electronic devices using
+  interceptor and its countermeasure.
+\newblock {\em IACR Transactions on Cryptographic Hardware and Embedded
+  Systems}, 2019(4):62–90.
+
 \bibitem[Li et~al., 2022]{9840090}
 Li, Y., Chen, L., Wang, J., and Gong, G. (2022).
 \newblock Partial reconfiguration for run-time memory faults and hardware

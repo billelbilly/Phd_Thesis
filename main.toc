@@ -66,39 +66,40 @@
 \contentsline {section}{\numberline {2.2}Insertion Approaches}{35}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Insertion phase}{37}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2} Abstraction Level}{38}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Some employed strategies in the insertion of HTs}{39}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Detection Techniques}{41}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Invasive Trojan Detection Technique}{42}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Non-invasive Trojan Detection Technique}{43}{subsection.2.3.2}%
-\contentsline {subsubsection}{Run-time, non-invasive Trojan detection approaches:}{43}{section*.181}%
-\contentsline {subsubsection}{Test-time, non-invasive Trojan detection approaches:}{44}{section*.187}%
-\contentsline {subsection}{\numberline {2.3.3}Advantages/disadvantages of invasive/non-invasive detection techniques}{45}{subsection.2.3.3}%
-\contentsline {subsubsection}{Invasive Hardware Trojan Detection Techniques:}{45}{section*.195}%
-\contentsline {subsubsection}{Advantages}{46}{section*.197}%
-\contentsline {subsubsection}{Disadvantages}{46}{section*.198}%
-\contentsline {subsubsection}{Non-Invasive Hardware Trojan Detection Techniques:}{46}{section*.199}%
-\contentsline {subsubsection}{Advantages}{46}{section*.201}%
-\contentsline {subsubsection}{Disadvantages}{46}{section*.202}%
-\contentsline {section}{\numberline {2.4}Software and Hardware Materials in HT Mitigation}{47}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Simulation and testing}{47}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Deductive verification}{47}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Formal Verification:}{48}{subsection.2.4.3}%
-\contentsline {subsubsection}{Temporal Logic}{48}{section*.211}%
-\contentsline {subsubsection}{Model Checking}{49}{section*.218}%
-\contentsline {subsection}{\numberline {2.4.4}Physically Unclonable Functions (PUFs)}{51}{subsection.2.4.4}%
-\contentsline {subsubsection}{The Advantages of a Physical Unclonable Function}{51}{section*.230}%
-\contentsline {subsubsection}{Typical Use Cases for a Physical Unclonable Function in IoT Devices}{52}{section*.234}%
-\contentsline {subsubsection}{PUF Processing Algorithms}{52}{section*.236}%
-\contentsline {subsubsection}{Error Correction}{53}{section*.238}%
-\contentsline {subsubsection}{Privacy Amplification}{53}{section*.242}%
-\contentsline {subsubsection}{What Are the Challenges When Implementing a Physical Unclonable Function?}{53}{section*.244}%
-\contentsline {subsubsection}{Typical CMOS Implementations of Physical Unclonable Functions}{54}{section*.247}%
-\contentsline {subsubsection}{A Review of Some Studies on Physical Unclonable Functions (PUFs)}{55}{section*.251}%
-\contentsline {subsection}{\numberline {2.4.5}Hardware-based Encryption}{56}{subsection.2.4.5}%
-\contentsline {subsubsection}{A Review of Some Studies on Hardware-based encryption}{57}{section*.259}%
-\contentsline {subsection}{\numberline {2.4.6}Trusted Platform Module (TPM)}{58}{subsection.2.4.6}%
-\contentsline {subsubsection}{A Review of Some Studies on The Trusted Platform Module (TPM)}{59}{section*.266}%
-\contentsline {subsection}{\numberline {2.4.7}Dual and Redundant Hardware Designs}{60}{subsection.2.4.7}%
-\contentsline {subsubsection}{A Review of Some Studies on Dual and Redundant Hardware designs}{61}{section*.273}%
-\contentsline {subsection}{\numberline {2.4.8}Anti-tamper Packaging}{62}{subsection.2.4.8}%
-\contentsline {subsubsection}{Anti-tampering Techniques}{63}{section*.283}%
+\contentsline {subsection}{\numberline {2.2.3}HT mounting outside the IC}{39}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Some employed strategies in the insertion of HTs}{40}{subsection.2.2.4}%
+\contentsline {section}{\numberline {2.3}Detection Techniques}{42}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Invasive Trojan Detection Technique}{43}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Non-invasive Trojan Detection Technique}{44}{subsection.2.3.2}%
+\contentsline {subsubsection}{Run-time, non-invasive Trojan detection approaches:}{44}{section*.186}%
+\contentsline {subsubsection}{Test-time, non-invasive Trojan detection approaches:}{45}{section*.192}%
+\contentsline {subsection}{\numberline {2.3.3}Advantages/disadvantages of invasive/non-invasive detection techniques}{47}{subsection.2.3.3}%
+\contentsline {subsubsection}{Invasive Hardware Trojan Detection Techniques:}{47}{section*.200}%
+\contentsline {subsubsection}{Advantages}{47}{section*.202}%
+\contentsline {subsubsection}{Disadvantages}{47}{section*.203}%
+\contentsline {subsubsection}{Non-Invasive Hardware Trojan Detection Techniques:}{47}{section*.204}%
+\contentsline {subsubsection}{Advantages}{47}{section*.206}%
+\contentsline {subsubsection}{Disadvantages}{48}{section*.207}%
+\contentsline {section}{\numberline {2.4}Software and Hardware Materials in HT Mitigation}{48}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Simulation and testing}{48}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Deductive verification}{48}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Formal Verification:}{49}{subsection.2.4.3}%
+\contentsline {subsubsection}{Temporal Logic}{49}{section*.216}%
+\contentsline {subsubsection}{Model Checking}{50}{section*.223}%
+\contentsline {subsection}{\numberline {2.4.4}Physically Unclonable Functions (PUFs)}{52}{subsection.2.4.4}%
+\contentsline {subsubsection}{The Advantages of a Physical Unclonable Function}{53}{section*.236}%
+\contentsline {subsubsection}{Typical Use Cases for a Physical Unclonable Function in IoT Devices}{54}{section*.240}%
+\contentsline {subsubsection}{PUF Processing Algorithms}{54}{section*.242}%
+\contentsline {subsubsection}{Error Correction}{55}{section*.244}%
+\contentsline {subsubsection}{Privacy Amplification}{55}{section*.248}%
+\contentsline {subsubsection}{What Are the Challenges When Implementing a Physical Unclonable Function?}{55}{section*.250}%
+\contentsline {subsubsection}{Typical CMOS Implementations of Physical Unclonable Functions}{56}{section*.253}%
+\contentsline {subsubsection}{A Review of Some Studies on Physical Unclonable Functions (PUFs)}{57}{section*.257}%
+\contentsline {subsection}{\numberline {2.4.5}Hardware-based Encryption}{58}{subsection.2.4.5}%
+\contentsline {subsubsection}{A Review of Some Studies on Hardware-based encryption}{59}{section*.266}%
+\contentsline {subsection}{\numberline {2.4.6}Trusted Platform Module (TPM)}{60}{subsection.2.4.6}%
+\contentsline {subsubsection}{A Review of Some Studies on The Trusted Platform Module (TPM)}{61}{section*.274}%
+\contentsline {subsection}{\numberline {2.4.7}Dual and Redundant Hardware Designs}{62}{subsection.2.4.7}%
+\contentsline {subsubsection}{A Review of Some Studies on Dual and Redundant Hardware designs}{64}{section*.282}%
+\contentsline {subsection}{\numberline {2.4.8}Anti-tamper Packaging}{65}{subsection.2.4.8}%
+\contentsline {subsubsection}{Anti-tampering Techniques}{67}{section*.294}%

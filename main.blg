@@ -9,7 +9,7 @@ Reallocating 'name_of_file' (item size: 1) to 8 items.
 The style file: apalike.bst
 Reallocating 'name_of_file' (item size: 1) to 4 items.
 Database file #1: ref.bib
-You're missing a field name---line 775 of file ref.bib
+You're missing a field name---line 773 of file ref.bib
  :  
  :  ,
 (Error may have been on previous line)
@@ -20,7 +20,6 @@ You're missing a field name---line 999 of file ref.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "4559047a"
-Warning--I didn't find a database entry for "insert01"
 Too many commas in name 1 of "Gayatri et al., Mitra , Mekala, Priyatharishini" for entry 9137882
 while executing---line 1023 of file apalike.bst
 Too many commas in name 1 of "Gayatri et al., Mitra , Mekala, Priyatharishini" for entry 9137882
@@ -31,45 +30,45 @@ Warning--empty booktitle in 10.1145/3338511.3357348
 Warning--empty booktitle in 10.1145/3424771.3424781
 Warning--empty booktitle in 7092492
 Warning--empty year in skorobogatovhardware
-You've used 49 entries,
+You've used 50 entries,
             1935 wiz_defined-function locations,
-            741 strings with 13739 characters,
-and the built_in function-call counts, 23689 in all, are:
-= -- 2331
-> -- 1008
+            746 strings with 14024 characters,
+and the built_in function-call counts, 24105 in all, are:
+= -- 2370
+> -- 1026
 < -- 42
-+ -- 369
-- -- 346
-* -- 1929
-:= -- 3861
-add.period$ -- 157
-call.type$ -- 49
-change.case$ -- 417
-chr.to.int$ -- 46
-cite$ -- 53
-duplicate$ -- 971
-empty$ -- 1675
-format.name$ -- 423
-if$ -- 4901
++ -- 375
+- -- 352
+* -- 1969
+:= -- 3934
+add.period$ -- 160
+call.type$ -- 50
+change.case$ -- 425
+chr.to.int$ -- 47
+cite$ -- 54
+duplicate$ -- 985
+empty$ -- 1705
+format.name$ -- 430
+if$ -- 4981
 int.to.chr$ -- 4
 int.to.str$ -- 0
-missing$ -- 49
-newline$ -- 247
-num.names$ -- 147
-pop$ -- 456
+missing$ -- 50
+newline$ -- 252
+num.names$ -- 150
+pop$ -- 462
 preamble$ -- 1
-purify$ -- 418
+purify$ -- 426
 quote$ -- 0
-skip$ -- 730
+skip$ -- 740
 stack$ -- 0
-substring$ -- 1681
-swap$ -- 239
+substring$ -- 1714
+swap$ -- 240
 text.length$ -- 24
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 292
+type$ -- 298
 warning$ -- 4
-while$ -- 178
+while$ -- 181
 width$ -- 0
-write$ -- 641
+write$ -- 654
 (There were 5 error messages)

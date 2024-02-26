@@ -22,6 +22,12 @@
 \contentsline {figure}{\numberline {1.19}{\ignorespaces Architecture of the Trojan-infected AES-T2000 benchmark}}{33}{figure.caption.131}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Hardware trojan insertion in circuit design phases}}{37}{figure.caption.148}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Classification of hardware Trojan Detection Techniques.}}{41}{figure.caption.172}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Model checker}}{50}{figure.caption.222}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Error correction techniques for cryptographic key reconstruction}}{53}{figure.caption.241}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces HT mounted outside of the IC.}}{40}{figure.caption.166}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Classification of hardware Trojan Detection Techniques.}}{43}{figure.caption.177}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Model checker}}{51}{figure.caption.227}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces PUF-based Security IP Solution.}}{53}{figure.caption.235}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Error correction techniques for cryptographic key reconstruction}}{55}{figure.caption.247}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Hardware-based Encryption using Specialized Crypto Module.}}{58}{figure.caption.263}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Trusted Platform Module (TPM) In Oven system.}}{60}{figure.caption.271}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Aircraft landing gear system redundancy.}}{63}{figure.caption.279}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces IC packaging process.}}{65}{figure.caption.287}%

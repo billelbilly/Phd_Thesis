@@ -1,6 +1,6 @@
 \chapter{Hardware Trojan Insertion/Detection Principle Approaches and Tools}
 \section{Introduction}
-\paragraph*{}d
+\paragraph*{}
 In the contemporary landscape of electronic systems and integrated circuits, the increasing complexity and interconnectedness have given rise to unprecedented challenges in ensuring the security and trustworthiness of these critical components. One particularly insidious threat that has garnered significant attention is the insertion of Hardware Trojans (HTs) - clandestine modifications in the hardware design or manufacturing process that compromise the functionality, reliability, or security of the targeted system. As electronic devices play an integral role in our daily lives, ranging from critical infrastructure to personal communication devices, the detection and prevention of Hardware Trojans have become paramount in safeguarding the integrity of these systems.
 \paragraph*{}
 This chapter explores the sophisticated domain of Hardware Trojans, specifically focusing on the insertion and detection approaches employed in countering this sophisticated threat.The chapter checks not only the techniques employed by adversaries to stealthily introduce Trojans into hardware but also the evolving strategies and technologies designed to identify and mitigate these malicious insertions.Central to this exploration is a comprehensive examination of the software and hardware materials utilized in both the perpetration and defense against Hardware Trojans.
@@ -27,7 +27,7 @@ In the end, the post-silicon test and validation phase will be safer if it is pe
 \end{figure}
 
 \paragraph*{}
-To assess the risks associated with Hardware trojans (HTs), various studies, such as \cite{insert01} , have presented taxonomies. These taxonomies abstract different categories related to the architecture, effects, and insertion of Trojans in Integrated Circuits (ICs).
+To assess the risks associated with Hardware trojans (HTs), various studies, such as \cite{9956883}, have presented taxonomies. These taxonomies abstract different categories related to the architecture, effects, and insertion of Trojans in Integrated Circuits (ICs).
 \subsection{Insertion phase}
 This classification delineates various stages within the IC design process where a potential adversary might be situated. The subsequent analysis outlines the susceptibilities to Trojan insertion at each phase:
 \paragraph*{}
@@ -55,6 +55,22 @@ The abstraction level pertains to the potential manipulation of the design in th
 \textbf{Transistor level:} The introduction of additional transistors can substantially raise leakages, providing attackers with insights into the internal states of security-focused circuits. Additionally, the incorporation of transistors may be employed to extend critical path delays, causing malfunctions in the circuit. Possible origins of Trojans at this level include adversaries during the design phase or the utilization of untrustworthy tools, libraries, and models.
 \paragraph*{}
 \textbf{Physical layout level:} The initial parameters of circuit components remain susceptible even following layout generation. An example is an attacker manipulating original masks, modifying transistor dimensions like lengths, widths, or channel doping concentrations. Additionally, resizing wires can cause malfunctions and increased leakages. Adversaries operating at both the design and fabrication levels, as well as third-party mask shops, have the capability to modify the original layout and introduce such Trojans.
+\subsection{HT mounting outside the IC}
+\paragraph*{}
+Mounting Hardware Trojans (HT) externally to the Integrated Circuit (IC) is simpler, requiring surface mounting on existing components. This external placement offers easier installation compared to embedding HTs within the IC. Successful mounting of an HT outside the IC relies on accessing the target device for a specific time period. Although not as integrated as internal placement, various circuit elements connect to the board. Detecting these circuits separately from elements mounted during design is considered challenging. In cases like communication lines, where circuit elements might not be present, they are often completely covered with coating. Camouflaging the HT by covering it further complicates detection.
+\paragraph*{}
+In \cite{Kinugawa_Fujimoto_Hayashi_2019} survey, pertains to an HT that is capable of being installed on the peripheral circuits and wiring of Integrated Circuits (ICs). This Hardware Trojan is associated with the risk of information leakage via electromagnetic waves. Unintentional electromagnetic emissions can lead to information leakage. However, intentional electromagnetic interference can be employed to control the timing and scope of this information leakage. Consequently, this example of a threat can be viewed as a novel challenge that encompasses both emission security and disturbance security within the Electromagnetic Compatibility (EMC) field.
+\paragraph*{}
+In Figure \ref{fig:htoutsideic}, the HT is composed of MOSFET and short wiring. This Hardware Trojan (HT) is installed on a board or connecting cable, and upon receiving the trigger pattern, it releases leaked data. This is achieved by utilizing the wiring pattern on the board and the line connected to the device as an antenna, referred to as the unintentional antenna.
+\paragraph*{}
+The discussed Hardware Trojan functions similarly to a mixer circuit that multiplies two signals. Initially, the HT produces an amplitude modulation (AM) signal by multiplying a target signal within the device, intended for leakage, with a signal emitted from the external environment acting as a carrier signal. Following this, the AM signal is transmitted outside the device via an "unintended antenna." Finally, by demodulating the transmitted signal, the internal device signal can be recovered.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/ht_outside_ic}
+	\caption{HT mounted outside of the IC.}
+	\label{fig:htoutsideic}
+\end{figure}
+\pagebreak
 \subsection{Some employed strategies in the insertion of HTs}
 \paragraph*{}
 In emulating the strategies employed by adversaries in the insertion of hardware Trojan horses (HTH), Alkabani and Koushanfar categorized the necessary components into three groups: trigger, storage, and driver. A trigger serves to activate the intended HTH, and following the trigger event, the ensuing action can be recorded in either memory or a sequential circuit. The driver is responsible for executing the action prompted by the trigger. Based on this classification, Alkabani and Koushanfar propose a systematic approach for embedding hardware Trojans into integrated circuits (ICs) through pre-synthesis manipulation of the circuit's structure \cite{4559059}. This model addresses trust concerns related to Intellectual Property (IP) cores, especially when multiple cores from various vendors are utilized. In an abstracted view of the design process, the Trojan designer formulates a high-level design description to ascertain the computation model of the circuit that can be represented by a finite-state machine (FSM).
@@ -253,6 +269,13 @@ Because of variations in the deep submicron manufacturing process, each transist
 Leveraging these inherent variations, PUFs prove highly beneficial as distinctive identifiers for individual integrated circuits (ICs). Achieved through the IC's internal circuitry, these minute variations are translated into a digital pattern of 0s and 1s, exclusive to that particular chip and consistently reproducible. This pattern serves as a "silicon fingerprint," analogous to the biometric characteristics found in humans.
 \paragraph*{}
 The application of this technology spans from employing Physical Unclonable Functions for IoT security, capitalizing on its cost-effectiveness and adaptable implementation for significant advantages, to utilizing Physical Unclonable Functions in Aerospace \& Defense. This demonstrates the technology's capability to provide the utmost level of security.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/puf_solution}
+	\caption{PUF-based Security IP Solution.}
+	\label{fig:pufsolution}
+\end{figure}
+
 \subsubsection{The Advantages of a Physical Unclonable Function}
 \paragraph*{}
 Devices, especially those integrated into the Internet of Things (IoT), necessitate keys for safeguarding their data, intellectual property (IP), and functionalities. These keys may be embedded onto the devices either by the device manufacturers, also known as OEMs, or at an earlier stage by a chip vendor. When chip vendors furnish pre-provisioned chips, they enhance the overall worth of the product offered to OEMs. Alternatively, if OEMs opt for self-provisioning, they usually acquire chips at a lower cost.
@@ -317,6 +340,13 @@ The concept of Physical Unclonable Functions (PUFs) has been a focal point in nu
  \subsection{Hardware-based Encryption}
  \paragraph*{}
  Hardware-based encryption is a method of securing data through the use of dedicated cryptographic hardware components. In this approach, encryption and decryption processes are offloaded to specialized hardware modules, providing a higher level of security and often better performance compared to software-based encryption.
+ \begin{figure}[h]
+ 	\centering
+ 	\includegraphics[width=0.7\linewidth]{../Figures/Hardware_based_encrypt}
+ 	\caption{Hardware-based Encryption using Specialized Crypto Module.}
+ 	\label{fig:hardwarebasedencrypt}
+ \end{figure}
+ 
  \paragraph*{}
  Key characteristics of hardware-based encryption include:
  \begin{itemize}
@@ -340,6 +370,13 @@ In \cite{https://doi.org/10.1002/dac.4211}, A novel and efficient strategy has b
 \subsection{Trusted Platform Module (TPM)}
 \paragraph*{}
 A Trusted Platform Module (TPM) is a specialized hardware component that provides a secure foundation for the establishment of trust in computing environments. It is designed to enhance the security of systems by providing a range of cryptographic functions and capabilities.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/tpm}
+	\caption{Trusted Platform Module (TPM) In Oven system.}
+	\label{fig:tpm}
+\end{figure}
+
 \paragraph*{}
 The Trusted Platform Module (TPM) encompasses fundamental elements crucial for enhancing the security of computing environments. This specialized hardware component integrates cryptographic functions, secure storage, and a root of trust to establish and maintain system integrity. TPM facilitates secure boot processes, remote attestation, and the sealing/unsealing of sensitive data, providing hardware-based security resistant to various attacks. Standardized by organizations like the Trusted Computing Group, TPM plays a pivotal role in safeguarding systems through its key features:
 \begin{itemize}
@@ -364,6 +401,13 @@ The growing frequency of cyber threats targeting Supervisory Control and Data Ac
 \subsection{Dual and Redundant Hardware Designs}
 \paragraph*{}
 Dual and redundant hardware designs refer to an approach in system architecture where critical components or subsystems are duplicated, and there is a built-in redundancy to ensure continued operation in the event of a hardware failure. This redundancy is implemented to enhance system reliability, availability, and fault tolerance. In a dual and redundant hardware design, if one component fails, the redundant counterpart can seamlessly take over, minimizing downtime and maintaining system functionality. This approach is commonly employed in safety-critical systems, mission-critical applications, and industries where uninterrupted operation is crucial. The redundancy provides a safeguard against hardware failures and contributes to overall system resilience.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.5\linewidth]{../Figures/landing_gear}
+	\caption{Aircraft landing gear system redundancy.}
+	\label{fig:landinggear}
+\end{figure}
+\pagebreak
 \paragraph*{}
 Implementing redundant hardware designs or dual-die configurations can provide a backup mechanism that helps mitigate the impact of a hardware Trojan by allowing the system to switch to a trusted component. Here are some key features of this technique:
 \begin{itemize}
@@ -389,7 +433,16 @@ The paper \cite{Amin2022} introduces a Unified Fault-Tolerant Control System (UF
 Safety-critical computing systems, found in domains like avionics or space, necessitate specific safety measures based on deployment criticality. One challenge encountered by these systems involves transient hardware failures. To address potential issues, a common approach is to introduce redundancy, such as utilizing two cores simultaneously running the same program. However, this redundancy alone does not mitigate all potential failures, like Common Cause Failures (CCF), where a single fault impacts both cores uniformly (e.g., a voltage droop). If both redundant cores share identical states during a fault, the possibility of CCF arises, as the fault can affect both cores in a similar manner. In \cite{9774540}, SafeDM is introduced, a Diversity Monitor in hardware that quantifies the diversity of each redundant processor to ensure that CCF will not be overlooked, all without the necessity of deploying lockstepped cores. Data and instruction diversity are computed separately by SafeDM, employing distinct techniques suitable for each case. Integration of SafeDM is carried out in a RISC-V FPGA space MPSoC from Cobham Gaisler, where its effectiveness is demonstrated through extensive benchmarking, incurring minimal area and power overheads. In summary, an effective hardware solution in SafeDM is provided for quantifying diversity in cores engaged in redundant execution.
 \subsection{Anti-tamper Packaging}
 \paragraph*{}
-Hardware anti-tamper packaging involves the use of specialized materials, mechanisms, and technologies to safeguard electronic devices and components against unauthorized access, tampering, or reverse engineering. This is particularly important in applications where the security and integrity of the hardware are critical, such as in defense systems, secure communication devices, and other sensitive electronic equipment. Employing anti-tamper packaging techniques, such as coatings or encapsulation, can make it more challenging for attackers to physically access and tamper with the hardware. Here are some common features and strategies used in hardware anti-tamper packaging:
+Hardware anti-tamper packaging involves the use of specialized materials, mechanisms, and technologies to safeguard electronic devices and components against unauthorized access, tampering, or reverse engineering. This is particularly important in applications where the security and integrity of the hardware are critical, such as in defense systems, secure communication devices, and other sensitive electronic equipment. Employing anti-tamper packaging techniques, such as coatings or encapsulation, can make it more challenging for attackers to physically access and tamper with the hardware.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.7\linewidth]{../Figures/anti_tamper}
+	\caption{IC packaging process.}
+	\label{fig:antitamper}
+\end{figure}
+ 
+\paragraph*{}
+Here are some common features and strategies used in hardware anti-tamper packaging:
 \begin{itemize}
 	\item \textbf{Encapsulation and Potting:} Components or entire devices may be encapsulated or potted in a resilient material to make physical access difficult. This can prevent unauthorized individuals from tampering with or extracting sensitive information from the hardware.
 	\item \textbf{Tamper-Evident Seals:} Special seals or coatings are applied to the hardware, and any attempt to breach the packaging results in visible damage or alteration. This provides a clear indication that tampering has occurred.
